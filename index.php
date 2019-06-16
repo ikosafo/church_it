@@ -1,98 +1,89 @@
-<?php require ('includes/header.php')?>
+<!doctype html>
+<html class="no-js" lang="">
 
-            <!--START PAGE CONTENT -->
-            <section class="page-content container-fluid">
-                <div class="row">
-                    <div class="col-12">
-                        <div class="card">
-                            <div class="row m-0 col-border-xl">
-                                <div class="col-md-12 col-lg-6 col-xl-3">
-                                    <div class="card-body">
-                                        <div class="icon-rounded icon-rounded-primary float-left m-r-20">
-                                            <i class="icon icon-people"></i>
-                                        </div>
-                                        <h5 class="card-title m-b-5 counter" data-count="120">0</h5>
-                                        <h6 class="text-muted m-t-10">
-                                           Members
-                                        </h6>
 
-                                    </div>
-                                </div>
-                                <div class="col-md-12 col-lg-6 col-xl-3">
-                                    <div class="card-body">
-                                        <div class="icon-rounded icon-rounded-accent float-left m-r-20">
-                                            <i class="icon dripicons-user"></i>
-                                        </div>
-                                        <h5 class="card-title m-b-5 counter" data-count="41">0</h5>
-                                        <h6 class="text-muted m-t-10">
-                                            Males
-                                        </h6>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Christ Vision Sanctuary Int</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="shortcut icon" type="image/png" href="assets/images/fav-icon.png">
+    <!-- Place favicon.ico in the root directory -->
 
-                                    </div>
-                                </div>
-                                <div class="col-md-12 col-lg-6 col-xl-3">
-                                    <div class="card-body">
-                                        <div class="icon-rounded icon-rounded-info float-left m-r-20">
-                                            <i class="icon icon-user-female"></i>
-                                        </div>
-                                        <h5 class="card-title m-b-5 counter" data-count="57">0</h5>
-                                        <h6 class="text-muted m-t-10">
-                                            Females
-                                        </h6>
+    <link rel="stylesheet" href="assets/css/animate.css">
+    <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="assets/css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="assets/css/magnific-popup.css">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/swiper.css">
+    <link rel="stylesheet" href="assets/css/menu.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    <link rel="stylesheet" href="assets/css/default.css">
+    <link rel="stylesheet" href="assets/css/color.css">
+</head>
 
-                                    </div>
-                                </div>
-                                <div class="col-md-12 col-lg-6 col-xl-3">
-                                    <div class="card-body">
-                                        <div class="icon-rounded icon-rounded-success float-left m-r-20">
-                                            <i class="icon dripicons-user-group"></i>
-                                        </div>
-                                        <h5 class="card-title m-b-5 counter" data-count="22">0</h5>
-                                        <h6 class="text-muted m-t-10">
-                                            Children
-                                        </h6>
+<body>
+<!--[if lte IE 9]>
+<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+<![endif]-->
 
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+<header class="header-nav-area sticky-on"><!-- header-nav -->
+    <div class="container">
+        <div class="row flexbox-center">
+            <div class="col-lg-12">
+                <div class="logo" style="text-align: center">
+                    <a href="index.php"><img src="assets/images/logo.jpg"
+                                             alt="Church Logo" style="width: 10%"></a>
                 </div>
+            </div><!-- col-lg-4 -->
 
-                <div class="row">
-                    <div class="col-12">
-                        <div class="card-deck m-b-100">
-                            <div class="card card-elevate text-center">
-                                <a href="#gettingStartedTitle" class="smooth-scroll">
-                                    <div class="card-body">
-                                        <i class="zmdi zmdi-compass zmdi-hc-fw font-size-80 text-primary"></i>
-                                        <h5 class="card-title m-t-20">Getting Started</h5>
-                                        <small class="text-muted">Brief tour of Church-IT management system</small>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="card card-elevate card-hover text-center">
-                                <a href="#faqTitle" class="smooth-scroll">
-                                    <div class="card-body">
-                                        <i class="zmdi zmdi-comment-text zmdi-hc-fw font-size-80 text-primary"></i>
-                                        <h5 class="card-title m-t-20">FAQ</h5>
-                                        <small class="text-muted">Frequently Asked Questions about system usage</small>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="card card-elevate card-hover text-center">
-                                <a href="#communityTitle" class="smooth-scroll">
-                                    <div class="card-body">
-                                        <i class="zmdi zmdi-group-work zmdi-hc-fw font-size-80 text-primary"></i>
-                                        <h5 class="card-title  m-t-20">Community</h5>
-                                        <small class="text-muted">Contact developers for system support</small>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
+        </div><!-- row -->
+    </div><!-- container -->
+</header><!-- header-nav -->
+
+<!-- header-area Start -->
+<div id="home">
+    <div class="container">
+        <div class="heade-slider-content">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="header-content" style="text-align: center">
+                        <h2>Update your membership information online</h2>
+                        <p class="lead">
+                            This is for Christ Vision Sanctuary International members
+                        </p>
+
+                        <ul class="app-button list-inline w-400">
+
+                            <li><a href="https://cvsiworld.net/cv_member"><p><span>Member</span>Login</p></a></li>
+                            <li><a href="https://chadmin.cvsiworld.net"><p><span>Admin</span>Login</p></a></li>
+                         <!--   <li><a href="/cv_admin"><p><span>Main</span>Login</p></a></li>-->
+
+                        </ul>
+
                     </div>
-                </div>
+                </div><!-- col-lg-7 -->
 
-            </section>
+            </div><!-- row -->
+        </div>
+    </div><!-- container -->
+</div><!-- Header area -->
 
-<?php require ('includes/footer.php')?>
+
+
+
+<script src="assets/js/vendor/jquery-3.3.1.min.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+<script src="assets/js/jquery.magnific-popup.min.js"></script>
+<script src="assets/js/swiper.min.js"></script>
+<script src="assets/js/plugins.js"></script>
+<script src="assets/js/menu.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+
+
+
+</html>
