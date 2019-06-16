@@ -53,13 +53,13 @@
                     <div class="header-content" style="text-align: center">
                         <h2>Update your membership information online</h2>
                         <p class="lead">
-                            This is for Christ Vision Sanctuary International members
+                            A Church Management System Application for Christ Vision Sanctuary International
                         </p>
 
                         <ul class="app-button list-inline w-400">
 
-                            <li><a href="https://cvsiworld.net/cv_member"><p><span>Member</span>Login</p></a></li>
-                            <li><a href="https://chadmin.cvsiworld.net"><p><span>Admin</span>Login</p></a></li>
+                            <li><a href="/cv_member"><p><span>Member</span>Login</p></a></li>
+                            <li><a href="/cv_branch"><p><span>Admin</span>Login</p></a></li>
                          <!--   <li><a href="/cv_admin"><p><span>Main</span>Login</p></a></li>-->
 
                         </ul>
