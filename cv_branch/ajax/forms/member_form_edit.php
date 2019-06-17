@@ -324,7 +324,7 @@ $memberid = $resm['memberid'];
 
                                 <p></p>
                                 <img
-                                        src="<?php echo $fetch_img['image_location'] ?>"
+                                        src="../<?php echo $fetch_img['image_location'] ?>"
                                         style="width: 80%"/>
 
                                 <input type="hidden" id="selected"/>

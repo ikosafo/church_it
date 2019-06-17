@@ -44,7 +44,7 @@ $getmember = $mysqli->query("select * from member where branch = '$branch' AND s
 
                             $fetch_img = $img->fetch_assoc() ?>
 
-                            <img src="<?php echo $fetch_img['image_location'] ?>"
+                            <img src="../<?php echo $fetch_img['image_location'] ?>"
                                  class="w-50 rounded-circle" alt="Member Image"><br/>
                             <?php echo $resmember['surname'] . ' ' . $resmember['firstname'] . ' ' . $resmember['othername']; ?>
                         </td>

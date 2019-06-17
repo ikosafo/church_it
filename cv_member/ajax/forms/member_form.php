@@ -298,9 +298,8 @@ if ($count == "0"){ ?>
                                     </div>
 
 
-                                    <div class="form-group" id="gender>
-                                    <label for=" exampleInputPassword1
-                                    ">Gender </label>
+                                    <div class="form-group" id="gender">
+                                    <label for="exampleInputPassword1">Gender </label>
                                     <br/>
                                     <div class="custom-control custom-radio custom-control-inline">
                                         <input type="radio" id="customRadioInline1"
@@ -862,7 +861,7 @@ else { ?>
 
                                         <p></p>
                                         <img
-                                            src="<?php echo $fetch_img['image_location'] ?>"
+                                            src="../<?php echo $fetch_img['image_location'] ?>"
                                             style="width: 80%"/>
 
                                         <input type="hidden" id="selected"/>

@@ -16,7 +16,7 @@ if (!isset($_SESSION['username'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Church Admin System | //Name of Church</title>
+    <title>Church Admin System | Christ Vision Sanctuary Int.</title>
     <!-- ================== GOOGLE FONTS ==================-->
     <link href="https@fonts.googleapis.com/css@family=Poppins_3A300,400,500" rel="stylesheet">
     <!-- ======================= GLOBAL VENDOR STYLES ========================-->
@@ -27,6 +27,7 @@ if (!isset($_SESSION['username'])) {
     <!-- ======================= LINE AWESOME ICONS ===========================-->
     <link rel="stylesheet" href="assets/css/icons/line-awesome.min.css">
     <link rel="stylesheet" href="assets/css/icons/simple-line-icons.css">
+
     <!-- ======================= DRIP ICONS ===================================-->
     <link rel="stylesheet" href="assets/css/icons/dripicons.min.css">
     <!-- ======================= MATERIAL DESIGN ICONIC FONTS =================-->
