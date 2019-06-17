@@ -149,12 +149,12 @@ $branch = $_SESSION['branch'];
                         ? "active" : ""); ?> nav-dropdown">
                         <a href="documents.php"><i class="icon dripicons-folder-open"></i><span>Documents</span></a>
                     </li>
-                    <li class="<?php echo($_SERVER['PHP_SELF'] == "/branches.php" ||
-                    $_SERVER['PHP_SELF'] == "/new_member.php" ||
-                    $_SERVER['PHP_SELF'] == "/view_member.php" ||
-                    $_SERVER['PHP_SELF'] == "/new_converts.php" ||
-                    $_SERVER['PHP_SELF'] == "/visitors.php" ||
-                    $_SERVER['PHP_SELF'] == "/print_forms.php"
+                    <li class="<?php echo(
+                    $_SERVER['PHP_SELF'] == "/cv_branch/new_member.php" ||
+                    $_SERVER['PHP_SELF'] == "/cv_branch/view_member.php" ||
+                    $_SERVER['PHP_SELF'] == "/cv_branch/new_converts.php" ||
+                    $_SERVER['PHP_SELF'] == "/cv_branch/visitors.php" ||
+                    $_SERVER['PHP_SELF'] == "/cv_branch/print_forms.php"
                         ? "active" : ""); ?> nav-dropdown">
                         <a class="has-arrow" href="#" aria-expanded="false"><i class="icon icon-people"></i><span>Membership</span></a>
                         <ul class="collapse nav-sub">

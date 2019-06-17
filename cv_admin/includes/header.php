@@ -123,13 +123,13 @@ if (!isset($_SESSION['username'])) {
             <nav class="main-menu">
                 <ul class="nav metismenu">
                     <li class="sidebar-header"><span>MAIN</span></li>
-                    <li class="<?php echo($_SERVER['PHP_SELF'] == "/ad/index.php"
+                    <li class="<?php echo($_SERVER['PHP_SELF'] == "/cv_admin/index.php"
                         ? "active" : ""); ?> nav-dropdown">
                         <a href="index.php"><i class="icon dripicons-meter"></i><span>Dashboard</span></a>
                     </li>
-                    <li class="<?php echo($_SERVER['PHP_SELF'] == "/ad/branches.php" ||
-                    $_SERVER['PHP_SELF'] == "/ad/sms_api_key.php" ||
-                    $_SERVER['PHP_SELF'] == "/ad/system_users.php"
+                    <li class="<?php echo($_SERVER['PHP_SELF'] == "/cv_admin/branches.php" ||
+                    $_SERVER['PHP_SELF'] == "/cv_admin/sms_api_key.php" ||
+                    $_SERVER['PHP_SELF'] == "/cv_admin/system_users.php"
                         ? "active" : ""); ?> nav-dropdown">
                         <a class="has-arrow" href="#" aria-expanded="false"><i class="icon dripicons-gear"></i><span>Configuration</span></a>
                         <ul class="collapse nav-sub" aria-expanded="false">
@@ -142,16 +142,16 @@ if (!isset($_SESSION['username'])) {
                         ? "active" : ""); ?> nav-dropdown">
                         <a href="documents.php"><i class="icon dripicons-folder-open"></i><span>Documents</span></a>
                     </li>
-                    <li class="<?php echo($_SERVER['PHP_SELF'] == "/ad/branches.php" ||
-                    $_SERVER['PHP_SELF'] == "/ad/view_member.php" ||
-                    $_SERVER['PHP_SELF'] == "/ad/new_converts.php" ||
-                    $_SERVER['PHP_SELF'] == "/ad/visitors.php" ||
-                    $_SERVER['PHP_SELF'] == "/ad/print_forms.php"
+                    <li class="<?php echo(
+                    $_SERVER['PHP_SELF'] == "/cv_admin/view_members.php" ||
+                    $_SERVER['PHP_SELF'] == "/cv_admin/new_converts.php" ||
+                    $_SERVER['PHP_SELF'] == "/cv_admin/visitors.php" ||
+                    $_SERVER['PHP_SELF'] == "/cv_admin/print_forms.php"
                         ? "active" : ""); ?> nav-dropdown">
                         <a class="has-arrow" href="#" aria-expanded="false"><i class="icon icon-people"></i><span>Membership</span></a>
                         <ul class="collapse nav-sub">
-                            <li><a href="new_member.php"><span>Add New Member</span></a></li>
-                            <li><a href="view_member.php"><span>View Members</span></a></li>
+
+                            <li><a href="view_members.php"><span>View Members</span></a></li>
                             <li><a href="new_converts.php"><span>New Converts</span></a></li>
                             <li><a href="visitors.php"><span>Visitors</span></a></li>
                             <li><a href="print_forms.php"><span>Print Forms</span></a></li>
@@ -272,7 +272,7 @@ if (!isset($_SESSION['username'])) {
                     </a>
                     <div class="dropdown-menu menu-icons dropdown-menu-left">
                         <div class="form-group form-filter">
-                            <input type="text" placeholder="Search Members..." class="form-control filter-input"
+                            <input type="text" placeholder="Search Branch..." class="form-control filter-input"
                                    data-search-trigger="open">
                             <i data-q-action="clear-filter" class="icon dripicons-cross clear-filter"></i>
                             <ul class="list-reset filter-list" data-scroll="minimal-dark">

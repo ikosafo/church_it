@@ -2,6 +2,7 @@
 
             <!--START PAGE CONTENT -->
             <section class="page-content container-fluid">
+
                 <div class="row">
                     <div class="col-12">
                         <div class="card">
@@ -11,9 +12,12 @@
                                         <div class="icon-rounded icon-rounded-primary float-left m-r-20">
                                             <i class="icon icon-people"></i>
                                         </div>
-                                        <h5 class="card-title m-b-5 counter" data-count="120">0</h5>
+                                        <h5 class="card-title m-b-5 counter" data-count="
+<?php $getnum = $mysqli->query("select * from member");
+                                        echo mysqli_num_rows($getnum);
+                                        ?>">0</h5>
                                         <h6 class="text-muted m-t-10">
-                                           Members
+                                            Member(s)
                                         </h6>
 
                                     </div>
@@ -23,9 +27,12 @@
                                         <div class="icon-rounded icon-rounded-accent float-left m-r-20">
                                             <i class="icon dripicons-user"></i>
                                         </div>
-                                        <h5 class="card-title m-b-5 counter" data-count="41">0</h5>
+                                        <h5 class="card-title m-b-5 counter"
+                                            data-count="<?php $getnumm = $mysqli->query("select * from member where gender = 'Male'");
+                                            echo mysqli_num_rows($getnumm);
+                                            ?>">0</h5>
                                         <h6 class="text-muted m-t-10">
-                                            Males
+                                            Male(s)
                                         </h6>
 
                                     </div>
@@ -35,9 +42,12 @@
                                         <div class="icon-rounded icon-rounded-info float-left m-r-20">
                                             <i class="icon icon-user-female"></i>
                                         </div>
-                                        <h5 class="card-title m-b-5 counter" data-count="57">0</h5>
+                                        <h5 class="card-title m-b-5 counter" data-count="
+<?php $getnumf = $mysqli->query("select * from member where gender = 'Female'");
+                                        echo mysqli_num_rows($getnumf);
+                                        ?>">0</h5>
                                         <h6 class="text-muted m-t-10">
-                                            Females
+                                            Female(s)
                                         </h6>
 
                                     </div>
@@ -47,9 +57,13 @@
                                         <div class="icon-rounded icon-rounded-success float-left m-r-20">
                                             <i class="icon dripicons-user-group"></i>
                                         </div>
-                                        <h5 class="card-title m-b-5 counter" data-count="22">0</h5>
+                                        <h5 class="card-title m-b-5 counter" data-count="
+
+<?php $getnums = $mysqli->query("select * from member where maritalstatus = 'Single'");
+                                        echo mysqli_num_rows($getnums);
+                                        ?>">0</h5>
                                         <h6 class="text-muted m-t-10">
-                                            Children
+                                            Single(s)
                                         </h6>
 
                                     </div>
