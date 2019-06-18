@@ -1,6 +1,6 @@
 <?php include("../../../config.php");
 
-$branch = $_SESSION['branch'];
+//$branch = $_SESSION['branch'];
 
 $memberid = $_POST['member_id'];
 
@@ -23,7 +23,7 @@ $memberid = $_POST['member_id'];
                         <option value="">Select</option>
 
                         <?php
-                        $getd = $mysqli->query("select * from department where branch = '$branch' ORDER BY department_name");
+                        $getd = $mysqli->query("select * from department ORDER BY department_name");
                         while ($resd = $getd->fetch_assoc()){?>
                             <option value="<?php echo $resd['id'] ?>"><?php echo $resd['department_name'] ?></option>
                        <?php } ?>
@@ -46,7 +46,7 @@ $memberid = $_POST['member_id'];
                         <option value="">Select</option>
 
                         <?php
-                        $getd = $mysqli->query("select * from ministry  where branch = '$branch' ORDER BY ministry_name");
+                        $getd = $mysqli->query("select * from ministry ORDER BY ministry_name");
                         while ($resd = $getd->fetch_assoc()){?>
                             <option value="<?php echo $resd['id'] ?>"><?php echo $resd['ministry_name'] ?></option>
                         <?php } ?>
@@ -70,7 +70,7 @@ $memberid = $_POST['member_id'];
                         <option value="">Select</option>
 
                         <?php
-                        $getd = $mysqli->query("select * from cell  where branch = '$branch' ORDER BY cell_name");
+                        $getd = $mysqli->query("select * from cell ORDER BY cell_name");
                         while ($resd = $getd->fetch_assoc()){?>
                             <option value="<?php echo $resd['id'] ?>"><?php echo $resd['cell_name'] ?></option>
                         <?php } ?>

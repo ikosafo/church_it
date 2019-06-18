@@ -112,7 +112,7 @@ $branch = $_SESSION['branch'];
                                           transform="translate(-65.5)" fill="url(#logo_background_color)"/>
                                 </svg>
                             </div>
-                            <span class="brand-text">Church-IT</span>
+                            <span class="brand-text">CVSI</span>
                         </a>
                         <!-- END LOGO -->
                     </li>
@@ -132,15 +132,12 @@ $branch = $_SESSION['branch'];
                         ? "active" : ""); ?> nav-dropdown">
                         <a href="index.php"><i class="icon dripicons-meter"></i><span>Dashboard</span></a>
                     </li>
-                    <li class="<?php echo($_SERVER['PHP_SELF'] == "/cv_branch/departments.php" ||
-                    $_SERVER['PHP_SELF'] == "/cv_branch/ministries.php" ||
+                    <li class="<?php echo(
                     $_SERVER['PHP_SELF'] == "/cv_branch/cells.php" ||
                     $_SERVER['PHP_SELF'] == "/cv_branch/mnotify_key.php"
                         ? "active" : ""); ?> nav-dropdown">
                         <a class="has-arrow" href="#" aria-expanded="false"><i class="icon dripicons-gear"></i><span>Configuration</span></a>
                         <ul class="collapse nav-sub" aria-expanded="false">
-                            <li><a href="departments.php"><span>Departments</span></a></li>
-                            <li><a href="ministries.php"><span>Ministries</span></a></li>
                             <li><a href="cells.php"><span>Cells</span></a></li>
                             <li><a href="mnotify_key.php"><span>Mnotify Key</span></a></li>
                         </ul>

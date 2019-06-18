@@ -21,7 +21,7 @@ $memberid = $result['memberid'];
 </script>
 
 <!-- START APP WRAPPER -->
-<a href="../../view_member.php">
+<a href="view_members.php">
     <button class="btn btn-warning btn-floating" id="close_page"
             style="float: right">
         <i class="icon-arrow-left-circle"></i> Close/Go Back
@@ -86,7 +86,7 @@ $memberid = $result['memberid'];
 
 
                                             <div class="profile-image"><img
-                                                    src="<?php echo $fetch_img['image_location'] ?>"
+                                                    src="../<?php echo $fetch_img['image_location'] ?>"
                                                     alt="" style="width: 80%">
                                             </div>
 

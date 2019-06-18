@@ -1,6 +1,6 @@
 <?php include("../../../config.php");
 
-$branch = $_SESSION['branch'];
+//$branch = $_SESSION['branch'];
 
 $memberid = $_POST['member_id'];
 $getm = $mysqli->query("select * from member where memberid = '$memberid'");
@@ -32,7 +32,7 @@ $resm = $getm->fetch_assoc();
 
 
 
-                        $query = $mysqli->query("select * from department where branch = '$branch' ORDER BY department_name");
+                        $query = $mysqli->query("select * from department ORDER BY department_name");
 
                             while ($result = $query->fetch_assoc()) { ?>
 
@@ -64,7 +64,7 @@ $resm = $getm->fetch_assoc();
 
                         $ministry = $resm['ministry'];
 
-                        $query = $mysqli->query("select * from ministry where branch = '$branch' ORDER BY ministry_name");
+                        $query = $mysqli->query("select * from ministry ORDER BY ministry_name");
 
                         while ($result = $query->fetch_assoc()) { ?>
 
@@ -98,7 +98,7 @@ $resm = $getm->fetch_assoc();
 
                         $cell = $resm['cell'];
 
-                        $query = $mysqli->query("select * from cell where branch = '$branch' ORDER BY cell_name");
+                        $query = $mysqli->query("select * from cell ORDER BY cell_name");
 
                         while ($result = $query->fetch_assoc()) { ?>
 

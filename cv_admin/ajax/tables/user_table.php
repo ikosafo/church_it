@@ -66,10 +66,7 @@ $qubr=$mysqli->query("select * from users_admin ORDER BY fullname");
 <script>
 
 
-    $('#bs4-table').DataTable({
-        aaSorting: [],
-        dom: 'Bfrtip'
-    });
+    $('#bs4-table').DataTable();
 
 
 

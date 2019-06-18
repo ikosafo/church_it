@@ -62,10 +62,7 @@ $qubr=$mysqli->query("select * from branch ORDER BY name");
 <script>
 
 
-    $('#bs4-table').DataTable({
-        aaSorting: [],
-        dom: 'Bfrtip'
-    });
+    $('#bs4-table').DataTable();
 
 
 

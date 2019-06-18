@@ -110,7 +110,7 @@ $branch = $_SESSION['branch'];
                                           transform="translate(-65.5)" fill="url(#logo_background_color)"/>
                                 </svg>
                             </div>
-                            <span class="brand-text">Church-IT</span>
+                            <span class="brand-text">CVSI</span>
                         </a>
                         <!-- END LOGO -->
                     </li>

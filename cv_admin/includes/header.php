@@ -134,12 +134,16 @@ if (!isset($_SESSION['username'])) {
                     </li>
                     <li class="<?php echo($_SERVER['PHP_SELF'] == "/cv_admin/branches.php" ||
                     $_SERVER['PHP_SELF'] == "/cv_admin/sms_api_key.php" ||
-                    $_SERVER['PHP_SELF'] == "/cv_admin/system_users.php"
+                    $_SERVER['PHP_SELF'] == "/cv_admin/system_users.php" ||
+                    $_SERVER['PHP_SELF'] == "/cv_admin/departments.php" ||
+                    $_SERVER['PHP_SELF'] == "/cv_admin/ministries.php"
                         ? "active" : ""); ?> nav-dropdown">
                         <a class="has-arrow" href="#" aria-expanded="false"><i class="icon dripicons-gear"></i><span>Configuration</span></a>
                         <ul class="collapse nav-sub" aria-expanded="false">
                             <li><a href="branches.php"><span>Branches</span></a></li>
                             <li><a href="system_users.php"><span>System Users</span></a></li>
+                            <li><a href="departments.php"><span>Departments</span></a></li>
+                            <li><a href="ministries.php"><span>Ministries</span></a></li>
                             <li><a href="sms_api_key.php"><span>SMS API Key</span></a></li>
                         </ul>
                     </li>

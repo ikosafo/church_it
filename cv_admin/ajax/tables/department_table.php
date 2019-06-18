@@ -1,76 +1,76 @@
 <?php include ('../../../config.php');
 
-$branch = $_SESSION['branch'];
+//$branch = $_SESSION['branch'];
 
-$dep = $mysqli->query("select * from ministry where branch = '$branch' ORDER by ministry_name");
+$dep = $mysqli->query("select * from department ORDER by department_name");
 
 
 ?>
 
-    <div class="card">
+<div class="card">
 
-        <h5 class="card-header">Ministries <strong>
+    <h5 class="card-header">Departments <strong>
 
-            </strong></h5>
-        <div class="card-body">
+        </strong></h5>
+    <div class="card-body">
 
-            <table id="bs4-table" class="table table-striped table-bordered"
-                   style="width:100% !important;">
-                <thead>
+        <table id="bs4-table" class="table table-striped table-bordered"
+               style="width:100% !important;">
+            <thead>
+            <tr>
+                <th>Department Name</th>
+                <th>Edit</th>
+                <th>Delete</th>
+
+            </tr>
+            </thead>
+            <tbody>
+
+            <?php
+            while ($resdep = $dep->fetch_assoc()) {
+
+
+                ?>
                 <tr>
-                    <th>Ministry Name</th>
-                    <th>Edit</th>
-                    <th>Delete</th>
+                    <td><?php echo $resdep['department_name']; ?></td>
+                    <td>
+                        <button type="button"
+                                class="btn btn-sm btn-info edit_department"
+                                i_index="<?php echo $resdep['id']; ?>"
+                                title="Edit"><i
+                                    class="icon-pencil" style="color:#fff !important;"></i>
+                        </button>
+                    </td>
+                    <td>
+                        <button type="button"
+                                data-type="confirm"
+                                class="btn btn-sm btn-danger js-sweetalert delete_department"
+                                i_index="<?php echo $resdep['id']; ?>"
+                                title="Delete">
+                            <i class="icon-trash" style="color:#fff !important;"></i>
+                        </button>
+
+                    </td>
+
+
+
 
                 </tr>
-                </thead>
-                <tbody>
 
                 <?php
-                while ($resdep = $dep->fetch_assoc()) {
+            }
+            ?>
+            </tbody>
+            <tfoot>
 
-
-                    ?>
-                    <tr>
-                        <td><?php echo $resdep['ministry_name']; ?></td>
-                        <td>
-                            <button type="button"
-                                    class="btn btn-sm btn-info edit_ministry"
-                                    i_index="<?php echo $resdep['id']; ?>"
-                                    title="Edit"><i
-                                    class="icon-pencil" style="color:#fff !important;"></i>
-                            </button>
-                        </td>
-                        <td>
-                            <button type="button"
-                                    data-type="confirm"
-                                    class="btn btn-sm btn-danger js-sweetalert delete_ministry"
-                                    i_index="<?php echo $resdep['id']; ?>"
-                                    title="Delete">
-                                <i class="icon-trash" style="color:#fff !important;"></i>
-                            </button>
-
-                        </td>
-
-
-
-
-                    </tr>
-
-                    <?php
-                }
-                ?>
-                </tbody>
-                <tfoot>
-
-            </table>
-
-
-        </div>
-
+        </table>
 
 
     </div>
+
+
+
+</div>
 
     <script>
         $('#bs4-table').DataTable({
@@ -80,7 +80,7 @@ $dep = $mysqli->query("select * from ministry where branch = '$branch' ORDER by 
 
 
 
-        $(document).on('click', '.edit_ministry', function () {
+        $(document).on('click', '.edit_department', function () {
 
             var id_index = $(this).attr('i_index');
 
@@ -88,7 +88,7 @@ $dep = $mysqli->query("select * from ministry where branch = '$branch' ORDER by 
 
             $.ajax({
                 type: "POST",
-                url: "ajax/forms/ministry_form_edit.php",
+                url: "ajax/forms/department_form_edit.php",
                 data:
                     {
                         id_index: id_index
@@ -99,7 +99,7 @@ $dep = $mysqli->query("select * from ministry where branch = '$branch' ORDER by 
                     });
                 },
                 success: function (text) {
-                    $('#ministry_form_div').html(text);
+                    $('#department_form_div').html(text);
                 },
                 error: function (xhr, ajaxOptions, thrownError) {
                     alert(xhr.status + " " + thrownError);
@@ -116,7 +116,7 @@ $dep = $mysqli->query("select * from ministry where branch = '$branch' ORDER by 
 
 
 
-        $(document).on('click', '.delete_ministry', function () {
+        $(document).on('click', '.delete_department', function () {
             var i_index = $(this).attr('i_index');
 
             //alert(i_index);
@@ -137,7 +137,7 @@ $dep = $mysqli->query("select * from ministry where branch = '$branch' ORDER by 
 
                         $.ajax({
                             type: "POST",
-                            url: "ajax/queries/delete_ministry.php",
+                            url: "ajax/queries/delete_department.php",
                             data: {
                                 i_index: i_index
                             },
@@ -147,14 +147,14 @@ $dep = $mysqli->query("select * from ministry where branch = '$branch' ORDER by 
 
                                 $.ajax({
                                     type: "POST",
-                                    url: "ajax/tables/ministry_table.php",
+                                    url: "ajax/tables/department_table.php",
                                     beforeSend: function () {
                                         $.blockUI({
                                             message: '<img src="assets/img/load.gif"/>'
                                         });
                                     },
                                     success: function (text) {
-                                        $('#ministry_table_div').html(text);
+                                        $('#department_table_div').html(text);
                                     },
                                     error: function (xhr, ajaxOptions, thrownError) {
                                         alert(xhr.status + " " + thrownError);
@@ -175,7 +175,7 @@ $dep = $mysqli->query("select * from ministry where branch = '$branch' ORDER by 
                             }
                         });
 
-                        swal("Deleted!", "Ministry has been deleted.", "success");
+                        swal("Deleted!", "Department has been deleted.", "success");
 
                     } else {
                         swal("Cancelled", "Data is safe.", "error");

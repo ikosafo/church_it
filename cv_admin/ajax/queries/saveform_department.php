@@ -5,15 +5,14 @@ include('../../../config.php');
 
 $department_name = mysqli_real_escape_string($mysqli, $_POST['department_name']);
 $department_id = mysqli_real_escape_string($mysqli, $_POST['department_id']);
-$branch = $_SESSION['branch'];
+//$branch = $_SESSION['branch'];
 
 
 $chk = $mysqli->query("select * from department where department_id = '$department_id'");
 
 $count = mysqli_num_rows($chk);
 
-$ct = mysqli_num_rows($mysqli->query("select * from department where department_name = '$department_name' 
-                                      AND branch = '$branch'"));
+$ct = mysqli_num_rows($mysqli->query("select * from department where department_name = '$department_name'"));
 
 
 if ($count == "0") {
@@ -23,11 +22,9 @@ if ($count == "0") {
 
         $mysqli->query("INSERT INTO `department`
             (`department_name`,
-             `department_id`,
-             `branch`)
+             `department_id`)
 VALUES ('$department_name',
-        '$department_id',
-        '$branch'
+        '$department_id'
         )")
         or die(mysqli_error($mysqli));
 
