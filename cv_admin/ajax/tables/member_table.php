@@ -87,12 +87,7 @@ $getmember = $mysqli->query("select * from member where status IS NULL ORDER by 
                                     title="View"><i
                                     class="icon-eye" style="color:#fff !important;"></i>
                             </button>
-                            <button type="button"
-                                    class="btn btn-sm btn-info edit_member"
-                                    i_index="<?php echo $resmember['id']; ?>"
-                                    title="Edit"><i
-                                    class="icon-pencil" style="color:#fff !important;"></i>
-                            </button>
+
                             <button type="button"
                                     data-type="confirm"
                                     class="btn btn-sm btn-danger js-sweetalert delete_member"
@@ -100,6 +95,7 @@ $getmember = $mysqli->query("select * from member where status IS NULL ORDER by 
                                     title="Delete">
                                 <i class="icon-trash" style="color:#fff !important;"></i>
                             </button>
+
 
                         </td>
 
@@ -266,36 +262,3 @@ $getmember = $mysqli->query("select * from member where status IS NULL ORDER by 
 
     </script>
 
-
-<?php
-function time_elapsed_string($datetime, $full = false)
-{
-    $now = new DateTime;
-    $ago = new DateTime($datetime);
-    $diff = $now->diff($ago);
-
-    $diff->w = floor($diff->d / 7);
-    $diff->d -= $diff->w * 7;
-
-    $string = array(
-        'y' => 'year',
-        'm' => 'month',
-        'w' => 'week',
-        'd' => 'day',
-        'h' => 'hour',
-        'i' => 'minute',
-        's' => 'second',
-    );
-    foreach ($string as $k => &$v) {
-        if ($diff->$k) {
-            $v = $diff->$k . ' ' . $v . ($diff->$k > 1 ? 's' : '');
-        } else {
-            unset($string[$k]);
-        }
-    }
-
-    if (!$full) $string = array_slice($string, 0, 1);
-    return $string ? implode(', ', $string) . ' ago' : 'just now';
-}
-
-?>

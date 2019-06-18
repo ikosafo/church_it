@@ -1,7 +1,12 @@
-<?php require ('includes/header.php')?>
+<?php require ('includes/header.php');
+
+//$branch = $_SESSION['branch'];
+?>
 
             <!--START PAGE CONTENT -->
             <section class="page-content container-fluid">
+
+
 
                 <div class="row">
                     <div class="col-12">
@@ -73,13 +78,15 @@
                     </div>
                 </div>
 
+
+
                 <div class="row">
                     <div class="col-12">
                         <div class="card-deck m-b-100">
                             <div class="card card-elevate text-center">
                                 <a href="#gettingStartedTitle" class="smooth-scroll">
                                     <div class="card-body">
-                                        <i class="la la-compass font-size-80 text-primary"></i>
+                                        <i class="zmdi zmdi-compass zmdi-hc-fw font-size-80 text-primary"></i>
                                         <h5 class="card-title m-t-20">Getting Started</h5>
                                         <small class="text-muted">Brief tour of Church-IT management system</small>
                                     </div>
@@ -88,7 +95,7 @@
                             <div class="card card-elevate card-hover text-center">
                                 <a href="#faqTitle" class="smooth-scroll">
                                     <div class="card-body">
-                                        <i class="la la-comments font-size-80 text-primary"></i>
+                                        <i class="zmdi zmdi-comment-text zmdi-hc-fw font-size-80 text-primary"></i>
                                         <h5 class="card-title m-t-20">FAQ</h5>
                                         <small class="text-muted">Frequently Asked Questions about system usage</small>
                                     </div>
@@ -97,7 +104,7 @@
                             <div class="card card-elevate card-hover text-center">
                                 <a href="#communityTitle" class="smooth-scroll">
                                     <div class="card-body">
-                                        <i class="la la-group font-size-80 text-primary"></i>
+                                        <i class="zmdi zmdi-group-work zmdi-hc-fw font-size-80 text-primary"></i>
                                         <h5 class="card-title  m-t-20">Community</h5>
                                         <small class="text-muted">Contact developers for system support</small>
                                     </div>
