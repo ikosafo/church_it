@@ -38,7 +38,7 @@
         url: "ajax/forms/document_form.php",
         beforeSend: function () {
             $.blockUI({
-                message: '<img src="../assets/img/load.gif"/>'
+                message: '<img src="assets/img/load.gif"/>'
             });
         },
         success: function (text) {
@@ -61,7 +61,7 @@
         url: "ajax/tables/document_table.php",
         beforeSend: function () {
             $.blockUI({
-                message: '<img src="../assets/img/load.gif"/>'
+                message: '<img src="assets/img/load.gif"/>'
             });
         },
         success: function (text) {

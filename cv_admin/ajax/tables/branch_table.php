@@ -101,7 +101,7 @@ $qubr=$mysqli->query("select * from branch ORDER BY name");
                                 url: "ajax/tables/branch_table.php",
                                 beforeSend: function () {
                                     $.blockUI({
-                                        message: '<img src="../assets/img/load.gif" />'
+                                        message: '<img src="assets/img/load.gif" />'
                                     });
                                 },
 
@@ -153,7 +153,7 @@ $qubr=$mysqli->query("select * from branch ORDER BY name");
             dataType: "html",
             beforeSend: function(){
                 $.blockUI({
-                    message: '<img src="../assets/img/load.gif" />'
+                    message: '<img src="assets/img/load.gif" />'
                 });
             },
             success: function(text) {

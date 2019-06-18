@@ -3,13 +3,15 @@
   <component name="ChangeListManager">
     <list default="true" id="113adc73-684f-4c00-a1cc-ce8f4684a494" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/config.php" afterPath="$PROJECT_DIR$/config.php" />
-      <change beforePath="$PROJECT_DIR$/cv_admin/ajax/tables/member_table.php" afterPath="$PROJECT_DIR$/cv_admin/ajax/tables/member_table.php" />
-      <change beforePath="$PROJECT_DIR$/cv_admin/includes/footer.php" afterPath="$PROJECT_DIR$/cv_admin/includes/footer.php" />
-      <change beforePath="$PROJECT_DIR$/cv_admin/includes/header.php" afterPath="$PROJECT_DIR$/cv_admin/includes/header.php" />
-      <change beforePath="$PROJECT_DIR$/cv_admin/index.php" afterPath="$PROJECT_DIR$/cv_admin/index.php" />
-      <change beforePath="$PROJECT_DIR$/cv_admin/login.php" afterPath="$PROJECT_DIR$/cv_admin/login.php" />
-      <change beforePath="$PROJECT_DIR$/lconfig.php" afterPath="$PROJECT_DIR$/lconfig.php" />
+      <change beforePath="$PROJECT_DIR$/cv_admin/ajax/forms/document_form.php" afterPath="$PROJECT_DIR$/cv_admin/ajax/forms/document_form.php" />
+      <change beforePath="$PROJECT_DIR$/cv_admin/ajax/forms/mnotify_form.php" afterPath="$PROJECT_DIR$/cv_admin/ajax/forms/mnotify_form.php" />
+      <change beforePath="$PROJECT_DIR$/cv_admin/ajax/forms/mnotify_form_edit.php" afterPath="$PROJECT_DIR$/cv_admin/ajax/forms/mnotify_form_edit.php" />
+      <change beforePath="$PROJECT_DIR$/cv_admin/ajax/forms/user_form_edit.php" afterPath="$PROJECT_DIR$/cv_admin/ajax/forms/user_form_edit.php" />
+      <change beforePath="$PROJECT_DIR$/cv_admin/ajax/tables/branch_table.php" afterPath="$PROJECT_DIR$/cv_admin/ajax/tables/branch_table.php" />
+      <change beforePath="$PROJECT_DIR$/cv_admin/ajax/tables/document_table.php" afterPath="$PROJECT_DIR$/cv_admin/ajax/tables/document_table.php" />
+      <change beforePath="$PROJECT_DIR$/cv_admin/ajax/tables/mnotify_table.php" afterPath="$PROJECT_DIR$/cv_admin/ajax/tables/mnotify_table.php" />
+      <change beforePath="$PROJECT_DIR$/cv_admin/ajax/tables/user_table.php" afterPath="$PROJECT_DIR$/cv_admin/ajax/tables/user_table.php" />
+      <change beforePath="$PROJECT_DIR$/cv_admin/documents.php" afterPath="$PROJECT_DIR$/cv_admin/documents.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -20,21 +22,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="450">
-      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/cv_branch/index.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2248">
-              <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-              <folding>
-                <marker date="1560700163692" expanded="true" signature="844:889" ph="select * fro... member" />
-                <marker date="1560700163692" expanded="true" signature="1687:1752" ph="select * fro... member" />
-                <marker date="1560700163692" expanded="true" signature="2620:2687" ph="select * fro... member" />
-                <marker date="1560700163692" expanded="true" signature="3565:3639" ph="select * fro... member" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/cv_admin/index.php">
           <provider selected="true" editor-type-id="text-editor">
@@ -51,16 +38,6 @@
         </entry>
       </file>
       <file leaf-file-name="footer.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/cv_branch/includes/footer.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="footer.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/cv_admin/includes/footer.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="641">
@@ -70,7 +47,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="header.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="header.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/cv_admin/includes/header.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="540">
@@ -79,6 +56,26 @@
                 <element signature="n#nav#0;n#div#0;n#aside#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
                 <marker date="1560858621764" expanded="true" signature="18351:18385" ph="select * fro... branch" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="branches.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/cv_admin/branches.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="446">
+              <caret line="69" column="31" lean-forward="true" selection-start-line="69" selection-start-column="31" selection-end-line="69" selection-end-column="31" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="branch_form.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/cv_admin/ajax/forms/branch_form.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="497">
+              <caret line="111" column="30" lean-forward="true" selection-start-line="111" selection-start-column="30" selection-end-line="111" selection-end-column="30" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -148,8 +145,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>display:</find>
-      <find>&quot;assets</find>
       <find>../../items/1/</find>
       <find>choose y</find>
       <find>background-image</find>
@@ -169,7 +164,6 @@
       <find>educbus_form.</find>
       <find>&quot;../assets/img/load.gif</find>
       <find>isNumber</find>
-      <find>../assets/img/load.gif</find>
       <find>where branch = '$branch'</find>
       <find>branch = '$branch' AND</find>
       <find>members</find>
@@ -178,6 +172,9 @@
       <find>../fonts</find>
       <find>Material-Design-Iconic-Font</find>
       <find>loca</find>
+      <find>../assets</find>
+      <find>../assets/img/load.gif</find>
+      <find>assets/img/load.gif</find>
     </findStrings>
     <replaceStrings>
       <replace>Ministry</replace>
@@ -207,14 +204,15 @@
       <replace>cell</replace>
       <replace>&quot;assets/img/load.gif</replace>
       <replace>member</replace>
-      <replace>assets/img/load.gif</replace>
       <replace>Christ Vision Sanctuary Int.</replace>
       <replace>../../fonts</replace>
+      <replace>assets/img/load.gif</replace>
     </replaceStrings>
     <dirStrings>
       <dir>C:\wamp64\www\church_it\cv_member\ajax</dir>
       <dir>C:\wamp64\www\church_it\cv_branch\ajax</dir>
       <dir>C:\wamp64\www\church_it\</dir>
+      <dir>C:\wamp64\www\church_it\cv_admin</dir>
     </dirStrings>
   </component>
   <component name="Git.Settings">
@@ -367,17 +365,18 @@
       <workItem from="1560327567491" duration="28127000" />
       <workItem from="1560433774299" duration="19559000" />
       <workItem from="1560589402818" duration="496000" />
-      <workItem from="1560614467288" duration="50859000" />
+      <workItem from="1560614467288" duration="51081000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="200765000" />
+    <option name="totallyTimeSpent" value="200987000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-11" y="-11" width="1942" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2859375" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2859375" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -446,30 +445,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/cv_branch/ajax/queries/saveform_document.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="2" column="18" lean-forward="false" selection-start-line="2" selection-start-column="18" selection-end-line="2" selection-end-column="18" />
-          <folding>
-            <marker date="1560664830049" expanded="true" signature="342:399" ph="select * fro... document" />
-            <marker date="1560664830049" expanded="true" signature="481:734" ph="INSERT INTO `document`... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cv_branch/ajax/queries/saveform_ministry.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1560658016355" expanded="true" signature="249:306" ph="select * fro... ministry" />
-            <marker date="1560658016355" expanded="true" signature="382:466" ph="select * fro... ministry" />
-            <marker date="1560658016355" expanded="true" signature="543:724" ph="INSERT INTO `ministry`... " />
-            <marker date="1560658016355" expanded="true" signature="886:985" ph="UPDATE `ministry`... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/cv_branch/ajax/queries/saveform_mnotify.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -941,6 +916,22 @@
             <element signature="n#nav#0;n#div#0;n#aside#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
             <marker date="1560858621764" expanded="true" signature="18351:18385" ph="select * fro... branch" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cv_admin/branches.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="446">
+          <caret line="69" column="31" lean-forward="true" selection-start-line="69" selection-start-column="31" selection-end-line="69" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cv_admin/ajax/forms/branch_form.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="497">
+          <caret line="111" column="30" lean-forward="true" selection-start-line="111" selection-start-column="30" selection-end-line="111" selection-end-column="30" />
+          <folding />
         </state>
       </provider>
     </entry>

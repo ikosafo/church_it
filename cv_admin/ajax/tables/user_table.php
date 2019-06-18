@@ -105,7 +105,7 @@ $qubr=$mysqli->query("select * from users_admin ORDER BY fullname");
                                 url: "ajax/tables/user_table.php",
                                 beforeSend: function () {
                                     $.blockUI({
-                                        message: '<img src="../assets/img/load.gif" />'
+                                        message: '<img src="assets/img/load.gif" />'
                                     });
                                 },
 
@@ -157,7 +157,7 @@ $qubr=$mysqli->query("select * from users_admin ORDER BY fullname");
             dataType: "html",
             beforeSend: function(){
                 $.blockUI({
-                    message: '<img src="../assets/img/load.gif" />'
+                    message: '<img src="assets/img/load.gif" />'
                 });
             },
             success: function(text) {

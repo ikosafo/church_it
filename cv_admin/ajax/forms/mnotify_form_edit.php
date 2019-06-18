@@ -51,7 +51,7 @@ $key_id = $depr['key_id'];
             url: "ajax/forms/mnotify_form.php",
             beforeSend: function () {
                 $.blockUI({
-                    message: '<img src="../assets/img/load.gif"/>'
+                    message: '<img src="assets/img/load.gif"/>'
                 });
             },
             success: function (text) {
@@ -94,7 +94,7 @@ $key_id = $depr['key_id'];
                 url: "ajax/queries/save_key.php",
                 beforeSend: function () {
                     $.blockUI({
-                        message: '<img src="../assets/img/load.gif"/>'
+                        message: '<img src="assets/img/load.gif"/>'
                     });
                 },
                 data: {
@@ -115,7 +115,7 @@ $key_id = $depr['key_id'];
                             url: "ajax/forms/mnotify_form.php",
                             beforeSend: function () {
                                 $.blockUI({
-                                    message: '<img src="../assets/img/load.gif"/>'
+                                    message: '<img src="assets/img/load.gif"/>'
                                 });
                             },
                             success: function (text) {
@@ -136,7 +136,7 @@ $key_id = $depr['key_id'];
                             url: "ajax/tables/mnotify_table.php",
                             beforeSend: function () {
                                 $.blockUI({
-                                    message: '<img src="../assets/img/load.gif"/>'
+                                    message: '<img src="assets/img/load.gif"/>'
                                 });
                             },
                             success: function (text) {

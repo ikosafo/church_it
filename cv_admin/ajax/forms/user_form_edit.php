@@ -71,7 +71,7 @@ $u_result = $u_query->fetch_assoc();
             url: "ajax/forms/user_form.php",
             beforeSend: function () {
                 $.blockUI({
-                    message: '<img src="../assets/img/load.gif" />'
+                    message: '<img src="assets/img/load.gif" />'
                 });
             },
 
@@ -126,7 +126,7 @@ $u_result = $u_query->fetch_assoc();
                 url: "ajax/queries/save_user_edit.php",
                 beforeSend: function () {
                     $.blockUI({
-                        message: '<img src="../assets/img/load.gif" />'
+                        message: '<img src="assets/img/load.gif" />'
                     });
                 },
                 data: {
@@ -149,7 +149,7 @@ $u_result = $u_query->fetch_assoc();
                             url: "ajax/tables/user_table.php",
                             beforeSend: function () {
                                 $.blockUI({
-                                    message: '<img src="../assets/img/load.gif" />'
+                                    message: '<img src="assets/img/load.gif" />'
                                 });
                             },
 
@@ -169,7 +169,7 @@ $u_result = $u_query->fetch_assoc();
                             url: "ajax/forms/user_form.php",
                             beforeSend: function () {
                                 $.blockUI({
-                                    message: '<img src="../assets/img/load.gif" />'
+                                    message: '<img src="assets/img/load.gif" />'
                                 });
                             },
 

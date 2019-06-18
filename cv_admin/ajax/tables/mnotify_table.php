@@ -95,7 +95,7 @@ $dep = $mysqli->query("select * from mnotify where branch = 'Admin'");
                     },
                 beforeSend: function () {
                     $.blockUI({
-                        message: '<img src="../assets/img/load.gif"/>'
+                        message: '<img src="assets/img/load.gif"/>'
                     });
                 },
                 success: function (text) {
@@ -150,7 +150,7 @@ $dep = $mysqli->query("select * from mnotify where branch = 'Admin'");
                                     url: "ajax/tables/mnotify_table.php",
                                     beforeSend: function () {
                                         $.blockUI({
-                                            message: '<img src="../assets/img/load.gif"/>'
+                                            message: '<img src="assets/img/load.gif"/>'
                                         });
                                     },
                                     success: function (text) {

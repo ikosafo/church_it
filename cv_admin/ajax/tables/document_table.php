@@ -116,7 +116,7 @@ $dep = $mysqli->query("select * from document ORDER by period_uploaded");
                                     url: "ajax/tables/document_table.php",
                                     beforeSend: function () {
                                         $.blockUI({
-                                            message: '<img src="../assets/img/load.gif"/>'
+                                            message: '<img src="assets/img/load.gif"/>'
                                         });
                                     },
                                     success: function (text) {

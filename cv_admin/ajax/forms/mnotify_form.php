@@ -58,7 +58,7 @@ $mnotifyid = date("ymdhis").rand(1,10000);
                 url: "ajax/queries/save_key.php",
                 beforeSend: function () {
                     $.blockUI({
-                        message: '<img src="../assets/img/load.gif"/>'
+                        message: '<img src="assets/img/load.gif"/>'
                     });
                 },
                 data: {
@@ -79,7 +79,7 @@ $mnotifyid = date("ymdhis").rand(1,10000);
                             url: "ajax/forms/mnotify_form.php",
                             beforeSend: function () {
                                 $.blockUI({
-                                    message: '<img src="../assets/img/load.gif"/>'
+                                    message: '<img src="assets/img/load.gif"/>'
                                 });
                             },
                             success: function (text) {
@@ -100,7 +100,7 @@ $mnotifyid = date("ymdhis").rand(1,10000);
                             url: "ajax/tables/mnotify_table.php",
                             beforeSend: function () {
                                 $.blockUI({
-                                    message: '<img src="../assets/img/load.gif"/>'
+                                    message: '<img src="assets/img/load.gif"/>'
                                 });
                             },
                             success: function (text) {
