@@ -46,6 +46,8 @@ $branch = $_SESSION['branch'];
 
     <link rel="stylesheet" href="assets/vendor/sweetalert/sweetalert.css">
 
+    <link rel="stylesheet" href="assets/vendor/flatpickr/flatpickr.css">
+
     <link rel="stylesheet" href="assets/uploadify/uploadifive.css">
 
     <link rel="stylesheet" href="assets/css/selectize.css">

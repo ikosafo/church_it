@@ -13,18 +13,14 @@
                 <input type="text" class="form-control" id="service_name" placeholder="Enter name of service">
             </div>
 
-            <div class="form-group">
-                <label for="exampleInputEmail1">Date of Service</label>
-                <input type="text" class="form-control" id="service_date" placeholder="Select Date">
-            </div>
 
             <div class="form-group">
-                <label for="exampleInputEmail1">Start Time</label>
+                <label for="exampleInputEmail1">Start Period</label>
                 <input type="text" class="form-control" id="start_time" placeholder="Select time">
             </div>
 
             <div class="form-group">
-                <label for="exampleInputEmail1">End Time</label>
+                <label for="exampleInputEmail1">End Period</label>
                 <input type="text" class="form-control" id="end_time" placeholder="Select time">
             </div>
 
@@ -51,19 +47,16 @@
 
 <script>
 
-    $('#service_date').datepicker({
-        format: 'yyyy-mm-dd',
-        autoclose: true,
-        orientation: "bottom",
-        templates: {
-            leftArrow: '<i class="icon dripicons-chevron-left"></i>',
-            rightArrow: '<i class="icon dripicons-chevron-right"></i>'
-        }
+
+    $("#start_time").flatpickr({
+        enableTime: true,
+        dateFormat: "Y-m-d H:i"
     });
 
-    $("#start_time").timepicker();
-
-    $("#end_time").timepicker();
+    $("#end_time").flatpickr({
+        enableTime: true,
+        dateFormat: "Y-m-d H:i"
+    });
 
 
     $("#service_period").selectize();
@@ -72,10 +65,11 @@
     $("#save_service").click(function () {
 
         var service_name = $("#service_name").val();
-        var service_date = $("#service_date").val();
         var start_time = $("#start_time").val();
         var end_time = $("#end_time").val();
         var service_period = $("#service_period").val();
+
+        //alert(start_time);
 
 
 
@@ -84,10 +78,6 @@
         if (service_name == "") {
             error += 'Please enter name of service \n';
             $("#service_name").focus();
-        }
-
-        if (service_date == "") {
-            error += 'Please select date  \n';
         }
 
         if (start_time == "") {
@@ -119,7 +109,6 @@
                 data: {
 
                     service_name: service_name,
-                    service_date: service_date,
                     start_time: start_time,
                     end_time:end_time,
                     service_period:service_period
@@ -127,7 +116,7 @@
                 },
                 success: function (text) {
 
-                    alert(text);
+                    //alert(text);
 
 
                         $('#success_loc').notify("Form submitted","success");
