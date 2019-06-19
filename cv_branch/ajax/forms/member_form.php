@@ -399,6 +399,12 @@ $memberid = date('ymhhis') . rand(1, 100000000000);
         });
 
 
+        $("#start_time").timepicker({
+            minuteStep: 1,
+            showSeconds: true,
+            showMeridian: false
+        });
+
         $("#savemember").click(function () {
 
             var member_id = '<?php echo $memberid; ?>';

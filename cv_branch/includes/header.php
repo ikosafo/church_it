@@ -54,6 +54,8 @@ $branch = $_SESSION['branch'];
 
     <link rel="stylesheet" href="assets/vendor/bootstrap-datepicker/bootstrap-datepicker.min.css">
 
+    <link rel="stylesheet" href="assets/css/bootstrap-timepicker.css">
+
     <link rel="stylesheet" href="assets/vendor/bootstrap-daterangepicker/daterangepicker.css">
 
 
@@ -150,8 +152,7 @@ $branch = $_SESSION['branch'];
                     $_SERVER['PHP_SELF'] == "/cv_branch/new_member.php" ||
                     $_SERVER['PHP_SELF'] == "/cv_branch/view_member.php" ||
                     $_SERVER['PHP_SELF'] == "/cv_branch/new_converts.php" ||
-                    $_SERVER['PHP_SELF'] == "/cv_branch/visitors.php" ||
-                    $_SERVER['PHP_SELF'] == "/cv_branch/print_forms.php"
+                    $_SERVER['PHP_SELF'] == "/cv_branch/visitors.php"
                         ? "active" : ""); ?> nav-dropdown">
                         <a class="has-arrow" href="#" aria-expanded="false"><i class="icon icon-people"></i><span>Membership</span></a>
                         <ul class="collapse nav-sub">
@@ -159,11 +160,14 @@ $branch = $_SESSION['branch'];
                             <li><a href="view_member.php"><span>View Members</span></a></li>
                             <li><a href="new_converts.php"><span>New Converts</span></a></li>
                             <li><a href="visitors.php"><span>Visitors</span></a></li>
-                            <li><a href="print_forms.php"><span>Print Forms</span></a></li>
                         </ul>
                     </li>
                     <li class="sidebar-header"><span>OTHERS</span></li>
-                    <li class="nav-dropdown">
+                    <li class="<?php echo(
+                    $_SERVER['PHP_SELF'] == "/cv_branch/attendance_service.php" ||
+                    $_SERVER['PHP_SELF'] == "/cv_branch/attendance_take.php" ||
+                    $_SERVER['PHP_SELF'] == "/cv_branch/attendance_search.php"
+                        ? "active" : ""); ?> nav-dropdown">
                         <a class="has-arrow" href="#" aria-expanded="false"><i
                                 class="icon dripicons-checklist"></i><span>Attendance</span></a>
                         <ul class="collapse nav-sub" aria-expanded="false">
