@@ -21,7 +21,7 @@ $memberid = $result['memberid'];
 </script>
 
 <!-- START APP WRAPPER -->
-<a href="../../view_member.php">
+<a href="view_member.php">
     <button class="btn btn-warning btn-floating" id="close_page"
             style="float: right">
         <i class="icon-arrow-left-circle"></i> Close/Go Back
@@ -55,7 +55,7 @@ $memberid = $result['memberid'];
                                 <div class="row">
 
                                     <div class="col-md-2" align="center">
-                                        <img src="../../assets/img/logo.jpg"
+                                        <img src="assets/img/logo.jpg"
                                              style="border: 0 !important;"/>
                                     </div>
                                     <div class="col-md-10" align="center">
