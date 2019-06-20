@@ -1,8 +1,7 @@
 <?php include ('../../../config.php');
 
-$branch = $_SESSION['branch'];
-
-$dep = $mysqli->query("SELECT * FROM `service` WHERE `branch` = '$branch' ORDER BY start_period DESC ,`period` DESC");
+//$branch = $_SESSION['branch'];
+$dep = $mysqli->query("SELECT * FROM `service` ORDER BY start_period DESC ,`period` DESC");
 
 
 ?>
@@ -20,6 +19,7 @@ $dep = $mysqli->query("SELECT * FROM `service` WHERE `branch` = '$branch' ORDER 
             <tr>
                 <th>No</th>
                 <th>Service Name</th>
+                <th>Branch</th>
                 <th>Start Period</th>
                 <th>End Period</th>
                 <th>Service Period</th>
@@ -38,6 +38,14 @@ $dep = $mysqli->query("SELECT * FROM `service` WHERE `branch` = '$branch' ORDER 
                 <tr>
                     <td><input type="checkbox"/></td>
                     <td><?php echo $resdep['service_name']; ?></td>
+                    <td><?php
+                        $branchid = $resdep['branch'];
+                        $getb = $mysqli->query("select * from branch where id = '$branchid'");
+                        $resb = $getb->fetch_assoc();
+                        echo $resb['name'];
+
+                        ?>
+                    </td>
                     <td><?php echo $start_period = $resdep['start_period']; ?></td>
                     <td><?php echo $end_period = $resdep['end_period']; ?></td>
                     <td><?php echo $resdep['service_period']; ?></td>
@@ -45,7 +53,7 @@ $dep = $mysqli->query("SELECT * FROM `service` WHERE `branch` = '$branch' ORDER 
                         $now = date('Y-m-d H:i:s');
 
                         if ($now < $start_period){
-                        echo "Not Started";
+                            echo "Not Started";
                         }
 
                         else if ($now >= $start_period && $now <= $end_period) {
@@ -55,7 +63,7 @@ $dep = $mysqli->query("SELECT * FROM `service` WHERE `branch` = '$branch' ORDER 
                         else {
                             echo "Completed";
                         }
-                         ?></td>
+                        ?></td>
 
                     <td>
                         <button type="button"

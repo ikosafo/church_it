@@ -42,6 +42,7 @@
 <script src="assets/uploadify/jquery.uploadifive.js"></script>
 <script src="assets/js/selectize.js"></script>
 <script src="assets/js/countrySelect.js"></script>
+<script src="assets/vendor/flatpickr/flatpickr.js"></script>
 <script src="assets/vendor/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
 <script src="assets/vendor/bootstrap-daterangepicker/daterangepicker.js"></script>
 <script src="assets/js/components/bootstrap-datepicker-init.js"></script>

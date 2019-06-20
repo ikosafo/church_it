@@ -1,15 +1,15 @@
 <?php include ('../../../config.php');
 
-$branch = $_SESSION['branch'];
+//$branch = $_SESSION['branch'];
 
-$dep = $mysqli->query("SELECT * FROM `service` WHERE `branch` = '$branch' ORDER BY start_period DESC ,`period` DESC");
+$dep = $mysqli->query("SELECT * FROM `visitor` ORDER BY `period` DESC");
 
 
 ?>
 
 <div class="card">
 
-    <h5 class="card-header">Services <strong>
+    <h5 class="card-header">Visitors <strong>
 
         </strong></h5>
     <div class="card-body">
@@ -18,13 +18,14 @@ $dep = $mysqli->query("SELECT * FROM `service` WHERE `branch` = '$branch' ORDER 
                style="width:100% !important;">
             <thead>
             <tr>
-                <th>No</th>
-                <th>Service Name</th>
-                <th>Start Period</th>
-                <th>End Period</th>
-                <th>Service Period</th>
-                <th>Status</th>
-                <th>Delete</th>
+                <th>Full Name</th>
+                <th>Branch</th>
+                <th>Telephone</th>
+                <th>Residence</th>
+                <th>Previous Denomination</th>
+                <th>How did you hear about us?</th>
+                <th>Description</th>
+
 
             </tr>
             </thead>
@@ -36,37 +37,21 @@ $dep = $mysqli->query("SELECT * FROM `service` WHERE `branch` = '$branch' ORDER 
 
                 ?>
                 <tr>
-                    <td><input type="checkbox"/></td>
-                    <td><?php echo $resdep['service_name']; ?></td>
-                    <td><?php echo $start_period = $resdep['start_period']; ?></td>
-                    <td><?php echo $end_period = $resdep['end_period']; ?></td>
-                    <td><?php echo $resdep['service_period']; ?></td>
-                    <td><?php
-                        $now = date('Y-m-d H:i:s');
-
-                        if ($now < $start_period){
-                        echo "Not Started";
-                        }
-
-                        else if ($now >= $start_period && $now <= $end_period) {
-                            echo "Ongoing";
-                        }
-
-                        else {
-                            echo "Completed";
-                        }
-                         ?></td>
-
+                    <td><?php echo $resdep['full_name']; ?></td>
                     <td>
-                        <button type="button"
-                                data-type="confirm"
-                                class="btn btn-sm btn-danger js-sweetalert delete_service"
-                                i_index="<?php echo $resdep['id']; ?>"
-                                title="Delete">
-                            <i class="icon-trash" style="color:#fff !important;"></i>
-                        </button>
+                        <?php
+                        $branchid = $resdep['branch'];
+                        $getb = $mysqli->query("select * from branch where id = '$branchid'");
+                        $resb = $getb->fetch_assoc();
+                        echo $resb['name'];
 
+                        ?>
                     </td>
+                    <td><?php echo $resdep['telephone']; ?></td>
+                    <td><?php echo $resdep['residence']; ?></td>
+                    <td><?php echo $resdep['denomination']; ?></td>
+                    <td><?php echo $resdep['hearing_about']; ?></td>
+                    <td><?php echo $resdep['description']; ?></td>
 
 
 
@@ -94,7 +79,7 @@ $dep = $mysqli->query("SELECT * FROM `service` WHERE `branch` = '$branch' ORDER 
 
 
 
-    $(document).on('click', '.delete_service', function () {
+    $(document).on('click', '.delete_visitor', function () {
         var i_index = $(this).attr('i_index');
 
         //alert(i_index);
@@ -115,7 +100,7 @@ $dep = $mysqli->query("SELECT * FROM `service` WHERE `branch` = '$branch' ORDER 
 
                     $.ajax({
                         type: "POST",
-                        url: "ajax/queries/delete_service.php",
+                        url: "ajax/queries/delete_visitor.php",
                         data: {
                             i_index: i_index
                         },
@@ -125,14 +110,14 @@ $dep = $mysqli->query("SELECT * FROM `service` WHERE `branch` = '$branch' ORDER 
 
                             $.ajax({
                                 type: "POST",
-                                url: "ajax/tables/service_table.php",
+                                url: "ajax/tables/visitor_table.php",
                                 beforeSend: function () {
                                     $.blockUI({
                                         message: '<img src="assets/img/load.gif"/>'
                                     });
                                 },
                                 success: function (text) {
-                                    $('#service_table_div').html(text);
+                                    $('#visitor_table_div').html(text);
                                 },
                                 error: function (xhr, ajaxOptions, thrownError) {
                                     alert(xhr.status + " " + thrownError);
@@ -153,7 +138,7 @@ $dep = $mysqli->query("SELECT * FROM `service` WHERE `branch` = '$branch' ORDER 
                         }
                     });
 
-                    swal("Deleted!", "Service has been deleted.", "success");
+                    swal("Deleted!", "Visitor has been deleted.", "success");
 
                 } else {
                     swal("Cancelled", "Data is safe.", "error");
