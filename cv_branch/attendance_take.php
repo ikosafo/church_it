@@ -19,7 +19,7 @@
         <div class="col-md-7 col-sm-12">
             <div id="attmem_table_div"></div>
         </div>
-        <div class="col-md-7 col-sm-12">
+        <div class="col-md-5 col-sm-12">
             <div id="attvis_table_div"></div>
         </div>
     </div>
