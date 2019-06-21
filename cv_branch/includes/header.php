@@ -178,7 +178,15 @@ $branch = $_SESSION['branch'];
                             <li><a href="attendance_search.php"><span>Search Details</span></a></li>
                         </ul>
                     </li>
-                    <li class="nav-dropdown">
+                    <li class="<?php echo(
+                    $_SERVER['PHP_SELF'] == "/cv_branch/tithe.php" ||
+                    $_SERVER['PHP_SELF'] == "/cv_branch/welfare.php" ||
+                    $_SERVER['PHP_SELF'] == "/cv_branch/contributions.php" ||
+                    $_SERVER['PHP_SELF'] == "/cv_branch/welfare.php" ||
+                    $_SERVER['PHP_SELF'] == "/cv_branch/first_fruit.php" ||
+                    $_SERVER['PHP_SELF'] == "/cv_branch/ministry_partners.php" ||
+                    $_SERVER['PHP_SELF'] == "/cv_branch/financials_search.php.php"
+                        ? "active" : ""); ?> nav-dropdown">
                         <a class="has-arrow" href="#" aria-expanded="false"><i class="icon dripicons-wallet"></i><span>Financials</span></a>
                         <ul class="collapse nav-sub" aria-expanded="false">
                             <li><a href="tithe.php"><span>Tithe</span></a></li>
