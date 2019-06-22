@@ -9,7 +9,7 @@
         <ul class="actions top-right">
             <li>
                 <a href="javascript:void(0)" class="btn btn-primary btn-floating">
-                    MANAGE TITHE
+                    MANAGE CONTRIBUTIONS
                 </a>
             </li>
         </ul>
@@ -19,10 +19,10 @@
 
     <div class="row">
         <div class="col-md-6 col-sm-12">
-            <div id="tithe_form_div"></div>
+            <div id="contributions_form_div"></div>
         </div>
         <div class="col-md-6 col-sm-12">
-            <div id="tithe_table_div"></div>
+            <div id="contributions_table_div"></div>
         </div>
     </div>
 
@@ -36,7 +36,7 @@
 
 
     $.ajax({
-        url: "ajax/forms/tithe_form.php",
+        url: "ajax/forms/contributions_form.php",
         beforeSend: function () {
             $.blockUI({
                 message: '<img src="assets/img/load.gif" />'
@@ -44,7 +44,7 @@
         },
 
         success: function (text) {
-            $('#tithe_form_div').html(text);
+            $('#contributions_form_div').html(text);
         },
         error: function (xhr, ajaxOptions, thrownError) {
             alert(xhr.status + " " + thrownError);
@@ -57,7 +57,7 @@
 
 
     $.ajax({
-        url: "ajax/tables/tithe_table.php",
+        url: "ajax/tables/contributions_table.php",
         beforeSend: function () {
             $.blockUI({
                 message: '<img src="assets/img/load.gif" />'
@@ -65,7 +65,7 @@
         },
 
         success: function (text) {
-            $('#tithe_table_div').html(text);
+            $('#contributions_table_div').html(text);
         },
         error: function (xhr, ajaxOptions, thrownError) {
             alert(xhr.status + " " + thrownError);

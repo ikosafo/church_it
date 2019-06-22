@@ -182,7 +182,6 @@ $branch = $_SESSION['branch'];
                     $_SERVER['PHP_SELF'] == "/cv_branch/tithe.php" ||
                     $_SERVER['PHP_SELF'] == "/cv_branch/welfare.php" ||
                     $_SERVER['PHP_SELF'] == "/cv_branch/contributions.php" ||
-                    $_SERVER['PHP_SELF'] == "/cv_branch/welfare.php" ||
                     $_SERVER['PHP_SELF'] == "/cv_branch/first_fruit.php" ||
                     $_SERVER['PHP_SELF'] == "/cv_branch/ministry_partners.php" ||
                     $_SERVER['PHP_SELF'] == "/cv_branch/financials_search.php.php"
@@ -192,7 +191,6 @@ $branch = $_SESSION['branch'];
                             <li><a href="tithe.php"><span>Tithe</span></a></li>
                             <li><a href="welfare.php"><span>Welfare</span></a></li>
                             <li><a href="contributions.php"><span>Contributions</span></a></li>
-                            <li><a href="welfare.php"><span>Welfare</span></a></li>
                             <li><a href="first_fruit.php"><span>First Fruit</span></a></li>
                             <li><a href="ministry_partners.php"><span>Ministry Partners</span></a></li>
                             <li><a href="financials_search.php"><span>Search</span></a></li>

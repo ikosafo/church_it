@@ -26,7 +26,7 @@
 <div class="card">
     <div id="success_loc"></div>
     <div id="error_loc"></div>
-    <h5 class="card-header">Add Tithe Record</h5>
+    <h5 class="card-header">Add Welfare Record</h5>
     <form name="branch_form" method="post" autocomplete="off">
         <div class="card-body">
 
@@ -54,7 +54,7 @@
             </div>
 
 
-            Tithe payment for
+            Welfare payment for
 
             <hr/>
 
@@ -70,45 +70,6 @@
 
                 </div>
 
-                <div class="col-md-6">
-
-                    <div class="form-group">
-                        <label for="exampleInputEmail1">Week</label>
-                        <select id="week">
-                            <option value="">Select</option>
-
-                            <option value="Week 1">Week 1</option>
-                            <option value="Week 2">Week 2</option>
-                            <option value="Week 3">Week 3</option>
-                            <option value="Week 4">Week 4</option>
-                            <option value="Week 5">Week 5</option>
-
-                        </select>
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <div class="row">
-
-                <div class="col-md-6">
-
-                    <div class="form-group">
-                        <label for="exampleInputEmail1">Payment Mode</label>
-                        <select id="payment_mode">
-                            <option value="">Select</option>
-
-                            <option value="Cash">Cash</option>
-                            <option value="Cheque">Cheque</option>
-                            <option value="Mobile Money">Mobile Money</option>
-
-
-                        </select>
-                    </div>
-
-                </div>
 
 
                 <div class="col-md-6">
@@ -122,12 +83,16 @@
 
                 </div>
 
+
+
+
             </div>
+
 
 
         </div>
         <div class="card-footer bg-light">
-            <button type="button" class="btn btn-primary" id="save_tithe">Submit</button>
+            <button type="button" class="btn btn-primary" id="save_welfare">Submit</button>
 
         </div>
     </form>
@@ -169,22 +134,14 @@
 
     $("#date_paid").flatpickr();
 
-    $("#week").selectize();
-
-    $("#payment_mode").selectize();
 
 
-
-
-
-    //SAVE TITHE
-    $("#save_tithe").click(function () {
+    //SAVE welfare
+    $("#save_welfare").click(function () {
 
         var date_paid = $("#date_paid").val();
         var memberid = $("#memberid").val();
         var year_month = $("#year_month").val();
-        var week = $("#week").val();
-        var payment_mode = $("#payment_mode").val();
         var amount = $("#amount").val();
 
 
@@ -204,14 +161,6 @@
             $("#year_month").focus();
         }
 
-        if (week == "") {
-            error += 'Please select week \n';
-        }
-
-        if (payment_mode == "") {
-            error += 'Please select payment mode \n';
-        }
-
         if (amount == "") {
             error += 'Please enter amount \n';
             $("#amount").focus();
@@ -222,19 +171,17 @@
 
             $.ajax({
                 type: "POST",
-                url: "ajax/queries/save_tithe.php",
+                url: "ajax/queries/save_welfare.php",
                 beforeSend: function () {
                     $.blockUI({
                         message: '<img src="assets/img/load.gif" />'
                     });
                 },
                 data: {
-                    
+
                     date_paid: date_paid,
                     memberid: memberid,
                     year_month: year_month,
-                    week: week,
-                    payment_mode: payment_mode,
                     amount: amount
 
                 },
@@ -245,7 +192,7 @@
                     $('#success_loc').notify("Form submitted", "success");
 
                     $.ajax({
-                        url: "ajax/tables/tithe_table.php",
+                        url: "ajax/tables/welfare_table.php",
                         beforeSend: function () {
                             $.blockUI({
                                 message: '<img src="assets/img/load.gif" />'
@@ -253,7 +200,7 @@
                         },
 
                         success: function (text) {
-                            $('#tithe_table_div').html(text);
+                            $('#welfare_table_div').html(text);
                         },
                         error: function (xhr, ajaxOptions, thrownError) {
                             alert(xhr.status + " " + thrownError);
@@ -265,7 +212,7 @@
                     });
 
                     $.ajax({
-                        url: "ajax/forms/tithe_form.php",
+                        url: "ajax/forms/welfare_form.php",
                         beforeSend: function () {
                             $.blockUI({
                                 message: '<img src="assets/img/load.gif" />'
@@ -273,7 +220,7 @@
                         },
 
                         success: function (text) {
-                            $('#tithe_form_div').html(text);
+                            $('#welfare_form_div').html(text);
                         },
                         error: function (xhr, ajaxOptions, thrownError) {
                             alert(xhr.status + " " + thrownError);
