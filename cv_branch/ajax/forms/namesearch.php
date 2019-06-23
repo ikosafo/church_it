@@ -2,14 +2,16 @@
 
 include('../../../config.php');
 
+$branch = $_SESSION['branch'];
+
 // Get search term
 $searchTerm = $_GET['term'];
 
 // Get matched data from provisional table
 $query = $mysqli->query("SELECT * FROM member m JOIN member_images i ON m.`memberid` = i.`memberid` 
-WHERE m.surname LIKE '%" . $searchTerm . "%'
+WHERE m.branch = '$branch' AND (m.surname LIKE '%" . $searchTerm . "%'
 OR m.firstname LIKE '%" . $searchTerm . "%' 
-OR m.othername LIKE '%" . $searchTerm . "%'");
+OR m.othername LIKE '%" . $searchTerm . "%')");
 
 // Generate name data array
 $nameData = array();

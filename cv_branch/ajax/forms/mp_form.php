@@ -24,9 +24,9 @@
 </script>
 
 <div class="card">
-    <div id="success_loc"></div>
-    <div id="error_loc"></div>
-    <h5 class="card-header">Add Contribution Record</h5>
+    <div id="mmsuccess_loc"></div>
+    <div id="merror_loc"></div>
+    <h5 class="card-header">Add Partner Record</h5>
     <form name="branch_form" method="post" autocomplete="off">
         <div class="card-body">
 
@@ -54,7 +54,7 @@
             </div>
 
 
-            Contributions payment for
+            Partnership payment for
 
             <hr/>
 
@@ -92,7 +92,7 @@
 
         </div>
         <div class="card-footer bg-light">
-            <button type="button" class="btn btn-primary" id="save_contributions">Submit</button>
+            <button type="button" class="btn btn-primary" id="save_mpcontributions">Submit</button>
 
         </div>
     </form>
@@ -101,29 +101,23 @@
 
 <script>
 
-;
+    ;
 
     $("#member_name").autocomplete({
-        source: "ajax/forms/namesearch.php",
+        source: "ajax/forms/namesearch_mp.php",
         minLength: 0,
         select: function (event, ui) {
             $("#member_name").val(ui.item.value);
             $("#memberid").val(ui.item.id);
         }
-    }).data("ui-autocomplete")._renderItem = function (ul, item) {
-        return $("<li class='ui-autocomplete-row'></li>")
-            .data("item.autocomplete", item)
-            .append(item.label)
-            .appendTo(ul);
-    };
-
+    });
 
     $("#date_paid").flatpickr();
 
 
 
     //SAVE contributions
-    $("#save_contributions").click(function () {
+    $("#save_mpcontributions").click(function () {
 
         var date_paid = $("#date_paid").val();
         var memberid = $("#memberid").val();
@@ -157,7 +151,7 @@
 
             $.ajax({
                 type: "POST",
-                url: "ajax/queries/save_contributions.php",
+                url: "ajax/queries/save_mpcontributions.php",
                 beforeSend: function () {
                     $.blockUI({
                         message: '<img src="assets/img/load.gif" />'
@@ -175,10 +169,10 @@
 
                     //alert(text);
 
-                    $('#success_loc').notify("Form submitted", "success");
+                    $('#mmsuccess_loc').notify("Form submitted", "success");
 
                     $.ajax({
-                        url: "ajax/tables/contributions_table.php",
+                        url: "ajax/tables/mp_table.php",
                         beforeSend: function () {
                             $.blockUI({
                                 message: '<img src="assets/img/load.gif" />'
@@ -186,7 +180,7 @@
                         },
 
                         success: function (text) {
-                            $('#contributions_table_div').html(text);
+                            $('#mp_table_div').html(text);
                         },
                         error: function (xhr, ajaxOptions, thrownError) {
                             alert(xhr.status + " " + thrownError);
@@ -198,7 +192,7 @@
                     });
 
                     $.ajax({
-                        url: "ajax/forms/contributions_form.php",
+                        url: "ajax/forms/mp_form.php",
                         beforeSend: function () {
                             $.blockUI({
                                 message: '<img src="assets/img/load.gif" />'
@@ -206,7 +200,7 @@
                         },
 
                         success: function (text) {
-                            $('#contributions_form_div').html(text);
+                            $('#mp_form_div').html(text);
                         },
                         error: function (xhr, ajaxOptions, thrownError) {
                             alert(xhr.status + " " + thrownError);
@@ -234,7 +228,7 @@
         else {
 
 
-            $('#error_loc').notify(error);
+            $('#merror_loc').notify(error);
 
         }
         return false;
