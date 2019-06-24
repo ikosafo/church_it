@@ -184,7 +184,7 @@ $branch = $_SESSION['branch'];
                     $_SERVER['PHP_SELF'] == "/cv_branch/contributions.php" ||
                     $_SERVER['PHP_SELF'] == "/cv_branch/first_fruit.php" ||
                     $_SERVER['PHP_SELF'] == "/cv_branch/ministry_partners.php" ||
-                    $_SERVER['PHP_SELF'] == "/cv_branch/financials_search.php.php"
+                    $_SERVER['PHP_SELF'] == "/cv_branch/financials_search.php"
                         ? "active" : ""); ?> nav-dropdown">
                         <a class="has-arrow" href="#" aria-expanded="false"><i class="icon dripicons-wallet"></i><span>Financials</span></a>
                         <ul class="collapse nav-sub" aria-expanded="false">
@@ -197,7 +197,8 @@ $branch = $_SESSION['branch'];
 
                         </ul>
                     </li>
-                    <li class="nav-dropdown">
+                    <li class="<?php echo($_SERVER['PHP_SELF'] == "/cv_branch/sms.php"
+                        ? "active" : ""); ?> nav-dropdown">
                         <a href="sms.php"><i class="icon icon-envelope-letter"></i><span>SMS</span></a>
                     </li>
                     <li class="nav-dropdown">
