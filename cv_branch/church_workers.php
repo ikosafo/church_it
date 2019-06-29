@@ -1,6 +1,5 @@
 <?php require ('includes/header.php')?>
 
-
 <!--START PAGE CONTENT -->
 <section class="page-content container-fluid">
 
@@ -8,7 +7,7 @@
         <ul class="actions top-right">
             <li>
                 <a href="javascript:void(0)" class="btn btn-primary btn-floating">
-                    MANAGE SMS
+                    MANAGE CHURCH WORKERS
                 </a>
             </li>
         </ul>
@@ -16,13 +15,12 @@
 
     <hr/>
 
-
     <div class="row">
-        <div class="col-md-6 col-sm-12 col-lg-6">
-            <div id="sms_form_div"></div>
+        <div class="col-md-6 col-sm-12">
+            <div id="worker_form_div"></div>
         </div>
-        <div class="col-md-6 col-sm-12 col-lg-6">
-            <div id="sms_table_div"></div>
+        <div class="col-md-6 col-sm-12">
+            <div id="worker_table_div"></div>
         </div>
     </div>
 
@@ -30,19 +28,22 @@
 
 <?php require ('includes/footer.php')?>
 
+<script src="assets/js/jquery-ui.min.js"></script>
+
 
 <script>
 
+
     $.ajax({
-        type: "POST",
-        url: "ajax/forms/sms_form.php",
+        url: "ajax/forms/worker_form.php",
         beforeSend: function () {
             $.blockUI({
-                message: '<img src="assets/img/load.gif"/>'
+                message: '<img src="assets/img/load.gif" />'
             });
         },
+
         success: function (text) {
-            $('#sms_form_div').html(text);
+            $('#worker_form_div').html(text);
         },
         error: function (xhr, ajaxOptions, thrownError) {
             alert(xhr.status + " " + thrownError);
@@ -54,18 +55,16 @@
     });
 
 
-
-
     $.ajax({
-        type: "POST",
-        url: "ajax/tables/sms_table.php",
+        url: "ajax/tables/worker_table.php",
         beforeSend: function () {
             $.blockUI({
-                message: '<img src="assets/img/load.gif"/>'
+                message: '<img src="assets/img/load.gif" />'
             });
         },
+
         success: function (text) {
-            $('#sms_table_div').html(text);
+            $('#worker_table_div').html(text);
         },
         error: function (xhr, ajaxOptions, thrownError) {
             alert(xhr.status + " " + thrownError);
@@ -75,5 +74,6 @@
         },
 
     });
+
 
 </script>

@@ -215,8 +215,9 @@ if ($count == "0"){ ?>
 
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Email Address</label>
-                                        <input type="text" class="form-control" id="email_address" readonly
-                                               placeholder="Enter email address" value="<?php echo $emailaddress ?>">
+                                        <input type="text" class="form-control" id="email_address"
+                                               placeholder="Enter email address"
+                                               value="<?php echo $emailaddress ?>">
                                     </div>
 
 
@@ -444,7 +445,6 @@ if ($count == "0"){ ?>
                     error += 'Please select title \n';
                     $("#title").focus();
                 }
-
 
                 if (title == "Other" && othertitle == "") {
                     error += 'Please specify title \n';

@@ -30,7 +30,7 @@
 
 <?php require ('includes/footer.php')?>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<script src="assets/js/jquery-ui.min.js"></script>
 
 <script>
 

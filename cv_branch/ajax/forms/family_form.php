@@ -49,7 +49,9 @@ $memberid = $_POST['member_id'];
 <div id="success_loc"></div>
 <div id="error_loc"></div>
 <h5 class="card-header">Field with * are required</h5>
+
 <form name="educbus_form" method="post" autocomplete="off">
+
     <div class="card-body">
 
         <div class="row">

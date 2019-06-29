@@ -1,7 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="113adc73-684f-4c00-a1cc-ce8f4684a494" name="Default" comment="" />
+    <list default="true" id="113adc73-684f-4c00-a1cc-ce8f4684a494" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/cv_branch/ajax/forms/family_form.php" afterPath="$PROJECT_DIR$/cv_branch/ajax/forms/family_form.php" />
+      <change beforePath="$PROJECT_DIR$/cv_branch/ajax/forms/namesearch.php" afterPath="$PROJECT_DIR$/cv_branch/ajax/forms/namesearch.php" />
+      <change beforePath="$PROJECT_DIR$/cv_branch/ajax/forms/sms_form.php" afterPath="$PROJECT_DIR$/cv_branch/ajax/forms/sms_form.php" />
+      <change beforePath="$PROJECT_DIR$/cv_branch/includes/header.php" afterPath="$PROJECT_DIR$/cv_branch/includes/header.php" />
+      <change beforePath="$PROJECT_DIR$/cv_branch/sms.php" afterPath="$PROJECT_DIR$/cv_branch/sms.php" />
+      <change beforePath="$PROJECT_DIR$/cv_branch/tithe.php" afterPath="$PROJECT_DIR$/cv_branch/tithe.php" />
+      <change beforePath="$PROJECT_DIR$/cv_member/ajax/forms/member_form.php" afterPath="$PROJECT_DIR$/cv_member/ajax/forms/member_form.php" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -11,99 +20,119 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="450">
-      <file leaf-file-name="delete_mpcontributions.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/cv_branch/ajax/queries/delete_mpcontributions.php">
+      <file leaf-file-name="worker_form.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/cv_branch/ajax/forms/worker_form.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="243">
-              <caret line="9" column="72" lean-forward="false" selection-start-line="9" selection-start-column="72" selection-end-line="9" selection-end-column="72" />
-              <folding>
-                <marker date="1561259808524" expanded="true" signature="99:159" ph="delete from f_mpcontributions... " />
-                <marker date="1561259808524" expanded="true" signature="155:159" ph="delete from f_welfare... " />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="financials_search.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/cv_branch/financials_search.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="567">
-              <caret line="36" column="16" lean-forward="false" selection-start-line="36" selection-start-column="16" selection-end-line="36" selection-end-column="16" />
+            <state relative-caret-position="621">
+              <caret line="79" column="50" lean-forward="false" selection-start-line="79" selection-start-column="35" selection-end-line="79" selection-end-column="50" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="sms.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/cv_branch/sms.php">
+      <file leaf-file-name="save_worker.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/cv_branch/ajax/queries/save_worker.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="432">
-              <caret line="16" column="9" lean-forward="true" selection-start-line="16" selection-start-column="9" selection-end-line="16" selection-end-column="9" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="sms_form.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/cv_branch/ajax/forms/sms_form.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="cells.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/cv_branch/cells.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="405">
-              <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="sms.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../cpcc/sms.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1350">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="attendance_search.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/cv_branch/attendance_search.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="405">
-              <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="delete_welfare.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/cv_branch/ajax/queries/delete_welfare.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="351">
-              <caret line="13" column="2" lean-forward="false" selection-start-line="13" selection-start-column="2" selection-end-line="13" selection-end-column="2" />
+              <caret line="16" column="19" lean-forward="false" selection-start-line="16" selection-start-column="19" selection-end-line="16" selection-end-column="19" />
               <folding>
-                <marker date="1561234078344" expanded="true" signature="91:135" ph="delete from f_welfare... " />
-                <marker date="1561234078344" expanded="true" signature="130:135" ph="delete from f_tithe... " />
+                <marker date="1561802116298" expanded="true" signature="157:334" ph="INSERT INTO `church_worker`... " />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="header.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/cv_branch/includes/header.php">
+      <file leaf-file-name="save_tithe.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/cv_branch/ajax/queries/save_tithe.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="559">
-              <caret line="199" column="81" lean-forward="false" selection-start-line="199" selection-start-column="81" selection-end-line="199" selection-end-column="81" />
+            <state relative-caret-position="621">
+              <caret line="26" column="22" lean-forward="true" selection-start-line="26" selection-start-column="22" selection-end-line="26" selection-end-column="22" />
               <folding>
-                <marker date="1561352585607" expanded="true" signature="18364:18405" ph="select * fro... branch" />
+                <marker date="1561192329471" expanded="true" signature="536:919" ph="INSERT INTO `f_tithe`... " />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="worker_table.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/cv_branch/ajax/tables/worker_table.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="330">
+              <caret line="109" column="64" lean-forward="false" selection-start-line="109" selection-start-column="47" selection-end-line="109" selection-end-column="64" />
+              <folding>
+                <element signature="e#1726#1756#0#HTML" expanded="true" />
+                <marker date="1561803127717" expanded="true" signature="98:150" ph="select * fro... church_worker" />
+                <marker date="1561803127717" expanded="true" signature="931:980" ph="select * fro... member" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="delete_tithe.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/cv_branch/ajax/queries/delete_tithe.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="351">
+              <caret line="13" column="2" lean-forward="true" selection-start-line="13" selection-start-column="2" selection-end-line="13" selection-end-column="2" />
+              <folding>
+                <marker date="1561233249364" expanded="true" signature="89:129" ph="delete from f_tithe... " />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="document_table.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/cv_admin/ajax/tables/document_table.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="432">
+              <caret line="16" column="23" lean-forward="true" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="23" />
+              <folding>
+                <marker date="1560859003582" expanded="true" signature="63:110" ph="select * fro... document" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="cell_table.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/cv_branch/ajax/tables/cell_table.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="243">
+              <caret line="9" column="22" lean-forward="true" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="22" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="namesearch.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/cv_branch/ajax/forms/namesearch.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="675">
+              <caret line="25" column="13" lean-forward="false" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
+              <folding>
+                <marker date="1561802884150" expanded="true" signature="189:425" ph="SELECT * FRO... member" />
+                <marker date="1561802884150" expanded="true" signature="764:866" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="tithe_form.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/cv_branch/ajax/forms/tithe_form.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-3294">
+              <caret line="22" column="0" lean-forward="true" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="delete_worker.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/cv_branch/ajax/queries/delete_worker.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="243">
+              <caret line="9" column="35" lean-forward="false" selection-start-line="9" selection-start-column="35" selection-end-line="9" selection-end-column="35" />
+              <folding>
+                <marker date="1561803127800" expanded="true" signature="90:137" ph="delete from church_worker... " />
+                <marker date="1561803127800" expanded="true" signature="133:137" ph="delete from f_tithe... " />
               </folding>
             </state>
           </provider>
@@ -113,7 +142,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>$start_period</find>
       <find>$period</find>
       <find>Do you want to mark as absent</find>
       <find>absent</find>
@@ -128,7 +156,6 @@
       <find>id</find>
       <find>profile_image</find>
       <find>txt</find>
-      <find>visitor</find>
       <find>$description</find>
       <find>service</find>
       <find>firstfruit</find>
@@ -137,15 +164,16 @@
       <find>year_mont</find>
       <find>Welfare</find>
       <find>year_month</find>
-      <find>tithe</find>
       <find>Convert</find>
       <find>convert</find>
       <find>error_loc</find>
       <find>welfare</find>
+      <find>email_address</find>
+      <find>visitor</find>
       <find>cell</find>
+      <find>tithe</find>
     </findStrings>
     <replaceStrings>
-      <replace>ministry</replace>
       <replace>cell</replace>
       <replace>&quot;assets/img/load.gif</replace>
       <replace>Christ Vision Sanctuary Int.</replace>
@@ -175,6 +203,7 @@
       <replace>merror_loc</replace>
       <replace>mpcontributions</replace>
       <replace>sms</replace>
+      <replace>worker</replace>
     </replaceStrings>
     <dirStrings>
       <dir>C:\wamp64\www\church_it\cv_member\ajax</dir>
@@ -189,14 +218,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/cv_branch/ajax/tables/attvis_table.php" />
-        <option value="$PROJECT_DIR$/cv_branch/ajax/queries/save_visitor_attendance.php" />
-        <option value="$PROJECT_DIR$/cv_branch/ajax/queries/search_attendance.php" />
-        <option value="$PROJECT_DIR$/cv_branch/ajax/tables/service_table.php" />
-        <option value="$PROJECT_DIR$/cv_admin/visitors.php" />
-        <option value="$PROJECT_DIR$/cv_admin/attendance_service.php" />
-        <option value="$PROJECT_DIR$/cv_admin/ajax/tables/visitor_table.php" />
-        <option value="$PROJECT_DIR$/cv_admin/ajax/tables/service_table.php" />
         <option value="$PROJECT_DIR$/cv_admin/attendance_search.php" />
         <option value="$PROJECT_DIR$/cv_branch/attendance_search.php" />
         <option value="$PROJECT_DIR$/cv_admin/includes/header.php" />
@@ -205,7 +226,6 @@
         <option value="$PROJECT_DIR$/cv_branch/ajax/forms/member_details.php" />
         <option value="$PROJECT_DIR$/cv_branch/ajax/forms/member_records.php" />
         <option value="$PROJECT_DIR$/cv_branch/includes/footer.php" />
-        <option value="$PROJECT_DIR$/cv_branch/tithe.php" />
         <option value="$PROJECT_DIR$/cv_branch/ajax/queries/save_tithe.php" />
         <option value="$PROJECT_DIR$/cv_branch/ajax/forms/tithe_form.php" />
         <option value="$PROJECT_DIR$/cv_branch/ajax/queries/delete_tithe.php" />
@@ -224,7 +244,6 @@
         <option value="$PROJECT_DIR$/cv_branch/ajax/queries/save_contributions.php" />
         <option value="$PROJECT_DIR$/cv_branch/ajax/queries/delete_contributions.php" />
         <option value="$PROJECT_DIR$/cv_branch/ajax/tables/contributions_table.php" />
-        <option value="$PROJECT_DIR$/cv_branch/ajax/forms/namesearch.php" />
         <option value="$USER_HOME$/AppData/Local/Temp/fz3temp-2/namesearch.php" />
         <option value="$PROJECT_DIR$/cv_branch/ajax/queries/save_partner.php" />
         <option value="$PROJECT_DIR$/cv_branch/ajax/queries/delete_partner.php" />
@@ -238,8 +257,18 @@
         <option value="$PROJECT_DIR$/cv_branch/ajax/tables/mp_table.php" />
         <option value="$PROJECT_DIR$/cv_branch/ajax/queries/delete_mpcontributions.php" />
         <option value="$PROJECT_DIR$/cv_branch/financials_search.php" />
-        <option value="$PROJECT_DIR$/cv_branch/includes/header.php" />
+        <option value="$PROJECT_DIR$/cv_member/ajax/forms/member_form.php" />
+        <option value="$PROJECT_DIR$/cv_branch/ajax/forms/family_form.php" />
         <option value="$PROJECT_DIR$/cv_branch/sms.php" />
+        <option value="$PROJECT_DIR$/cv_branch/ajax/forms/sms_form.php" />
+        <option value="$PROJECT_DIR$/cv_branch/includes/header.php" />
+        <option value="$PROJECT_DIR$/cv_branch/tithe.php" />
+        <option value="$PROJECT_DIR$/cv_branch/church_workers.php" />
+        <option value="$PROJECT_DIR$/cv_branch/ajax/forms/worker_form.php" />
+        <option value="$PROJECT_DIR$/cv_branch/ajax/queries/save_worker.php" />
+        <option value="$PROJECT_DIR$/cv_branch/ajax/forms/namesearch.php" />
+        <option value="$PROJECT_DIR$/cv_branch/ajax/tables/worker_table.php" />
+        <option value="$PROJECT_DIR$/cv_branch/ajax/queries/delete_worker.php" />
       </list>
     </option>
   </component>
@@ -294,13 +323,7 @@
               <item name="church_it" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="cv_branch" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="ajax" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="forms" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="church_it" type="b2602c69:ProjectViewProjectNode" />
-              <item name="church_it" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="cv_branch" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="includes" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="queries" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
           </expand>
           <select />
@@ -369,18 +392,20 @@
       <workItem from="1560589402818" duration="496000" />
       <workItem from="1560614467288" duration="94960000" />
       <workItem from="1561035382827" duration="8058000" />
-      <workItem from="1561110576145" duration="44647000" />
+      <workItem from="1561110576145" duration="46680000" />
+      <workItem from="1561623778735" duration="23000" />
+      <workItem from="1561779318680" duration="5385000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="297571000" />
+    <option name="totallyTimeSpent" value="305012000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-10" y="2" width="1940" height="1042" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2278415" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2434828" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -449,233 +474,11 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/cv_branch/ajax/forms/member_records.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="15" column="22" lean-forward="false" selection-start-line="15" selection-start-column="22" selection-end-line="15" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cv_branch/ajax/queries/save_visitor.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="20" column="17" lean-forward="true" selection-start-line="20" selection-start-column="17" selection-end-line="20" selection-end-column="17" />
-          <folding>
-            <marker date="1560896444488" expanded="true" signature="582:704" ph="select * fro... visitor" />
-            <marker date="1560896444488" expanded="true" signature="751:1162" ph="INSERT INTO `visitor`... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cv_branch/ajax/tables/cell_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-          <folding>
-            <marker date="1560658505217" expanded="true" signature="95:157" ph="select * fro... cell" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cv_branch/ajax/tables/attmem_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="142" column="69" lean-forward="true" selection-start-line="142" selection-start-column="69" selection-end-line="142" selection-end-column="69" />
-          <folding>
-            <marker date="1560958311196" expanded="true" signature="100:201" ph="select * fro... member" />
-            <marker date="1560958311196" expanded="true" signature="1094:1178" ph="select * fro... member_images" />
-            <marker date="1560958311196" expanded="true" signature="2046:2087" ph="select * fro... department" />
-            <marker date="1560958311196" expanded="true" signature="2580:2718" ph="select * fro... service" />
-            <marker date="1560958311196" expanded="true" signature="3161:3299" ph="select * fro... service" />
-            <marker date="1560958311196" expanded="true" signature="3556:3609" ph="select * fro... attendance" />
-            <marker date="1560958311196" expanded="true" signature="3556:3735" ph="select * fro... attendance" />
-            <marker date="1560958311196" expanded="true" signature="3556:3751" ph="select * fro... attendance" />
-            <marker date="1560958311196" expanded="true" signature="3556:3762" ph="select * fro... attendance" />
-            <marker date="1560958311196" expanded="true" signature="3556:3765" ph="select * fro... attendance" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cv_branch/ajax/queries/delete_service.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="351">
-          <caret line="13" column="2" lean-forward="true" selection-start-line="13" selection-start-column="2" selection-end-line="13" selection-end-column="2" />
-          <folding>
-            <marker date="1560937280164" expanded="true" signature="91:133" ph="delete from service... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cv_branch/ajax/forms/tithe_form.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="231" column="13" lean-forward="true" selection-start-line="231" selection-start-column="13" selection-end-line="231" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cv_branch/ajax/queries/save_tithe.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-          <folding>
-            <marker date="1561192329471" expanded="true" signature="536:919" ph="INSERT INTO `visitor`... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cv_branch/ajax/tables/tithe_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="433">
-          <caret line="21" column="8" lean-forward="false" selection-start-line="21" selection-start-column="8" selection-end-line="21" selection-end-column="8" />
-          <folding>
-            <marker date="1561233425915" expanded="true" signature="95:194" ph="select * fro... f_tithe" />
-            <marker date="1561233425915" expanded="true" signature="1433:1482" ph="select * fro... member" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cv_branch/ajax/tables/delete_welfare.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cv_branch/ajax/queries/delete_tithe.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-          <folding>
-            <marker date="1561233249364" expanded="true" signature="89:129" ph="delete from f_tithe... " />
-            <marker date="1561233249364" expanded="true" signature="124:129" ph="delete from service... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cv_branch/welfare.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="338">
-          <caret line="26" column="10" lean-forward="true" selection-start-line="26" selection-start-column="10" selection-end-line="26" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cv_branch/ajax/tables/ff_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="12" column="60" lean-forward="true" selection-start-line="12" selection-start-column="60" selection-end-line="12" selection-end-column="60" />
-          <folding>
-            <element signature="e#449#479#0#HTML" expanded="false" />
-            <element signature="e#2176#2206#0#HTML" expanded="false" />
-            <marker date="1561234924087" expanded="true" signature="95:111" ph="SELECT * FRO... f_welfare" />
-            <marker date="1561234924087" expanded="true" signature="95:112" ph="SELECT * FRO... f_firstfruit" />
-            <marker date="1561234924087" expanded="true" signature="95:180" ph="SELECT * FRO... f_ff" />
-            <marker date="1561234924087" expanded="true" signature="1361:1410" ph="select * fro... member" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cv_branch/ajax/queries/delete_ff.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="351">
-          <caret line="13" column="2" lean-forward="true" selection-start-line="13" selection-start-column="2" selection-end-line="13" selection-end-column="2" />
-          <folding>
-            <marker date="1561235098280" expanded="true" signature="94:144" ph="delete from f_firstfruit... " />
-            <marker date="1561235098280" expanded="true" signature="140:144" ph="delete from f_welfare... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cv_branch/ajax/queries/save_ff.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="14" column="41" lean-forward="false" selection-start-line="14" selection-start-column="41" selection-end-line="14" selection-end-column="41" />
-          <folding>
-            <marker date="1561235137674" expanded="true" signature="384:668" ph="INSERT INTO `f_firstfruit`... " />
-            <marker date="1561235137674" expanded="true" signature="587:668" ph="INSERT INTO `f_ff`... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cv_branch/ajax/forms/ff_form.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="263">
-          <caret line="171" column="31" lean-forward="true" selection-start-line="171" selection-start-column="31" selection-end-line="171" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cv_branch/first_fruit.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="28" column="10" lean-forward="true" selection-start-line="28" selection-start-column="10" selection-end-line="28" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cv_branch/contributions.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="38" column="47" lean-forward="false" selection-start-line="38" selection-start-column="25" selection-end-line="38" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cv_branch/ajax/queries/save_welfare.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="621">
-          <caret line="23" column="21" lean-forward="false" selection-start-line="23" selection-start-column="21" selection-end-line="23" selection-end-column="21" />
-          <folding>
-            <marker date="1561233817089" expanded="true" signature="396:689" ph="INSERT INTO `f_welfare`... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cv_branch/ajax/queries/delete_visitor.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="351">
-          <caret line="13" column="2" lean-forward="false" selection-start-line="13" selection-start-column="2" selection-end-line="13" selection-end-column="2" />
-          <folding>
-            <marker date="1560896371085" expanded="true" signature="91:135" ph="delete from `visitor`... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cv_branch/ajax/queries/delete_contributions.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="9" column="68" lean-forward="false" selection-start-line="9" selection-start-column="68" selection-end-line="9" selection-end-column="68" />
-          <folding>
-            <marker date="1561236277464" expanded="true" signature="97:153" ph="delete from f_contributions... " />
-            <marker date="1561236277464" expanded="true" signature="149:153" ph="delete from f_welfare... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Temp/fz3temp-2/namesearch.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="675">
-          <caret line="25" column="13" lean-forward="false" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cv_branch/tithe.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="675">
-          <caret line="55" column="7" lean-forward="false" selection-start-line="55" selection-start-column="6" selection-end-line="55" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/fz3temp-2/namesearch.php" />
     <entry file="file://$PROJECT_DIR$/cv_branch/ajax/forms/convert_form.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
           <caret line="10" column="5" lean-forward="true" selection-start-line="10" selection-start-column="5" selection-end-line="10" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -683,9 +486,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="243">
           <caret line="9" column="22" lean-forward="true" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="22" />
-          <folding>
-            <marker date="1560870296932" expanded="true" signature="95:168" ph="SELECT * FRO... convert" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -693,9 +493,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="351">
           <caret line="13" column="2" lean-forward="true" selection-start-line="13" selection-start-column="2" selection-end-line="13" selection-end-column="2" />
-          <folding>
-            <marker date="1560870297208" expanded="true" signature="91:135" ph="delete from `convert`... " />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -703,11 +500,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
           <caret line="86" column="0" lean-forward="true" selection-start-line="86" selection-start-column="0" selection-end-line="86" selection-end-column="0" />
-          <folding>
-            <marker date="1561234103596" expanded="true" signature="95:111" ph="SELECT * FRO... f_tithe" />
-            <marker date="1561234103596" expanded="true" signature="95:183" ph="SELECT * FRO... f_welfare" />
-            <marker date="1561234103596" expanded="true" signature="1362:1411" ph="select * fro... member" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -715,10 +507,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="567">
           <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-          <folding>
-            <marker date="1560869656336" expanded="true" signature="582:704" ph="select * fro... convert" />
-            <marker date="1560869656336" expanded="true" signature="751:1162" ph="INSERT INTO `convert`... " />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -726,12 +514,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="162">
           <caret line="15" column="63" lean-forward="false" selection-start-line="15" selection-start-column="63" selection-end-line="15" selection-end-column="63" />
-          <folding>
-            <marker date="1561257399894" expanded="true" signature="362:377" ph="select * fro... convert" />
-            <marker date="1561257399894" expanded="true" signature="362:487" ph="select * fro... f_partners" />
-            <marker date="1561257399894" expanded="true" signature="534:792" ph="INSERT INTO `f_partner`... " />
-            <marker date="1561257399894" expanded="true" signature="557:792" ph="INSERT INTO `convert`... " />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -739,10 +521,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="243">
           <caret line="9" column="39" lean-forward="false" selection-start-line="9" selection-start-column="39" selection-end-line="9" selection-end-column="39" />
-          <folding>
-            <marker date="1561257427597" expanded="true" signature="91:138" ph="delete from `f_partners`... " />
-            <marker date="1561257427597" expanded="true" signature="134:138" ph="delete from `f_partner`... " />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -750,19 +528,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="209">
           <caret line="188" column="0" lean-forward="true" selection-start-line="188" selection-start-column="0" selection-end-line="188" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cv_branch/ajax/forms/namesearch.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="16" column="18" lean-forward="false" selection-start-line="16" selection-start-column="18" selection-end-line="16" selection-end-column="18" />
-          <folding>
-            <marker date="1561237035806" expanded="true" signature="189:424" ph="SELECT * FRO... member" />
-            <marker date="1561237035806" expanded="true" signature="189:425" ph="SELECT * FRO... member" />
-            <marker date="1561237035806" expanded="true" signature="764:863" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -770,9 +535,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="567">
           <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-          <folding>
-            <marker date="1561258142724" expanded="true" signature="189:283" ph="SELECT * FRO... f_partners" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -780,7 +542,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="199">
           <caret line="67" column="73" lean-forward="false" selection-start-line="67" selection-start-column="73" selection-end-line="67" selection-end-column="73" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -788,10 +549,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="280">
           <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-          <folding>
-            <marker date="1561235974093" expanded="true" signature="390:683" ph="INSERT INTO `f_contributions`... " />
-            <marker date="1561235974093" expanded="true" signature="602:683" ph="INSERT INTO `f_welfare`... " />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -799,12 +556,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="373">
           <caret line="27" column="8" lean-forward="false" selection-start-line="27" selection-start-column="8" selection-end-line="27" selection-end-column="8" />
-          <folding>
-            <marker date="1561236411519" expanded="true" signature="95:111" ph="SELECT * FRO... f_welfare" />
-            <marker date="1561236411519" expanded="true" signature="95:160" ph="SELECT * FRO... f_contributions" />
-            <marker date="1561236411519" expanded="true" signature="95:171" ph="SELECT * FRO... f_contributions" />
-            <marker date="1561236411519" expanded="true" signature="1365:1414" ph="select * fro... member" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -812,7 +563,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-486">
           <caret line="64" column="0" lean-forward="false" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -820,7 +570,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="594">
           <caret line="34" column="29" lean-forward="false" selection-start-line="34" selection-start-column="29" selection-end-line="34" selection-end-column="29" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -828,10 +577,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="567">
           <caret line="72" column="25" lean-forward="false" selection-start-line="72" selection-start-column="25" selection-end-line="72" selection-end-column="25" />
-          <folding>
-            <marker date="1561258967243" expanded="true" signature="95:109" ph="SELECT * FRO... f_mp" />
-            <marker date="1561258967243" expanded="true" signature="95:167" ph="SELECT * FRO... f_partners" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -839,17 +584,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="297">
           <caret line="11" column="30" lean-forward="false" selection-start-line="11" selection-start-column="30" selection-end-line="11" selection-end-column="30" />
-          <folding>
-            <marker date="1561258433310" expanded="true" signature="390:685" ph="INSERT INTO `f_mpcontributions`... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cv_branch/ajax/forms/mp_form.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1728">
-          <caret line="221" column="18" lean-forward="false" selection-start-line="221" selection-start-column="18" selection-end-line="221" selection-end-column="18" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -857,10 +591,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="621">
           <caret line="125" column="73" lean-forward="false" selection-start-line="125" selection-start-column="47" selection-end-line="125" selection-end-column="73" />
-          <folding>
-            <marker date="1561259808647" expanded="true" signature="95:173" ph="SELECT * FRO... f_mpcontributions" />
-            <marker date="1561259808647" expanded="true" signature="1367:1414" ph="select * fro... f_partners" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -889,23 +619,15 @@
     <entry file="file://$PROJECT_DIR$/cv_branch/attendance_search.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="405">
-          <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/cv_branch/financials_search.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="567">
+        <state relative-caret-position="972">
           <caret line="36" column="16" lean-forward="false" selection-start-line="36" selection-start-column="16" selection-end-line="36" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../cpcc/sms.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1350">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -913,25 +635,7 @@
     <entry file="file://$PROJECT_DIR$/cv_branch/cells.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="405">
-          <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cv_branch/includes/header.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="559">
-          <caret line="199" column="81" lean-forward="false" selection-start-line="199" selection-start-column="81" selection-end-line="199" selection-end-column="81" />
-          <folding>
-            <marker date="1561352585607" expanded="true" signature="18364:18405" ph="select * fro... branch" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cv_branch/sms.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="16" column="9" lean-forward="true" selection-start-line="16" selection-start-column="9" selection-end-line="16" selection-end-column="9" />
+          <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -940,22 +644,253 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1215">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../cpcc/sms.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2889">
+          <caret line="107" column="11" lean-forward="true" selection-start-line="107" selection-start-column="11" selection-end-line="107" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cv_admin/ajax/forms/user_form.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-972">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cv_member/ajax/queries/save_member.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-162">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1519234790849" expanded="true" signature="2089:2148" ph="SELECT * FRO... clergy" />
-            <marker date="1519234790849" expanded="true" signature="4073:4136" ph="SELECT * FRO... department" />
-            <marker date="1519234790849" expanded="true" signature="6053:6110" ph="SELECT * FRO... cell" />
-            <marker date="1519234790849" expanded="true" signature="8029:8090" ph="SELECT * FRO... ministry" />
-            <marker date="1519234790849" expanded="true" signature="10013:10075" ph="SELECT * FRO... positions" />
-            <marker date="1519234790849" expanded="true" signature="12998:13070" ph="SELECT * FRO... member" />
+            <marker date="1560662693381" expanded="true" signature="1267:1316" ph="select * fro... member" />
+            <marker date="1560662693381" expanded="true" signature="1406:2234" ph="INSERT INTO `member`... " />
+            <marker date="1560662693381" expanded="true" signature="2314:2791" ph="UPDATE `member`... " />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cv_branch/ajax/forms/member_form.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="273">
+          <caret line="524" column="45" lean-forward="true" selection-start-line="524" selection-start-column="45" selection-end-line="524" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cv_member/ajax/forms/member_form.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2265">
+          <caret line="468" column="0" lean-forward="true" selection-start-line="468" selection-start-column="0" selection-end-line="468" selection-end-column="0" />
+          <folding>
+            <marker date="1561779823637" expanded="true" signature="250:299" ph="select * fro... member" />
+            <marker date="1561779823637" expanded="true" signature="36326:36405" ph="select * fro... member_images" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cv_branch/ajax/forms/cell_form.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="50" column="0" lean-forward="true" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cv_branch/ajax/forms/family_form.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3271">
+          <caret line="169" column="0" lean-forward="true" selection-start-line="169" selection-start-column="0" selection-end-line="169" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cv_branch/ajax/forms/ff_form.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3827">
+          <caret line="171" column="31" lean-forward="true" selection-start-line="171" selection-start-column="31" selection-end-line="171" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cv_branch/ajax/forms/mp_form.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5967">
+          <caret line="221" column="18" lean-forward="false" selection-start-line="221" selection-start-column="18" selection-end-line="221" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cv_branch/ajax/forms/mnotify_form.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="8" column="17" lean-forward="true" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cv_branch/sms.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="621">
+          <caret line="23" column="47" lean-forward="false" selection-start-line="23" selection-start-column="47" selection-end-line="23" selection-end-column="47" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/cv_branch/ajax/forms/sms_form.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="351">
+          <caret line="13" column="0" lean-forward="true" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cv_branch/ajax/forms/memministry_form_edit.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1782">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1560664417386" expanded="true" signature="96:145" ph="select * fro... member" />
+            <marker date="1560664417386" expanded="true" signature="839:888" ph="select * fro... department" />
+            <marker date="1560664417386" expanded="true" signature="1762:1807" ph="select * fro... ministry" />
+            <marker date="1560664417386" expanded="true" signature="2657:2694" ph="select * fro... cell" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cv_branch/includes/header.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="513">
+          <caret line="165" column="59" lean-forward="false" selection-start-line="165" selection-start-column="41" selection-end-line="165" selection-end-column="59" />
+          <folding>
+            <marker date="1561795235704" expanded="true" signature="18541:18582" ph="select * fro... branch" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cv_branch/visitors.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="27">
+          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cv_branch/tithe.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cv_branch/church_workers.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="648">
+          <caret line="30" column="50" lean-forward="false" selection-start-line="30" selection-start-column="50" selection-end-line="30" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cv_branch/ajax/tables/cell_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="243">
+          <caret line="9" column="22" lean-forward="true" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cv_admin/ajax/tables/document_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="16" column="23" lean-forward="true" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="23" />
+          <folding>
+            <marker date="1560859003582" expanded="true" signature="63:110" ph="select * fro... document" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cv_branch/ajax/forms/worker_form.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="621">
+          <caret line="79" column="50" lean-forward="false" selection-start-line="79" selection-start-column="35" selection-end-line="79" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cv_branch/ajax/queries/save_tithe.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="621">
+          <caret line="26" column="22" lean-forward="true" selection-start-line="26" selection-start-column="22" selection-end-line="26" selection-end-column="22" />
+          <folding>
+            <marker date="1561192329471" expanded="true" signature="536:919" ph="INSERT INTO `f_tithe`... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cv_branch/ajax/forms/tithe_form.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3294">
+          <caret line="22" column="0" lean-forward="true" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cv_branch/ajax/forms/namesearch.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="675">
+          <caret line="25" column="13" lean-forward="false" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
+          <folding>
+            <marker date="1561802884150" expanded="true" signature="189:425" ph="SELECT * FRO... member" />
+            <marker date="1561802884150" expanded="true" signature="764:866" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cv_branch/ajax/queries/save_worker.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="16" column="19" lean-forward="false" selection-start-line="16" selection-start-column="19" selection-end-line="16" selection-end-column="19" />
+          <folding>
+            <marker date="1561802116298" expanded="true" signature="157:334" ph="INSERT INTO `church_worker`... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cv_branch/ajax/tables/worker_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="109" column="64" lean-forward="false" selection-start-line="109" selection-start-column="47" selection-end-line="109" selection-end-column="64" />
+          <folding>
+            <element signature="e#1726#1756#0#HTML" expanded="true" />
+            <marker date="1561803127717" expanded="true" signature="98:150" ph="select * fro... church_worker" />
+            <marker date="1561803127717" expanded="true" signature="931:980" ph="select * fro... member" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cv_branch/ajax/queries/delete_tithe.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="351">
+          <caret line="13" column="2" lean-forward="true" selection-start-line="13" selection-start-column="2" selection-end-line="13" selection-end-column="2" />
+          <folding>
+            <marker date="1561233249364" expanded="true" signature="89:129" ph="delete from f_tithe... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cv_branch/ajax/queries/delete_worker.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="243">
+          <caret line="9" column="35" lean-forward="false" selection-start-line="9" selection-start-column="35" selection-end-line="9" selection-end-column="35" />
+          <folding>
+            <marker date="1561803127800" expanded="true" signature="90:137" ph="delete from church_worker... " />
+            <marker date="1561803127800" expanded="true" signature="133:137" ph="delete from f_tithe... " />
+          </folding>
         </state>
       </provider>
     </entry>

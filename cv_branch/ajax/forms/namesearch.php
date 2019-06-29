@@ -23,7 +23,7 @@ if ($query->num_rows > 0) {
         $data['value'] = $name;
         $data['label'] = '
 <a href="javascript:void(0);">
-<img src="' . $row['image_location'] . '" width="50" height="50"/>
+<img src="../' . $row['image_location'] . '" width="50" height="50"/>
 <span>' . $name . '</span>
 </a>';
         array_push($nameData, $data);

@@ -154,6 +154,7 @@ $branch = $_SESSION['branch'];
                     $_SERVER['PHP_SELF'] == "/cv_branch/new_member.php" ||
                     $_SERVER['PHP_SELF'] == "/cv_branch/view_member.php" ||
                     $_SERVER['PHP_SELF'] == "/cv_branch/new_converts.php" ||
+                    $_SERVER['PHP_SELF'] == "/cv_branch/church_workers.php" ||
                     $_SERVER['PHP_SELF'] == "/cv_branch/visitors.php"
                         ? "active" : ""); ?> nav-dropdown">
                         <a class="has-arrow" href="#" aria-expanded="false"><i class="icon icon-people"></i><span>Membership</span></a>
@@ -162,6 +163,7 @@ $branch = $_SESSION['branch'];
                             <li><a href="view_member.php"><span>View Members</span></a></li>
                             <li><a href="new_converts.php"><span>New Converts</span></a></li>
                             <li><a href="visitors.php"><span>Visitors</span></a></li>
+                            <li><a href="church_workers.php"><span>Church Workers</span></a></li>
                         </ul>
                     </li>
                     <li class="sidebar-header"><span>OTHERS</span></li>
