@@ -18,10 +18,10 @@
 
 
     <div class="row">
-        <div class="col-md-6 col-sm-12 col-lg-6">
+        <div class="col-md-4 col-sm-12 col-lg-4">
             <div id="sms_form_div"></div>
         </div>
-        <div class="col-md-6 col-sm-12 col-lg-6">
+        <div class="col-md-8 col-sm-12 col-lg-8">
             <div id="sms_table_div"></div>
         </div>
     </div>

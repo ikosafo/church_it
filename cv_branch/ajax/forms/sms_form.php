@@ -2,7 +2,7 @@
 
 include('../../../config.php');
 
-$mnotifyid = date("ymdhis").rand(1,10000);
+$smsid = date("ymdhis").rand(1,10000);
 
 ?>
 
@@ -14,6 +14,11 @@ $mnotifyid = date("ymdhis").rand(1,10000);
 
                 <form>
 
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Group</label>
+                        <input type="text" class="form-control" id="group" readonly
+                               value="All Members">
+                    </div>
 
                     <div class="form-group">
                         <label for="demoTextInput1">Message</label>
@@ -23,7 +28,7 @@ $mnotifyid = date("ymdhis").rand(1,10000);
 
                     <div class="form-group">
                         <button style="margin-top: 20px" type="button" class="btn btn-primary"
-                                id="savemnotify"><i class="la la-save" style="color: #fff"></i> Save
+                                id="savesms"><i class="la la-save" style="color: #fff"></i> Save
                         </button>
                     </div>
 
@@ -36,19 +41,22 @@ $mnotifyid = date("ymdhis").rand(1,10000);
 
 <script>
 
-    $("#savemnotify").click(function () {
+    $("#savesms").click(function () {
 
-        var mnotify_key = $("#mnotify_key").val();
-        var key_id = '<?php echo $mnotifyid; ?>';
+        alert('hi');
 
-        //alert(mnotify_name);
+        var group = $("#group").val();
+        var message = $("#message").val();
+        var sms_id = '<?php echo $smsid; ?>';
+
+        //alert(sms_name);
 
         var error = '';
 
 
-        if (mnotify_key == "") {
-            error += 'Please enter key \n';
-            $('#mnotify_key').focus();
+        if (me'' == "") {
+            error += 'Please enter message \n';
+            $('#message').focus();
         }
 
 
@@ -57,7 +65,7 @@ $mnotifyid = date("ymdhis").rand(1,10000);
 
             $.ajax({
                 type: "POST",
-                url: "ajax/queries/saveform_mnotify.php",
+                url: "ajax/queries/saveform_sms.php",
                 beforeSend: function () {
                     $.blockUI({
                         message: '<img src="assets/img/load.gif"/>'
@@ -65,7 +73,7 @@ $mnotifyid = date("ymdhis").rand(1,10000);
                 },
                 data: {
 
-                    mnotify_key: mnotify_key,
+                    sms_key: sms_key,
                     key_id: key_id
                 },
                 success: function (text) {
@@ -78,14 +86,14 @@ $mnotifyid = date("ymdhis").rand(1,10000);
 
                         $.ajax({
                             type: "POST",
-                            url: "ajax/forms/mnotify_form.php",
+                            url: "ajax/forms/sms_form.php",
                             beforeSend: function () {
                                 $.blockUI({
                                     message: '<img src="assets/img/load.gif"/>'
                                 });
                             },
                             success: function (text) {
-                                $('#mnotify_form_div').html(text);
+                                $('#sms_form_div').html(text);
                             },
                             error: function (xhr, ajaxOptions, thrownError) {
                                 alert(xhr.status + " " + thrownError);
@@ -99,14 +107,14 @@ $mnotifyid = date("ymdhis").rand(1,10000);
 
                         $.ajax({
                             type: "POST",
-                            url: "ajax/tables/mnotify_table.php",
+                            url: "ajax/tables/sms_table.php",
                             beforeSend: function () {
                                 $.blockUI({
                                     message: '<img src="assets/img/load.gif"/>'
                                 });
                             },
                             success: function (text) {
-                                $('#mnotify_table_div').html(text);
+                                $('#sms_table_div').html(text);
                             },
                             error: function (xhr, ajaxOptions, thrownError) {
                                 alert(xhr.status + " " + thrownError);
