@@ -157,15 +157,19 @@ $branch = $_SESSION['branch'];
                             <span>Search Attendance</span></a>
                     </li>
 
-                    <li class="nav-dropdown">
+                    <li class="<?php echo($_SERVER['PHP_SELF'] == "/cv_member/tithe.php" ||
+                    $_SERVER['PHP_SELF'] == "/cv_member/welfare.php" ||
+                    $_SERVER['PHP_SELF'] == "/cv_member/contributions.php" ||
+                    $_SERVER['PHP_SELF'] == "/cv_member/firstfruit.php" ||
+                    $_SERVER['PHP_SELF'] == "/cv_member/ministrypartner.php"
+                        ? "active" : ""); ?> nav-dropdown">
                         <a class="has-arrow" href="#" aria-expanded="false"><i class="icon dripicons-wallet"></i><span>Financials</span></a>
                         <ul class="collapse nav-sub" aria-expanded="false">
-                            <li><a href="#"><span>Tithe</span></a></li>
-                            <li><a href="#"><span>Welfare</span></a></li>
-                            <li><a href="#"><span>Contributions</span></a></li>
-                            <li><a href="#"><span>Welfare</span></a></li>
-                            <li><a href="#"><span>First Fruit</span></a></li>
-                            <li><a href="#"><span>Ministry Partner</span></a></li>
+                            <li><a href="tithe.php"><span>Tithe</span></a></li>
+                            <li><a href="welfare.php"><span>Welfare</span></a></li>
+                            <li><a href="contributions.php"><span>Contributions</span></a></li>
+                            <li><a href="firstfruit.php"><span>First Fruit</span></a></li>
+                            <li><a href="ministrypartner.php"><span>Ministry Partner</span></a></li>
                             <li><a href="#"><span>Search</span></a></li>
 
                         </ul>
