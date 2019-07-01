@@ -63,7 +63,7 @@ $result = $app->fetch_assoc();
 
 
                                 <div class="profile-image"><img
-                                            src="<?php echo $fetch_img['image_location'] ?>"
+                                            src="../<?php echo $fetch_img['image_location'] ?>"
                                             alt="" style="width: 80%">
                                 </div>
 

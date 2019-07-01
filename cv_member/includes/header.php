@@ -51,6 +51,8 @@ $branch = $_SESSION['branch'];
 
     <link rel="stylesheet" href="assets/css/selectize.css">
 
+    <link rel="stylesheet" href="assets/vendor/flatpickr/flatpickr.css">
+
     <link rel="stylesheet" href="assets/css/countrySelect.css">
 
     <link rel="stylesheet" href="assets/vendor/bootstrap-datepicker/bootstrap-datepicker.min.css">
@@ -147,15 +149,14 @@ $branch = $_SESSION['branch'];
                         <a href="member.php"><i class="icon icon-people"></i><span>Update Details</span></a>
                     </li>
 
-
                     <li class="sidebar-header"><span>OTHERS</span></li>
-                    <li class="nav-dropdown">
-                        <a class="has-arrow" href="#" aria-expanded="false"><i
-                                    class="icon dripicons-checklist"></i><span>Attendance</span></a>
-                        <ul class="collapse nav-sub" aria-expanded="false">
-                            <li><a href="#"><span>Search Details</span></a></li>
-                        </ul>
+
+                    <li class="<?php echo($_SERVER['PHP_SELF'] == "/cv_member/search_attendance.php"
+                        ? "active" : ""); ?> nav-dropdown">
+                        <a href="search_attendance.php"><i class="icon dripicons-checklist"></i>
+                            <span>Search Attendance</span></a>
                     </li>
+
                     <li class="nav-dropdown">
                         <a class="has-arrow" href="#" aria-expanded="false"><i class="icon dripicons-wallet"></i><span>Financials</span></a>
                         <ul class="collapse nav-sub" aria-expanded="false">
