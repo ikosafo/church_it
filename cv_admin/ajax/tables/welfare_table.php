@@ -1,68 +1,73 @@
-<?php include ('../../../config.php');
+<?php include('../../../config.php');
 
-$branch = $_SESSION['branch'];
 
-$getmem = $mysqli->query("select * from church_worker where branch = '$branch'");
+$dep = $mysqli->query("SELECT * FROM f_welfare  
+ORDER BY `year_month` DESC,period DESC");
 
 
 ?>
 
     <div class="card">
 
-        <h5 class="card-header">Church Worker <strong>
+        <h5 class="card-header">Welfare Records <strong>
 
             </strong></h5>
         <div class="card-body">
 
-            <table id="bs4-table" class="table table-striped table-bordered"
-                   style="width:100% !important;">
+            <table id="bs4-table" class="table table-striped table-bordered">
                 <thead>
                 <tr>
-
+                    <th>No.</th>
+                    <th>Branch</th>
+                    <th>welfare Paid For</th>
                     <th>Member Name</th>
-                    <th>Telephone</th>
-                    <th>Delete</th>
+                    <th>Amount</th>
+
 
                 </tr>
                 </thead>
                 <tbody>
 
                 <?php
-                while ($resmem = $getmem->fetch_assoc()) {
-
-                    $memberid = $resmem['memberid'];
+                $counter = 1;
+                while ($resdep = $dep->fetch_assoc()) {
 
 
                     ?>
                     <tr>
-                        <td><?php
-
-                        $getd = $mysqli->query("select * from member where memberid = '$memberid'");
-                        $resd = $getd->fetch_assoc();
-
-                        echo $resd['firstname'].' '.$resd['othername'].' '.$resd['surname'];
-
+                        <td>
+                            <?php echo $counter; ?>
+                        </td>
+                        <td>
+                            <?php
+                            $branchid = $resdep['branch'];
+                            $getb = $mysqli->query("select * from branch where id = '$branchid'");
+                            $resb = $getb->fetch_assoc();
+                            echo $resb['name'];
 
                             ?>
                         </td>
                         <td>
-                            <?php echo $resd['telephone'] ?>
+                            <?php echo $resdep['year_month']; ?> <br/>
                         </td>
                         <td>
-                            <button type="button"
-                                    data-type="confirm"
-                                    class="btn btn-sm btn-danger js-sweetalert delete_worker"
-                                    i_index="<?php echo $resmem['id']; ?>"
-                                    title="Delete">
-                                <i class="icon-trash" style="color:#fff !important;"></i>
-                            </button>
+                            <?php
+                            $memberid = $resdep['memberid'];
+                            $getmem = $mysqli->query("select * from member where memberid = '$memberid'");
+                            $resmem = $getmem->fetch_assoc();
+
+                            echo $resmem['firstname'] . ' ' . $resmem['othername'] . ' ' . $resmem['surname'];
+
+                            ?>
 
                         </td>
-
-
-
+                        <td>
+                            <b><?php echo $resdep['amount']; ?></b>
+                        </td>
 
                     </tr>
+
+                    <?php $counter++; ?>
 
                     <?php
                 }
@@ -76,17 +81,17 @@ $getmem = $mysqli->query("select * from church_worker where branch = '$branch'")
         </div>
 
 
-
     </div>
 
     <script>
         $('#bs4-table').DataTable({
-            aaSorting: [],
-            dom: 'Bfrtip'
+            "scrollY": "500px",
+            "scrollCollapse": true,
+            "paging": false
         });
 
 
-        $(document).on('click', '.delete_worker', function () {
+        $(document).on('click', '.delete_welfare', function () {
             var i_index = $(this).attr('i_index');
 
             //alert(i_index);
@@ -107,7 +112,7 @@ $getmem = $mysqli->query("select * from church_worker where branch = '$branch'")
 
                         $.ajax({
                             type: "POST",
-                            url: "ajax/queries/delete_worker.php",
+                            url: "ajax/queries/delete_welfare.php",
                             data: {
                                 i_index: i_index
                             },
@@ -117,14 +122,14 @@ $getmem = $mysqli->query("select * from church_worker where branch = '$branch'")
 
                                 $.ajax({
                                     type: "POST",
-                                    url: "ajax/tables/worker_table.php",
+                                    url: "ajax/tables/welfare_table.php",
                                     beforeSend: function () {
                                         $.blockUI({
                                             message: '<img src="assets/img/load.gif"/>'
                                         });
                                     },
                                     success: function (text) {
-                                        $('#worker_table_div').html(text);
+                                        $('#welfare_table_div').html(text);
                                     },
                                     error: function (xhr, ajaxOptions, thrownError) {
                                         alert(xhr.status + " " + thrownError);
@@ -145,7 +150,7 @@ $getmem = $mysqli->query("select * from church_worker where branch = '$branch'")
                             }
                         });
 
-                        swal("Deleted!", "Worker has been deleted.", "success");
+                        swal("Deleted!", "Welfare has been deleted.", "success");
 
                     } else {
                         swal("Cancelled", "Data is safe.", "error");
@@ -159,7 +164,8 @@ $getmem = $mysqli->query("select * from church_worker where branch = '$branch'")
 
 
 <?php
-function time_elapsed_string($datetime, $full = false) {
+function time_elapsed_string($datetime, $full = false)
+{
     $now = new DateTime;
     $ago = new DateTime($datetime);
     $diff = $now->diff($ago);
@@ -187,4 +193,5 @@ function time_elapsed_string($datetime, $full = false) {
     if (!$full) $string = array_slice($string, 0, 1);
     return $string ? implode(', ', $string) . ' ago' : 'just now';
 }
+
 ?>

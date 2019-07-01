@@ -180,13 +180,17 @@ if (!isset($_SESSION['username'])) {
                             <li><a href="attendance_search.php"><span>Search Details</span></a></li>
                         </ul>
                     </li>
-                    <li class="nav-dropdown">
+                    <li class="<?php echo(
+                    $_SERVER['PHP_SELF'] == "/cv_admin/tithe.php" ||
+                    $_SERVER['PHP_SELF'] == "/cv_admin/welfare.php" ||
+                    $_SERVER['PHP_SELF'] == "/cv_admin/contributions.php" ||
+                    $_SERVER['PHP_SELF'] == "/cv_admin/first_fruit.php"
+                        ? "active" : ""); ?> nav-dropdown">
                         <a class="has-arrow" href="#" aria-expanded="false"><i class="icon dripicons-wallet"></i><span>Financials</span></a>
                         <ul class="collapse nav-sub" aria-expanded="false">
                             <li><a href="tithe.php"><span>Tithe</span></a></li>
                             <li><a href="welfare.php"><span>Welfare</span></a></li>
                             <li><a href="contributions.php"><span>Contributions</span></a></li>
-                            <li><a href="welfare.php"><span>Welfare</span></a></li>
                             <li><a href="first_fruit.php"><span>First Fruit</span></a></li>
                             <li><a href="ministry_partners.php"><span>Ministry Partners</span></a></li>
                             <li><a href="financials_search.php"><span>Search</span></a></li>

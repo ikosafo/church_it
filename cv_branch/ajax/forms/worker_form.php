@@ -92,47 +92,57 @@
 
                     //alert(text);
 
-                    $('#success_loc').notify("Form submitted", "success");
+                    if (text == 1) {
 
-                    $.ajax({
-                        url: "ajax/tables/worker_table.php",
-                        beforeSend: function () {
-                            $.blockUI({
-                                message: '<img src="assets/img/load.gif" />'
-                            });
-                        },
 
-                        success: function (text) {
-                            $('#worker_table_div').html(text);
-                        },
-                        error: function (xhr, ajaxOptions, thrownError) {
-                            alert(xhr.status + " " + thrownError);
-                        },
-                        complete: function () {
-                            $.unblockUI();
-                        },
+                        $('#success_loc').notify("Form submitted", "success");
 
-                    });
+                        $.ajax({
+                            url: "ajax/tables/worker_table.php",
+                            beforeSend: function () {
+                                $.blockUI({
+                                    message: '<img src="assets/img/load.gif" />'
+                                });
+                            },
 
-                    $.ajax({
-                        url: "ajax/forms/worker_form.php",
-                        beforeSend: function () {
-                            $.blockUI({
-                                message: '<img src="assets/img/load.gif" />'
-                            });
-                        },
+                            success: function (text) {
+                                $('#worker_table_div').html(text);
+                            },
+                            error: function (xhr, ajaxOptions, thrownError) {
+                                alert(xhr.status + " " + thrownError);
+                            },
+                            complete: function () {
+                                $.unblockUI();
+                            },
 
-                        success: function (text) {
-                            $('#worker_form_div').html(text);
-                        },
-                        error: function (xhr, ajaxOptions, thrownError) {
-                            alert(xhr.status + " " + thrownError);
-                        },
-                        complete: function () {
-                            $.unblockUI();
-                        },
+                        });
 
-                    });
+                        $.ajax({
+                            url: "ajax/forms/worker_form.php",
+                            beforeSend: function () {
+                                $.blockUI({
+                                    message: '<img src="assets/img/load.gif" />'
+                                });
+                            },
+
+                            success: function (text) {
+                                $('#worker_form_div').html(text);
+                            },
+                            error: function (xhr, ajaxOptions, thrownError) {
+                                alert(xhr.status + " " + thrownError);
+                            },
+                            complete: function () {
+                                $.unblockUI();
+                            },
+
+                        });
+
+                    }
+
+                    else {
+                        $('#error_loc').notify('Worker already exists','error');
+                    }
+
 
 
                 },
