@@ -22,7 +22,7 @@
 
         <div class="col-md-4 col-sm-12 col-lg-4">
             <div class="card">
-                <h5 class="card-header">Select Dates to Search for Attendance</h5>
+                <h5 class="card-header">Select Dates to Search</h5>
                 <div class="card-body">
 
                     <form>
@@ -35,7 +35,7 @@
 
                         <div class="form-group">
                             <button type="button" class="btn btn-primary mt-lg-2"
-                                    id="search_attendance">
+                                    id="search_financials">
                                 <i class="zmdi zmdi-search zmdi-hc-fw" style="color: #fff"></i> Search
                             </button>
                         </div>
@@ -46,7 +46,7 @@
         </div>
 
         <div class="col-md-8 col-sm-12 col-lg-8">
-            <div id="attendance_search_table_div"></div>
+            <div id="financials_search_table_div"></div>
         </div>
 
     </div>
@@ -63,7 +63,7 @@
         maxDate: "today"
     });
 
-    $("#search_attendance").click(function(){
+    $("#search_financials").click(function(){
 
         var daterange = $("#select_dates").val();
 
@@ -79,7 +79,7 @@
 
             $.ajax({
                 type: "POST",
-                url: "ajax/queries/search_attendance.php",
+                url: "ajax/queries/search_financials.php",
                 beforeSend: function () {
                     $.blockUI({
                         message: '<img src="assets/img/load.gif"/>'
@@ -94,7 +94,7 @@
 
                     //alert(text);
 
-                    $('#attendance_search_table_div').html(text);
+                    $('#financials_search_table_div').html(text);
 
                 },
 

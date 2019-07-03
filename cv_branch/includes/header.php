@@ -195,15 +195,23 @@ $branch = $_SESSION['branch'];
                             <li><a href="contributions.php"><span>Contributions</span></a></li>
                             <li><a href="first_fruit.php"><span>First Fruit</span></a></li>
                             <li><a href="ministry_partners.php"><span>Ministry Partners</span></a></li>
-                            <li><a href="financials_search.php"><span>Search</span></a></li>
+                            <li><a href="#."><span>Search</span></a></li>
 
                         </ul>
                     </li>
-                    <li class="<?php echo($_SERVER['PHP_SELF'] == "/cv_branch/sms.php"
+                    <li class="<?php echo(
+                    $_SERVER['PHP_SELF'] == "/cv_branch/sms.php" ||
+                    $_SERVER['PHP_SELF'] == "/cv_branch/#.php"
                         ? "active" : ""); ?> nav-dropdown">
-                        <a href="sms.php"><i class="icon icon-envelope-letter"></i><span>SMS</span></a>
+                        <a class="has-arrow" href="#" aria-expanded="false">
+                            <i class="icon icon-envelope-letter"></i><span>SMS</span></a>
+                        <ul class="collapse nav-sub" aria-expanded="false">
+                            <li><a href="sms.php"><span>All Members</span></a></li>
+                            <li><a href="#."><span>Custom SMS</span></a></li>
+                        </ul>
                     </li>
-                    <li class="nav-dropdown">
+                    <li class="<?php echo($_SERVER['PHP_SELF'] == "/cv_branch/birthdays.php"
+                        ? "active" : ""); ?> nav-dropdown">
                         <a href="birthdays.php"><i class="icon icon-emotsmile"></i><span>Birthdays</span></a>
                     </li>
                     <li class="nav-dropdown">

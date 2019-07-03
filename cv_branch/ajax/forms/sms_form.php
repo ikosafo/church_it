@@ -1,63 +1,71 @@
-<?php
+<?php include("../../../config.php"); ?>
 
-include('../../../config.php');
+<script>
+    function isNumber(evt) {
+        evt = (evt) ? evt : window.event;
+        var charCode = (evt.which) ? evt.which : evt.keyCode;
+        if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+            return false;
+        }
+        return true;
+    }
+</script>
 
-$smsid = date("ymdhis").rand(1,10000);
 
-?>
+<div class="card">
+    <div id="success_loc"></div>
+    <div id="error_loc"></div>
+    <h5 class="card-header">Add New sms</h5>
+    <form name="branch_form" method="post" autocomplete="off">
+        <div class="card-body">
 
-<div class="row">
-    <div class="col-md-12">
-        <div class="card">
-            <h5 class="card-header">Send SMS</h5>
-            <div class="card-body">
-
-                <form>
-
-                    <div class="form-group">
-                        <label for="exampleInputEmail1">Group</label>
-                        <input type="text" class="form-control" id="group" readonly
-                               value="All Members">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="demoTextInput1">Message</label>
-                        <textarea type="text" class="form-control" id="message" rows="15"
-                                  placeholder="Enter Enter Message"></textarea>
-                    </div>
-
-                    <div class="form-group">
-                        <button style="margin-top: 20px" type="button" class="btn btn-primary"
-                                id="savesms"><i class="la la-save" style="color: #fff"></i> Save
-                        </button>
-                    </div>
-
-                </form>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Title</label>
+                <input type="text" class="form-control" id="title" placeholder="Enter title">
             </div>
+
+            <div class="form-group">
+                <label for="exampleInputEmail1">Message</label>
+                <textarea class="form-control" id="message" rows="20"
+                          placeholder="Enter message"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="exampleInputEmail1">Send to</label>
+                <input type="text" class="form-control" id="sendto" value="Every member" readonly>
+            </div>
+
         </div>
-    </div>
+        <div class="card-footer bg-light">
+            <button type="button" class="btn btn-primary" id="save_sms">Submit</button>
+            <button type="button" class="btn btn-secondary clear-form">Clear</button>
+        </div>
+    </form>
 </div>
+
 
 
 <script>
 
-    $("#savesms").click(function () {
 
-        alert('hi');
+    $("#save_sms").click(function () {
 
-        var group = $("#group").val();
+        var title = $("#title").val();
         var message = $("#message").val();
-        var sms_id = '<?php echo $smsid; ?>';
 
-        //alert(sms_name);
 
         var error = '';
 
-
-        if (me'' == "") {
-            error += 'Please enter message \n';
-            $('#message').focus();
+        if (title == "") {
+            error += 'Enter title \n';
+            $("#title").focus();
         }
+
+        if (message == "") {
+            error += 'Enter SMS to send \n';
+            $("#message").focus();
+        }
+
 
 
         if (error == "") {
@@ -65,33 +73,50 @@ $smsid = date("ymdhis").rand(1,10000);
 
             $.ajax({
                 type: "POST",
-                url: "ajax/queries/saveform_sms.php",
+                url: "ajax/queries/save_sms.php",
                 beforeSend: function () {
                     $.blockUI({
-                        message: '<img src="assets/img/load.gif"/>'
+                        message: '<img src="assets/img/load.gif" />'
                     });
                 },
                 data: {
-
-                    sms_key: sms_key,
-                    key_id: key_id
+                    message:message,
+                    title:title
                 },
                 success: function (text) {
 
                     //alert(text);
 
-                    if (text == 1 || text == 3) {
-
-                        $.notify("Key Saved", "success", {position: "top center"});
+                        $('#success_loc').notify("SMS Sent","success");
 
                         $.ajax({
-                            type: "POST",
+                            url: "ajax/tables/sms_table.php",
+                            beforeSend: function () {
+                                $.blockUI({
+                                    message: '<img src="assets/img/load.gif" />'
+                                });
+                            },
+
+                            success: function (text) {
+                                $('#sms_table_div').html(text);
+                            },
+                            error: function (xhr, ajaxOptions, thrownError) {
+                                alert(xhr.status + " " + thrownError);
+                            },
+                            complete: function () {
+                                $.unblockUI();
+                            },
+
+                        });
+
+                        $.ajax({
                             url: "ajax/forms/sms_form.php",
                             beforeSend: function () {
                                 $.blockUI({
-                                    message: '<img src="assets/img/load.gif"/>'
+                                    message: '<img src="assets/img/load.gif" />'
                                 });
                             },
+
                             success: function (text) {
                                 $('#sms_form_div').html(text);
                             },
@@ -105,34 +130,6 @@ $smsid = date("ymdhis").rand(1,10000);
                         });
 
 
-                        $.ajax({
-                            type: "POST",
-                            url: "ajax/tables/sms_table.php",
-                            beforeSend: function () {
-                                $.blockUI({
-                                    message: '<img src="assets/img/load.gif"/>'
-                                });
-                            },
-                            success: function (text) {
-                                $('#sms_table_div').html(text);
-                            },
-                            error: function (xhr, ajaxOptions, thrownError) {
-                                alert(xhr.status + " " + thrownError);
-                            },
-                            complete: function () {
-                                $.unblockUI();
-                            },
-
-                        });
-
-                    }
-
-                    else if (text == 2 || text == 4) {
-
-                        $.notify("Key already exists,", {position: "top center"});
-
-                    }
-
 
                 },
 
@@ -145,17 +142,21 @@ $smsid = date("ymdhis").rand(1,10000);
 
             });
 
+
         }
-
-
         else {
 
-            $.notify(error, {position: "top center"});
+
+            $('#error_loc').notify(error);
 
         }
-
         return false;
 
+
+
+
     });
+
+
 
 </script>

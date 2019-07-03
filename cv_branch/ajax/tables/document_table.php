@@ -1,4 +1,4 @@
-<?php include ('../../config.php');
+<?php include ('../../../config.php');
 
 $dep = $mysqli->query("select * from document ORDER by period_uploaded");
 

@@ -2,14 +2,14 @@
 
 $branch = $_SESSION['branch'];
 
-$dep = $mysqli->query("SELECT * FROM `sms` WHERE `branch` = '$branch' ORDER BY `period` DESC");
+$dep = $mysqli->query("SELECT * FROM `sms` WHERE `branch` = '$branch' ORDER BY `date` DESC");
 
 
 ?>
 
 <div class="card">
 
-    <h5 class="card-header">Services <strong>
+    <h5 class="card-header">Messages <strong>
 
         </strong></h5>
     <div class="card-body">
@@ -20,6 +20,7 @@ $dep = $mysqli->query("SELECT * FROM `sms` WHERE `branch` = '$branch' ORDER BY `
             <tr>
                 <th>No</th>
                 <th>Group</th>
+                <th>title</th>
                 <th>Message</th>
 
 
@@ -35,10 +36,8 @@ $dep = $mysqli->query("SELECT * FROM `sms` WHERE `branch` = '$branch' ORDER BY `
                 <tr>
                     <td><input type="checkbox"/></td>
                     <td><?php echo $resdep['group']; ?></td>
-                    <td><?php echo $resdep['group']; ?></td>
-
-
-
+                    <td><?php echo $resdep['title']; ?></td>
+                    <td><?php echo $resdep['message']; ?></td>
                 </tr>
 
                 <?php
