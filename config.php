@@ -34,14 +34,6 @@ function curl_get_contents($url)
     return $data;
 }
 
-function sendSMS($message, $phone)
-{
-    $sender = $_POST['title'];
-    $key = "MlEnpAUwzvRKOtVVun169uyPT";
-    $url = "http://bulk.mnotify.net/smsapi?key=" . $key . "&to=" . $phone . "&msg=" . urlencode($message) . "&sender_id=" . $sender;
-    $response = file_get_contents($url);
-}
-
 
 ?>
 

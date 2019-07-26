@@ -8,7 +8,7 @@ $randno = $_POST['randno'];
 $today = date("Y-m-d H:i:s");
 
 
-$target_path = "../../uploads/documents/";
+$target_path = "../../../uploads/documents/";
 
 $rand = rand(1,100000);
 
@@ -16,7 +16,7 @@ $ext = pathinfo($_FILES['Filedata']['name'], PATHINFO_EXTENSION);
 
 $filename =  $_FILES['Filedata']['name'];
 $newfile = 'uploads/documents/'.date('Ymd').$rand.".".$ext;
-$target_path = "../../uploads/documents/".date('Ymd').$rand.".".$ext;
+$target_path = "../../../uploads/documents/".date('Ymd').$rand.".".$ext;
 
 
 $filetype =  $_FILES['Filedata']['type'];

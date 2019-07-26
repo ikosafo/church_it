@@ -50,7 +50,7 @@ $documentid = date("ymdhis").rand(1,10000);
         'auto': false,
         'method': 'post',
         'buttonText': 'Upload document',
-        'multi': false,
+        'multi': true,
         'width': 180,
         'formData': {'randno': '<?php echo $documentid ?>'},
         'dnd': false,
@@ -107,7 +107,7 @@ $documentid = date("ymdhis").rand(1,10000);
                 },
                 success: function (text) {
 
-                    alert(text);
+                    //alert(text);
 
                     var selected = $("#selected").val();
 

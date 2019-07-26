@@ -169,13 +169,15 @@ $branch = $_SESSION['branch'];
                     <li class="sidebar-header"><span>OTHERS</span></li>
                     <li class="<?php echo(
                     $_SERVER['PHP_SELF'] == "/cv_branch/attendance_service.php" ||
+                    $_SERVER['PHP_SELF'] == "/cv_branch/attendance_meeting.php" ||
                     $_SERVER['PHP_SELF'] == "/cv_branch/attendance_take.php" ||
                     $_SERVER['PHP_SELF'] == "/cv_branch/attendance_search.php"
                         ? "active" : ""); ?> nav-dropdown">
                         <a class="has-arrow" href="#" aria-expanded="false"><i
                                 class="icon dripicons-checklist"></i><span>Attendance</span></a>
                         <ul class="collapse nav-sub" aria-expanded="false">
-                            <li><a href="attendance_service.php"><span>Service</span></a></li>
+                            <li><a href="attendance_service.php"><span>Services</span></a></li>
+                            <li><a href="attendance_meeting.php"><span>Meetings</span></a></li>
                             <li><a href="attendance_take.php"><span>Take Attendance</span></a></li>
                             <li><a href="attendance_search.php"><span>Search Details</span></a></li>
                         </ul>
