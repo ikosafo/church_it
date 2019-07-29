@@ -9,23 +9,25 @@ $getmem = $mysqli->query("select * from meeting where branch = '$branch'");
 
     <div class="card">
 
-        <h5 class="card-header">Church Worker <strong>
+        <h5 class="card-header">Church Meetings<strong>
 
             </strong></h5>
         <div class="card-body">
 
-            <table id="bs4-table" class="table table-striped table-bordered"
+            <table id="bs4-table" class="table table-responsive table-striped table-bordered"
                    style="width:100% !important;">
                 <thead>
                 <tr>
 
                     <th>Meeting Name</th>
-                    <th>Time Duration</th>
+                    <th>Period Started</th>
+                    <th>Period Ended</th>
                     <th>Men</th>
                     <th>Women</th>
                     <th>Guys</th>
                     <th>Ladies</th>
                     <th>Children</th>
+                    <th>Total Members</th>
                     <th>Offering</th>
                     <th>Delete</th>
 
@@ -36,35 +38,50 @@ $getmem = $mysqli->query("select * from meeting where branch = '$branch'");
                 <?php
                 while ($resmem = $getmem->fetch_assoc()) {
 
-                    $memberid = $resmem['memberid'];
-
 
                     ?>
                     <tr>
-                        <td><?php
 
-                            $getd = $mysqli->query("select * from member where memberid = '$memberid'");
-                            $resd = $getd->fetch_assoc();
-
-                            echo $resd['firstname'].' '.$resd['othername'].' '.$resd['surname'];
-
-
-                            ?>
+                        <td>
+                            <?php echo $resmem['meetingname']; ?>
                         </td>
                         <td>
-                            <?php echo $resd['telephone'] ?>
+                            <?php echo $resmem['periodstarted'] ?>
+                        </td>
+                        <td>
+                            <?php echo $resmem['periodclosed'] ?>
+                        </td>
+                        <td>
+                            <?php echo $resmem['men'] ?>
+                        </td>
+                        <td>
+                            <?php echo $resmem['women'] ?>
+                        </td>
+                        <td>
+                            <?php echo $resmem['guys'] ?>
+                        </td>
+                        <td>
+                            <?php echo $resmem['ladies'] ?>
+                        </td>
+                        <td>
+                            <?php echo $resmem['children'] ?>
+                        </td>
+                        <td>
+                            <?php echo $resmem['total'] ?>
+                        </td>
+                        <td>
+                            <?php echo $resmem['offering'] ?>
                         </td>
                         <td>
                             <button type="button"
                                     data-type="confirm"
-                                    class="btn btn-sm btn-danger js-sweetalert delete_worker"
+                                    class="btn btn-sm btn-danger js-sweetalert delete_meeting"
                                     i_index="<?php echo $resmem['id']; ?>"
                                     title="Delete">
                                 <i class="icon-trash" style="color:#fff !important;"></i>
                             </button>
 
                         </td>
-
 
 
 
@@ -92,7 +109,7 @@ $getmem = $mysqli->query("select * from meeting where branch = '$branch'");
         });
 
 
-        $(document).on('click', '.delete_worker', function () {
+        $(document).on('click', '.delete_meeting', function () {
             var i_index = $(this).attr('i_index');
 
             //alert(i_index);
@@ -113,7 +130,7 @@ $getmem = $mysqli->query("select * from meeting where branch = '$branch'");
 
                         $.ajax({
                             type: "POST",
-                            url: "ajax/queries/delete_worker.php",
+                            url: "ajax/queries/delete_meeting.php",
                             data: {
                                 i_index: i_index
                             },
@@ -123,14 +140,14 @@ $getmem = $mysqli->query("select * from meeting where branch = '$branch'");
 
                                 $.ajax({
                                     type: "POST",
-                                    url: "ajax/tables/worker_table.php",
+                                    url: "ajax/tables/meeting_table.php",
                                     beforeSend: function () {
                                         $.blockUI({
                                             message: '<img src="assets/img/load.gif"/>'
                                         });
                                     },
                                     success: function (text) {
-                                        $('#worker_table_div').html(text);
+                                        $('#meeting_table_div').html(text);
                                     },
                                     error: function (xhr, ajaxOptions, thrownError) {
                                         alert(xhr.status + " " + thrownError);
@@ -151,7 +168,7 @@ $getmem = $mysqli->query("select * from meeting where branch = '$branch'");
                             }
                         });
 
-                        swal("Deleted!", "Worker has been deleted.", "success");
+                        swal("Deleted!", "Meeting details has been deleted.", "success");
 
                     } else {
                         swal("Cancelled", "Data is safe.", "error");

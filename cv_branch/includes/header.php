@@ -176,8 +176,8 @@ $branch = $_SESSION['branch'];
                         <a class="has-arrow" href="#" aria-expanded="false"><i
                                 class="icon dripicons-checklist"></i><span>Attendance</span></a>
                         <ul class="collapse nav-sub" aria-expanded="false">
-                            <li><a href="attendance_service.php"><span>Services</span></a></li>
                             <li><a href="attendance_meeting.php"><span>Meetings</span></a></li>
+                            <li><a href="attendance_service.php"><span>Services</span></a></li>
                             <li><a href="attendance_take.php"><span>Take Attendance</span></a></li>
                             <li><a href="attendance_search.php"><span>Search Details</span></a></li>
                         </ul>
