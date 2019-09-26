@@ -61,6 +61,7 @@
                             <li><a href="/cv_member"><p><span>CVSI Member</span>Login</p></a></li>
                             <li><a href="/cv_branch"><p><span>Branch Administrator</span>Login</p></a></li>
                             <li><a href="/cv_admin"><p><span>Main Administrator</span>Login</p></a></li>
+                            <li><a href="/sebson"><p><span>Multmedia Training</span>Login</p></a></li>
 
                         </ul>
 
