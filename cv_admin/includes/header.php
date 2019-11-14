@@ -46,6 +46,7 @@ if (!isset($_SESSION['username'])) {
     <link rel="stylesheet" href="assets/vendor/bootstrap-datepicker/bootstrap-datepicker.min.css">
     <link rel="stylesheet" href="assets/vendor/bootstrap-daterangepicker/daterangepicker.css">
     <link rel="stylesheet" href="assets/css/custom.css">
+    <link rel="stylesheet" href="assets/jquery-confirm/css/jquery-confirm.css">
 
     <style>
         .active {
@@ -331,7 +332,7 @@ if (!isset($_SESSION['username'])) {
                             </div>
                         </div>
 
-                        <a class="dropdown-item" href="login.php"><i class="icon dripicons-lock-open"></i> Sign
+                        <a class="dropdown-item" href="login"><i class="icon dripicons-lock-open"></i> Sign
                             Out</a>
                     </div>
                 </li>

@@ -14,7 +14,7 @@ $getmem = $mysqli->query("select * from meeting where branch = '$branch'");
             </strong></h5>
         <div class="card-body">
 
-            <table id="bs4-table" class="table table-responsive table-striped table-bordered"
+            <table id="bs4-table" class="table table-responsive"
                    style="width:100% !important;">
                 <thead>
                 <tr>

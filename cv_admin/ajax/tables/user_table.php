@@ -1,14 +1,11 @@
 <?php include('../../../config.php');
-
 $qubr=$mysqli->query("select * from users_admin ORDER BY fullname");
-
-
 ?>
 
 <div class="card">
     <h5 class="card-header">Users</h5>
     <div class="card-body">
-        <table id="bs4-table" class="table table-striped table-bordered" style="width:100%">
+        <table id="bs4-table" class="table" style="width:100%">
             <thead>
             <tr>
                 <th>Full Name</th>
@@ -48,103 +45,80 @@ $qubr=$mysqli->query("select * from users_admin ORDER BY fullname");
                         </button>
                     </td>
                 </tr>
-
                 <?php
             }
             ?>
-
-
             </tbody>
-
         </table>
-
-
     </div>
 </div>
 
 
 <script>
 
-
     $('#bs4-table').DataTable();
 
-
-
-
-    $(document).on('click','.delete_user', function(e) {
+    $(document).off('click', '.delete_user').on('click', '.delete_user', function () {
         var theindex = $(this).attr('i_index');
-
-        swal({
-                title: "Do you want to delete this?",
-                text: "You will not be able to recover this data!",
-                type: "warning",
-                showCancelButton: true,
-                confirmButtonClass: "btn-danger",
-                confirmButtonText: "Yes, delete it!",
-                cancelButtonText: "No, cancel!",
-                closeOnConfirm: false,
-                closeOnCancel: false
-            },
-            function (isConfirm) {
-                if (isConfirm) {
-
-                    $.ajax({
-                        type: "POST",
-                        url: "ajax/queries/delete_user.php",
-                        data: {
-                            theindex: theindex
-                        },
-                        dataType: "html",
-
-                        success:function(text) {
-
-                            $.ajax({
-                                url: "ajax/tables/user_table.php",
-                                beforeSend: function () {
-                                    $.blockUI({
-                                        message: '<img src="assets/img/load.gif" />'
-                                    });
-                                },
-
-                                success: function (text) {
-                                    $('#user_table_div').html(text);
-                                },
-                                error: function (xhr, ajaxOptions, thrownError) {
-                                    alert(xhr.status + " " + thrownError);
-                                },
-                                complete: function () {
-                                    $.unblockUI();
-                                },
-
-                            });
-
-                        },
-
-                        complete: function () {
-
-                        },
-                        error: function (xhr, ajaxOptions, thrownError) {
-                            alert(xhr.status + " " + thrownError);
-                        }
-                    });
-
-                    swal(
-                        'Deleted!',
-                        'User has been deleted.',
-                        'success'
-                    )
-                } else {
-                    swal("Cancelled", "Data is safe.", "error");
+        $.confirm({
+            title: 'Delete User!',
+            content: 'Are you sure to continue?',
+            buttons: {
+                no: {
+                    text: 'No',
+                    keys: ['enter', 'shift'],
+                    backdrop: 'static',
+                    keyboard: false,
+                    action: function () {
+                        $.alert('Data is safe');
+                    }
+                },
+                yes: {
+                    text: 'Yes, Delete it!',
+                    btnClass: 'btn-blue',
+                    action: function () {
+                        $.ajax({
+                            type: "POST",
+                            url: "ajax/queries/delete_user.php",
+                            data: {
+                                theindex: theindex
+                            },
+                            dataType: "html",
+                            success:function(text) {
+                                $.ajax({
+                                    url: "ajax/tables/user_table.php",
+                                    beforeSend: function () {
+                                        $.blockUI({
+                                            message: '<img src="assets/img/load.gif" />'
+                                        });
+                                    },
+                                    success: function (text) {
+                                        $('#user_table_div').html(text);
+                                    },
+                                    error: function (xhr, ajaxOptions, thrownError) {
+                                        alert(xhr.status + " " + thrownError);
+                                    },
+                                    complete: function () {
+                                        $.unblockUI();
+                                    },
+                                });
+                            },
+                            complete: function () {
+                            },
+                            error: function (xhr, ajaxOptions, thrownError) {
+                                alert(xhr.status + " " + thrownError);
+                            }
+                        });
+                    }
                 }
-            });
-
-
+            }
+        });
     });
+
 
 
     $(document).on('click','.edit_user',function(){
         var theindex = $(this).attr('i_index');
-
         $.ajax({
             type: "POST",
             url: "ajax/forms/user_form_edit.php",
@@ -167,10 +141,5 @@ $qubr=$mysqli->query("select * from users_admin ORDER BY fullname");
                 $.unblockUI();
             },
         });
-
-
-
     });
-
-
 </script>

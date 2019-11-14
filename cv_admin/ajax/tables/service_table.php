@@ -13,7 +13,7 @@ $dep = $mysqli->query("SELECT * FROM `service` ORDER BY start_period DESC ,`peri
         </strong></h5>
     <div class="card-body">
 
-        <table id="bs4-table" class="table table-responsive table-striped table-bordered"
+        <table id="bs4-table" class="table"
                style="width:100% !important;">
             <thead>
             <tr>
@@ -24,19 +24,20 @@ $dep = $mysqli->query("SELECT * FROM `service` ORDER BY start_period DESC ,`peri
                 <th>End Period</th>
                 <th>Service Period</th>
                 <th>Status</th>
-                <th>Delete</th>
+                <!--<th>Delete</th>-->
 
             </tr>
             </thead>
             <tbody>
 
             <?php
+            $counter = 1;
             while ($resdep = $dep->fetch_assoc()) {
 
 
                 ?>
                 <tr>
-                    <td><input type="checkbox"/></td>
+                    <td><?php echo $counter ?></td>
                     <td><?php echo $resdep['service_name']; ?></td>
                     <td><?php
                         $branchid = $resdep['branch'];
@@ -65,23 +66,24 @@ $dep = $mysqli->query("SELECT * FROM `service` ORDER BY start_period DESC ,`peri
                         }
                         ?></td>
 
-                    <td>
+                   <!-- <td>
                         <button type="button"
                                 data-type="confirm"
                                 class="btn btn-sm btn-danger js-sweetalert delete_service"
-                                i_index="<?php echo $resdep['id']; ?>"
+                                i_index="<?php /*echo $resdep['id']; */?>"
                                 title="Delete">
                             <i class="icon-trash" style="color:#fff !important;"></i>
                         </button>
 
                     </td>
 
-
+-->
 
 
                 </tr>
 
                 <?php
+                $counter ++;
             }
             ?>
             </tbody>
@@ -99,14 +101,9 @@ $dep = $mysqli->query("SELECT * FROM `service` ORDER BY start_period DESC ,`peri
 <script>
     $('#bs4-table').DataTable();
 
-
-
-
-    $(document).on('click', '.delete_service', function () {
+    /*$(document).on('click', '.delete_service', function () {
         var i_index = $(this).attr('i_index');
-
         //alert(i_index);
-
         swal({
                 title: "Do you want to delete this?",
                 text: "You will not be able to recover this data!",
@@ -169,7 +166,7 @@ $dep = $mysqli->query("SELECT * FROM `service` ORDER BY start_period DESC ,`peri
             });
 
 
-    });
+    });*/
 
 </script>
 

@@ -1,10 +1,7 @@
 <?php
 include('../../../config.php');
-
 $memberid = date('ymhhis') . rand(1, 100000000000);
-
 ?>
-
 
 <script>
     function SelectTitle(val) {
@@ -23,81 +20,61 @@ $memberid = date('ymhhis') . rand(1, 100000000000);
         }
         return true;
     }
-
 </script>
-
 
 <style>
     .notifyjs-bootstrap-base {
         font-weight: lighter;
         font-size: small;
     }
-
     .educbus-class {
         cursor: not-allowed;
     }
-
     .educbus-class a {
         pointer-events: none;
     }
-
     .educbus-change {
         cursor: hand
     }
-
     .educbus-change a {
         pointer-events: auto
     }
-
     .family-class {
         cursor: not-allowed;
     }
-
     .family-class a {
         pointer-events: none;
     }
-
     .family-change {
         cursor: hand
     }
-
     .family-change a {
         pointer-events: auto
     }
-
     .ministry-class {
         cursor: not-allowed;
     }
-
     .ministry-class a {
         pointer-events: none;
     }
-
     .ministry-change {
         cursor: hand
     }
-
     .ministry-change a {
         pointer-events: auto
     }
-
     .summary-class {
         cursor: not-allowed;
     }
-
     .summary-class a {
         pointer-events: none;
     }
-
     .summary-change {
         cursor: hand
     }
-
     .summary-change a {
         pointer-events: auto
     }
-
-
 </style>
 
 
@@ -135,18 +112,13 @@ $memberid = date('ymhhis') . rand(1, 100000000000);
 
         <div class="tab-content">
             <div class="tab-pane fadeIn active" id="personal">
-
-
                 <div id="success_loc"></div>
                 <div id="error_loc"></div>
 
-
                 <form name="provisional_form" method="post">
-
                     <div class="card-body">
                         <div class="row">
                             <div class="col-md-4">
-
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group">
@@ -163,9 +135,7 @@ $memberid = date('ymhhis') . rand(1, 100000000000);
                                                 <option value="Bishop">Bishop</option>
                                                 <option value="Prophet">Prophet</option>
                                                 <option value="Other">Other</option>
-
                                             </select>
-
                                         </div>
                                     </div>
                                     <div class="col-md-6">
@@ -177,8 +147,6 @@ $memberid = date('ymhhis') . rand(1, 100000000000);
                                         </div>
                                     </div>
                                 </div>
-
-
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Surname</label>
                                     <input type="text" class="form-control" id="surname"
@@ -194,21 +162,16 @@ $memberid = date('ymhhis') . rand(1, 100000000000);
                                     <input type="text" class="form-control" id="othername"
                                            placeholder="Enter Other Name(s)">
                                 </div>
-
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Email Address</label>
                                     <input type="text" class="form-control" id="email_address"
                                            placeholder="Enter email address">
                                 </div>
-
-
                             </div>
 
                             <div class="col-md-4">
-
                                 <div class="form-group">
                                     <label for="exampleInputPassword1">Telephone </label>
-
                                     <div class="input-group">
                                         <div class="input-group-prepend">
                                             <span class="input-group-text">+</span>
@@ -218,13 +181,9 @@ $memberid = date('ymhhis') . rand(1, 100000000000);
                                                minlength="10" autocomplete="off"
                                                placeholder="Enter telephone">
                                     </div>
-
                                 </div>
-
-
                                 <div class="form-group">
                                     <label for="exampleInputPassword1">Alternative Telephone </label>
-
                                     <div class="input-group">
                                         <div class="input-group-prepend">
                                             <span class="input-group-text">+</span>
@@ -234,55 +193,39 @@ $memberid = date('ymhhis') . rand(1, 100000000000);
                                                minlength="10" autocomplete="off"
                                                placeholder="Enter alternative telephone">
                                     </div>
-
                                 </div>
-
-
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Date of Birth</label>
                                     <input type="text" id="birth_date"
                                            class="form-control"
                                            placeholder="Select Date">
                                 </div>
-
-
                                 <div class="form-group">
                                     <label for="exampleInputPassword1">Nationality</label><br/>
                                     <input type="text" id="nationality" class="form-control countryselect"
                                            placeholder="Select Country"/>
                                     <input type="hidden" id="country_code"/>
-
                                 </div>
-
-
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Hometown</label>
                                     <input type="text" class="form-control" id="hometown"
                                            placeholder="Enter hometown">
                                 </div>
-
-
                             </div>
 
                             <div class="col-md-4">
-
-
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Residence</label>
                                     <input type="text" class="form-control" id="residence"
                                            placeholder="Enter residence">
                                 </div>
-
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">House Number</label>
                                     <input type="text" class="form-control" id="house_number"
                                            placeholder="Enter house number">
                                 </div>
-
-
-                                <div class="form-group" id="gender>
-                                    <label for=" exampleInputPassword1
-                                ">Gender </label>
+                                <div class="form-group" id="gender">
+                                    <label for="exampleInputPassword1">Gender </label>
                                 <br/>
                                 <div class="custom-control custom-radio custom-control-inline">
                                     <input type="radio" id="customRadioInline1"
@@ -297,25 +240,15 @@ $memberid = date('ymhhis') . rand(1, 100000000000);
                                     <label class="custom-control-label" for="customRadioInline2">Female</label>
                                 </div>
                             </div>
-
-
                             <div class="form-group">
                                 <label>Passport Picture</label>
                                 <input type="file" class="form-control" id="member_picture">
-
-
                                 <input type="hidden" id="selected"/>
-
                             </div>
-
-
                         </div>
-
-
                     </div>
-
-
             </div>
+
             <div class="card-footer bg-light">
                 <button type="button" class="btn btn-secondary"
                         style="cursor: default" disabled="">Previous
@@ -323,10 +256,7 @@ $memberid = date('ymhhis') . rand(1, 100000000000);
                 <button type="button" style="float: right" class="btn btn-primary" id="savemember">Save and Continue
                 </button>
             </div>
-
             </form>
-
-
         </div>
 
         <div class="tab-pane fadeIn" id="educbus">
@@ -351,7 +281,6 @@ $memberid = date('ymhhis') . rand(1, 100000000000);
 
 
 <script>
-
     $(document).ready(function () {
         $('#member_picture').uploadifive({
             'auto': false,
@@ -369,7 +298,6 @@ $memberid = date('ymhhis') . rand(1, 100000000000);
             'onSelect': function (file) {
                 // Update selected so we know they have selected a file
                 $("#selected").val('yes');
-
             },
             'onCancel': function (file) {
                 // Update selected so we know they have no file selected
@@ -377,17 +305,11 @@ $memberid = date('ymhhis') . rand(1, 100000000000);
             }
         });
 
-
         $('#title').selectize();
-
         $('#member_branch').selectize();
-
         $(".countryselect").countrySelect({
-
             preferredCountries: ["gh", "gb"]
-
         });
-
         $('#birth_date').datepicker({
             format: 'yyyy-mm-dd',
             autoclose: true,
@@ -398,7 +320,6 @@ $memberid = date('ymhhis') . rand(1, 100000000000);
             }
         });
 
-
         $("#start_time").timepicker({
             minuteStep: 1,
             showSeconds: true,
@@ -406,26 +327,21 @@ $memberid = date('ymhhis') . rand(1, 100000000000);
         });
 
         $("#savemember").click(function () {
-
             var member_id = '<?php echo $memberid; ?>';
-
             var title = $("#title").val();
             var othertitle = $("#othertitle").val();
             var surname = $("#surname").val();
             var firstname = $("#firstname").val();
             var othername = $("#othername").val();
             var email_address = $("#email_address").val();
-
             var telephone = $("#telephone").val();
             var alttelephone = $("#alttelephone").val();
             var birth_date = $("#birth_date").val();
             var nationality = $("#nationality").val();
             var hometown = $("#hometown").val();
-
             var residence = $("#residence").val();
             var house_number = $("#house_number").val();
             var gender = $('input[name=gender]:checked').val();
-
 
             var error = '';
 
@@ -433,80 +349,57 @@ $memberid = date('ymhhis') . rand(1, 100000000000);
                 error += 'Please select title \n';
                 $("#title").focus();
             }
-
-
             if (title == "Other" && othertitle == "") {
                 error += 'Please specify title \n';
                 $("#othertitle").focus();
             }
-
             if (title != "Other" && othertitle != "") {
                 error += 'Specify title should be empty or choose "Other" for title \n';
-
             }
-
             if (surname == "") {
                 error += 'Please enter surname \n';
                 $("#surname").focus();
             }
-
             if (firstname == "") {
                 error += 'Please enter first name \n';
                 $("#firstname").focus();
             }
-
-
             if (!email_address.match(/^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/)) {
                 error += 'Please enter valid email \n';
                 $("#email_address").focus();
-
             }
-
             if (telephone == "") {
                 error += 'Please enter telephone \n';
                 $("#telephone").focus();
             }
-
             if (telephone != "" && telephone.length < 10) {
                 error += 'Please enter valid telephone \n';
                 $("#telephone").focus();
             }
-
             if (alttelephone != "" && alttelephone.length < 10) {
                 error += 'Please enter valid alt telephone \n';
                 $("#alttelephone").focus();
             }
-
             if (birth_date == "") {
                 error += 'Please select birth date \n';
-
             }
-
             if (nationality == "") {
                 error += 'Please select nationality \n';
                 $("#nationality").focus();
             }
-
             if (hometown == "") {
                 error += 'Please enter hometown \n';
                 $("#hometown").focus();
             }
-
             if (residence == "") {
                 error += 'Please enter residence \n';
                 $("#residence").focus();
             }
-
             if (gender == undefined) {
                 error += 'Please select gender  \n';
             }
 
-
-
-
             if (error == "") {
-
-
                 $.ajax({
                     type: "POST",
                     url: "ajax/queries/save_member.php",
@@ -516,7 +409,6 @@ $memberid = date('ymhhis') . rand(1, 100000000000);
                         });
                     },
                     data: {
-
                         member_id: member_id,
                         title: title,
                         othertitle: othertitle,
@@ -532,27 +424,16 @@ $memberid = date('ymhhis') . rand(1, 100000000000);
                         residence: residence,
                         house_number: house_number,
                         gender: gender
-
                     },
                     success: function (text) {
-
                         //alert(text);
-
-
                         var selected = $("#selected").val();
-
                         if (selected == 'yes') {
-
                             $('#member_picture').uploadifive('upload');
-
-
                             $.notify("Profile Saved", "success", {position: "top center"});
-
                             $("#member_form a[href='#educbus']").tab('show');
                             $('#educbus-id').removeClass('educbus-class');
                             $('#educbus-id').addClass('educbus-change');
-
-
                             $.ajax({
                                 type: "POST",
                                 url: "ajax/forms/educbus_form.php",
@@ -565,40 +446,22 @@ $memberid = date('ymhhis') . rand(1, 100000000000);
                                 },
 
                             });
-
-
                         } else {
-
                             $.notify("Please select a file to upload", {position: "top center"});
-
                         }
-
-
                     },
-
                     error: function (xhr, ajaxOptions, thrownError) {
                         alert(xhr.status + " " + thrownError);
                     },
                     complete: function () {
                         $.unblockUI();
                     },
-
                 });
-
-
             }
             else {
-
                 $.notify(error, {position: "top center"});
-
             }
             return false;
-
-
         });
-
-
     });
-
-
 </script>

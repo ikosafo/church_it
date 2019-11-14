@@ -1,10 +1,7 @@
 <?php include("../../../config.php");
-
 $memberid = $_POST['member_id'];
-
 $geted = $mysqli->query("select * from member where memberid = '$memberid'");
 $resed = $geted->fetch_assoc();
-
 ?>
 
 <div id="success_loc"></div>
@@ -12,15 +9,11 @@ $resed = $geted->fetch_assoc();
 <h5 class="card-header">Field with * are required</h5>
 <form name="educbus_form" method="post" autocomplete="off">
     <div class="card-body">
-
         <div class="row">
-
             <div class="col-md-4">
                 <div class="form-group">
                     <label for="educlevel">Educational Level *</label>
-
                     <select id="educlevel" style="width: 100%">
-
                         <option value="">Select</option>
                         <option <?php if(@$resed['educationallevel'] == "Tertiary") echo "Selected" ?>>Tertiary</option>
                         <option <?php if(@$resed['educationallevel'] == "'A' Levels") echo "Selected" ?>>'A' Levels</option>
@@ -29,8 +22,6 @@ $resed = $geted->fetch_assoc();
                         <option <?php if(@$resed['educationallevel'] == "Secondary") echo "Selected" ?>>Secondary</option>
                         <option <?php if(@$resed['educationallevel'] == "Primary") echo "Selected" ?>>Primary</option>
                         <option <?php if(@$resed['educationallevel'] == "None") echo "Selected" ?>>None</option>
-
-
                     </select>
                 </div>
 
@@ -39,23 +30,19 @@ $resed = $geted->fetch_assoc();
                     <input type="text" class="form-control" id="institution_attended"
                            placeholder="Enter institution" value="<?php echo $resed['institutionattended'] ?>">
                 </div>
-
             </div>
 
             <div class="col-md-4">
-
                 <div class="form-group">
                     <label for="exampleInputEmail1">Qualification</label>
                     <input type="text" class="form-control" id="qualification"
                            placeholder="Enter qualification" value="<?php echo $resed['qualification'] ?>">
                 </div>
-
                 <div class="form-group">
                     <label for="exampleInputEmail1">Occupation</label>
                     <input type="text" class="form-control" id="occupation"
                            placeholder="Enter Occupation" value="<?php echo $resed['occupation'] ?>">
                 </div>
-
             </div>
 
             <div class="col-md-4">
@@ -69,17 +56,10 @@ $resed = $geted->fetch_assoc();
                     <input type="text" class="form-control" id="job_position"
                            placeholder="Enter Job Position" value="<?php echo $resed['jobposition'] ?>">
                 </div>
-
-
             </div>
-
         </div>
 
-
-
     </div>
-
-
 </form>
 
 
@@ -95,22 +75,17 @@ $resed = $geted->fetch_assoc();
 <script>
 
     $("#educlevel").selectize();
-
     //Move to Personal Information
     $("#previous_personal").click(function () {
-
         $("#member_form a[href='#personal']").tab('show');
         $('#personal-id').removeClass('personal-class');
         $('#personal-id').addClass('personal-change');
-
-
     });
 
 
 
 
     $("#save_educbus").click(function () {
-
         var member_id = '<?php echo $memberid; ?>';
         var educlevel = $("#educlevel").val();
         var institution_attended = $("#institution_attended").val();
@@ -119,20 +94,13 @@ $resed = $geted->fetch_assoc();
         var workplace = $("#workplace").val();
         var job_position = $("#job_position").val();
 
-
         //alert(member_id);
-
         var error = '';
-
-
         if (educlevel == "") {
             error += 'Please select educational level \n';
         }
 
-
         if (error == "") {
-
-
             $.ajax({
                 type: "POST",
                 url: "ajax/queries/save_educbus.php",
@@ -142,7 +110,6 @@ $resed = $geted->fetch_assoc();
                     });
                 },
                 data: {
-
                     member_id: member_id,
                     educlevel: educlevel,
                     institution_attended: institution_attended,
@@ -150,19 +117,13 @@ $resed = $geted->fetch_assoc();
                     occupation: occupation,
                     workplace: workplace,
                     job_position: job_position
-
                 },
                 success: function (text) {
-
                     //alert(text);
-
                     $.notify("Education and Business Saved", "success", {position: "top center"});
-
                     $("#member_form a[href='#family']").tab('show');
                     $('#family-id').removeClass('family-class');
                     $('#family-id').addClass('family-change');
-
-
                     $.ajax({
                         type: "POST",
                         url: "ajax/forms/family_form_edit.php",
@@ -173,33 +134,19 @@ $resed = $geted->fetch_assoc();
                         error: function (xhr, ajaxOptions, thrownError) {
                             alert(xhr.status + " " + thrownError);
                         },
-
                     });
-
-
-
                 },
-
                 error: function (xhr, ajaxOptions, thrownError) {
                     alert(xhr.status + " " + thrownError);
                 },
                 complete: function () {
                     $.unblockUI();
                 },
-
             });
-
         }
-
-
         else {
-
             $.notify(error, {position: "top center"});
-
         }
-
         return false;
-
     });
-
 </script>

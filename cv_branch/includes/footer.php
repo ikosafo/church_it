@@ -48,6 +48,7 @@
 <script src="assets/vendor/bootstrap-daterangepicker/daterangepicker.js"></script>
 <script src="assets/js/components/bootstrap-datepicker-init.js"></script>
 <script src="assets/js/components/bootstrap-date-range-picker-init.js"></script>
+<script src="assets/jquery-confirm/js/jquery-confirm.js"></script>
 
 
 </body>

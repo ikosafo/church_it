@@ -7,7 +7,7 @@
         <ul class="actions top-right">
             <li>
                 <a href="javascript:void(0)" class="btn btn-primary btn-floating">
-                    <i class="la la-plus-circle"></i> ADD NEW MEMBER
+                    ADD NEW MEMBER
                 </a>
             </li>
         </ul>
@@ -25,11 +25,7 @@
 
 <?php require ('includes/footer.php')?>
 
-
-
 <script>
-
-
     $.ajax({
         url: "ajax/forms/member_form.php",
         beforeSend: function () {
@@ -37,7 +33,6 @@
                 message: '<img src="assets/img/load.gif" />'
             });
         },
-
         success: function (text) {
             $('#member_form_div').html(text);
         },

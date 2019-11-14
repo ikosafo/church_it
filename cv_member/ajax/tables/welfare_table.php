@@ -15,7 +15,7 @@ ORDER BY `year_month` DESC,period DESC");
         </strong></h5>
     <div class="card-body">
 
-        <table id="bs4-table" class="table table-striped table-bordered"
+        <table id="bs4-table" class="table"
                style="width:100% !important;">
             <thead>
             <tr>

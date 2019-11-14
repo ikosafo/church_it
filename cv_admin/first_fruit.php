@@ -7,7 +7,7 @@
         <ul class="actions top-right">
             <li>
                 <a href="javascript:void(0)" class="btn btn-primary btn-floating">
-                    <i class="la la-eye"></i> MANAGE FIRST FRUIT
+                     MANAGE FIRST FRUIT
                 </a>
             </li>
         </ul>

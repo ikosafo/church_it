@@ -12,7 +12,7 @@ $dep = $mysqli->query("select * from document ORDER by period_uploaded");
             </strong></h5>
         <div class="card-body">
 
-            <table id="bs4-table" class="table table-striped table-bordered"
+            <table id="bs4-table" class="table"
                    style="width:100% !important;">
                 <thead>
                 <tr>
@@ -50,26 +50,15 @@ $dep = $mysqli->query("select * from document ORDER by period_uploaded");
                                     title="Delete">
                                 <i class="icon-trash" style="color:#fff !important;"></i>
                             </button>
-
                         </td>
-
-
-
-
                     </tr>
-
                     <?php
                 }
                 ?>
                 </tbody>
                 <tfoot>
-
             </table>
-
-
         </div>
-
-
 
     </div>
 

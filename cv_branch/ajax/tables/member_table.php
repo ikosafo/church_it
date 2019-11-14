@@ -1,43 +1,54 @@
 <?php include('../../../config.php');
 
 $branch = $_SESSION['branch'];
-
 $getmember = $mysqli->query("select * from member where branch = '$branch' AND status IS NULL ORDER by surname,firstname,othername");
-
 
 ?>
 
+    <style>
+        .dataTables_filter { display: none; }
+    </style>
+
+
     <div class="card">
+        <h5 class="card-header">Members</h5>
+        <div class="row">
+            <div class="mt-4 col-lg-6 offset-lg-3 col-xl-6 offset-xl-3">
+                <form>
+                    <div class="search-wrapper page-search">
+                        <button class="search-button-submit"
+                                type="submit"><i class="icon dripicons-search"></i></button>
+                        <input type="text" class="search-input" id="mem_search"
+                               placeholder="Search...">
+                    </div>
+                </form>
+            </div>
 
-        <h5 class="card-header">Members <strong>
-
-            </strong></h5>
+        </div>
         <div class="card-body">
-
-            <table id="bs4-table" class="table table-striped table-bordered"
+            <table id="bs4-table" class="table"
                    style="width:100% !important;">
                 <thead>
                 <tr>
+                    <th>No.</th>
+                    <th>Image</th>
                     <th>Full Name</th>
                     <th>Telephone</th>
                     <th>Gender</th>
                     <th>Residence</th>
-                    <th>Marital Status</th>
-                    <th>Department</th>
                     <th>Action</th>
-
-
                 </tr>
                 </thead>
                 <tbody>
 
                 <?php
+                $counter = 1;
                 while ($resmember = $getmember->fetch_assoc()) {
-
                     $memberid = $resmember['memberid'];
                     $lmem = lock($memberid);
                     ?>
                     <tr>
+                        <td><?php echo $counter ?></td>
                         <td><?php
                             $img = $mysqli->query("select * from member_images
                             where memberid = '$memberid'");
@@ -45,7 +56,9 @@ $getmember = $mysqli->query("select * from member where branch = '$branch' AND s
                             $fetch_img = $img->fetch_assoc() ?>
 
                             <img src="../<?php echo $fetch_img['image_location'] ?>"
-                                 class="w-50 rounded-circle" alt="Member Image"><br/>
+                                 class="w-50 rounded-circle" alt="Member Image">
+                        </td>
+                        <td>
                             <?php echo $resmember['surname'] . ' ' . $resmember['firstname'] . ' ' . $resmember['othername']; ?>
                         </td>
                         <td>
@@ -57,19 +70,19 @@ $getmember = $mysqli->query("select * from member where branch = '$branch' AND s
                         <td>
                             <?php echo $resmember['residence'] ?>
                         </td>
-                        <td>
-                            <?php echo $resmember['maritalstatus'] ?>
+                       <!-- <td>
+                            <?php /*echo $resmember['maritalstatus'] */?>
                         </td>
                         <td>
-                            <?php $di = $resmember['department'];
+                            <?php /*$di = $resmember['department'];
                             $getd = $mysqli->query("select * from department where id = '$di'");
                             $resd = $getd->fetch_assoc();
                             echo $resd['department_name'];
                             if ($di == "None") {
                                 echo "None";
                             }
-                            ?>
-                        </td>
+                            */?>
+                        </td>-->
                         <td>
                             <button type="button"
                                     class="btn btn-sm btn-warning view_member"
@@ -93,10 +106,10 @@ $getmember = $mysqli->query("select * from member where branch = '$branch' AND s
 
                         </td>
 
-
                     </tr>
 
                     <?php
+                    $counter ++;
                 }
                 ?>
                 </tbody>
@@ -112,15 +125,18 @@ $getmember = $mysqli->query("select * from member where branch = '$branch' AND s
 
     <script>
 
-        $('#bs4-table').DataTable();
+        oTable = $('#bs4-table').DataTable({
+            "bLengthChange": false
+        });
+        $('#mem_search').keyup(function(){
+            oTable.search($(this).val()).draw() ;
+        });
+
 
 
         $(document).on('click', '.view_member', function () {
-
             var id_index = $(this).attr('i_index');
-
             //alert(id_index);
-
             $.ajax({
                 type: "POST",
                 url: "ajax/forms/member_details.php",
@@ -142,19 +158,13 @@ $getmember = $mysqli->query("select * from member where branch = '$branch' AND s
                 complete: function () {
                     $.unblockUI();
                 },
-
             });
-
-
         });
 
 
         $(document).on('click', '.edit_member', function () {
-
             var id_index = $(this).attr('i_index');
-
             //alert(id_index);
-
             $.ajax({
                 type: "POST",
                 url: "ajax/forms/member_form_edit.php",
@@ -176,81 +186,71 @@ $getmember = $mysqli->query("select * from member where branch = '$branch' AND s
                 complete: function () {
                     $.unblockUI();
                 },
-
             });
-
-
         });
 
 
-        $(document).on('click', '.delete_member', function () {
-            var i_index = $(this).attr('i_index');
 
-            //alert(i_index);
+        $(document).off('click', '.delete_member').on('click', '.delete_member', function () {
+            var theindex = $(this).attr('i_index');
+            $.confirm({
+                title: 'Delete Member!',
+                content: 'Are you sure to continue?',
+                buttons: {
+                    no: {
+                        text: 'No',
+                        keys: ['enter', 'shift'],
+                        backdrop: 'static',
+                        keyboard: false,
+                        action: function () {
+                            $.alert('Data is safe');
+                        }
+                    },
+                    yes: {
+                        text: 'Yes, Delete it!',
+                        btnClass: 'btn-blue',
+                        action: function () {
+                            $.ajax({
+                                type: "POST",
+                                url: "ajax/queries/delete_member.php",
+                                data: {
+                                    i_index: theindex
+                                },
+                                dataType: "html",
 
-            swal({
-                    title: "Do you want to delete this?",
-                    text: "You will not be able to recover this data!",
-                    footer: '<a href="ajax/queries/safedeletemember.php?memberid=<?php echo $lmem; ?>"><u>Delete but keep the data</u></a>',
-                    type: "warning",
-                    showCancelButton: true,
-                    confirmButtonClass: "btn-danger",
-                    confirmButtonText: "Yes, delete it!",
-                    cancelButtonText: "No, cancel!",
-                    closeOnConfirm: false,
-                    closeOnCancel: false
-                },
-                function (isConfirm) {
-                    if (isConfirm) {
+                                success: function (text) {
 
-                        $.ajax({
-                            type: "POST",
-                            url: "ajax/queries/delete_member.php",
-                            data: {
-                                i_index: i_index
-                            },
-                            dataType: "html",
+                                    $.ajax({
+                                        type: "POST",
+                                        url: "ajax/tables/member_table.php",
+                                        beforeSend: function () {
+                                            $.blockUI({
+                                                message: '<img src="assets/img/load.gif"/>'
+                                            });
+                                        },
+                                        success: function (text) {
+                                            $('#member_table_div').html(text);
+                                        },
+                                        error: function (xhr, ajaxOptions, thrownError) {
+                                            alert(xhr.status + " " + thrownError);
+                                        },
+                                        complete: function () {
+                                            $.unblockUI();
+                                        },
+                                    });
+                                },
 
-                            success: function (text) {
+                                complete: function () {
 
-                                $.ajax({
-                                    type: "POST",
-                                    url: "ajax/tables/member_table.php",
-                                    beforeSend: function () {
-                                        $.blockUI({
-                                            message: '<img src="assets/img/load.gif"/>'
-                                        });
-                                    },
-                                    success: function (text) {
-                                        $('#member_table_div').html(text);
-                                    },
-                                    error: function (xhr, ajaxOptions, thrownError) {
-                                        alert(xhr.status + " " + thrownError);
-                                    },
-                                    complete: function () {
-                                        $.unblockUI();
-                                    },
-
-                                });
-
-                            },
-
-                            complete: function () {
-
-                            },
-                            error: function (xhr, ajaxOptions, thrownError) {
-                                alert(xhr.status + " " + thrownError);
-                            }
-                        });
-
-                        swal("Deleted!", "Member has been deleted.", "success");
-
-                    } else {
-                        swal("Cancelled", "Data is safe.", "error");
+                                },
+                                error: function (xhr, ajaxOptions, thrownError) {
+                                    alert(xhr.status + " " + thrownError);
+                                }
+                            });
+                        }
                     }
-                });
-
-
+                }
+            });
         });
 
 

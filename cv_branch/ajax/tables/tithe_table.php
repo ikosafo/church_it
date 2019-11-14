@@ -1,21 +1,15 @@
 <?php include ('../../../config.php');
-
 $branch = $_SESSION['branch'];
-
 $dep = $mysqli->query("SELECT * FROM f_tithe WHERE branch = '$branch' 
 ORDER BY `year_month` DESC,`week` DESC, period DESC");
 
 
 ?>
-
     <div class="card">
-
-        <h5 class="card-header">Tithe Records <strong>
-
-            </strong></h5>
+        <h5 class="card-header">Tithe Records </h5>
         <div class="card-body">
 
-            <table id="bs4-table" class="table table-striped table-responsive table-bordered"
+            <table id="bs4-table" class="table table-responsive"
                    style="width:100% !important;">
                 <thead>
                 <tr>
@@ -24,7 +18,6 @@ ORDER BY `year_month` DESC,`week` DESC, period DESC");
                     <th>Member Name</th>
                     <th>Amount</th>
                     <th>Delete</th>
-
                 </tr>
                 </thead>
                 <tbody>
@@ -32,8 +25,6 @@ ORDER BY `year_month` DESC,`week` DESC, period DESC");
                 <?php
                 $counter = 1;
                 while ($resdep = $dep->fetch_assoc()) {
-
-
                     ?>
                     <tr>
                         <td>
@@ -66,26 +57,16 @@ ORDER BY `year_month` DESC,`week` DESC, period DESC");
                                     title="Delete">
                                 <i class="icon-trash" style="color:#fff !important;"></i>
                             </button>
-
                         </td>
-
-
                     </tr>
 
-                    <?php $counter++; ?>
-
-                    <?php
+                    <?php $counter++;
                 }
                 ?>
                 </tbody>
                 <tfoot>
-
             </table>
-
-
         </div>
-
-
 
     </div>
 
@@ -100,7 +81,6 @@ ORDER BY `year_month` DESC,`week` DESC, period DESC");
 
         $(document).on('click', '.delete_tithe', function () {
             var i_index = $(this).attr('i_index');
-
             //alert(i_index);
 
             swal({

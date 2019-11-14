@@ -14,7 +14,6 @@ $period = date("Y-m-d H:i:s");
     }
 </script>
 
-
     <div class="card">
         <div id="success_loc"></div>
         <div id="error_loc"></div>
@@ -33,24 +32,14 @@ $period = date("Y-m-d H:i:s");
                 <div class="form-group">
                     <label for="exampleInputEmail1">Service Type</label>
                     <select id="visitor_service">
-
                         <?php
-
                         $getservice = $mysqli->query("select * from service where start_period <= '$period' 
                                                         AND end_period >= '$period'");
-
                         while ($ress = $getservice->fetch_assoc()) { ?>
-
                             <option value="<?php echo $ress['id'] ?>"><?php echo $ress['service_name']; ?></option>
-
                         <?php } ?>
-
                     </select>
-
                 </div>
-
-
-
             </div>
             <div class="card-footer bg-light">
                 <button type="button" class="btn btn-primary" id="save_visitor">Submit</button>
@@ -61,41 +50,29 @@ $period = date("Y-m-d H:i:s");
 
 
 <script>
-
     $("#visitor_service").selectize();
-
 
     $("#save_visitor").click(function () {
 
         var visitor_name = $("#visitor_name").val();
         var visitor_telephone = $("#visitor_telephone").val();
         var visitor_service = $("#visitor_service").val();
-
-
-
         var error = '';
 
         if (visitor_name == "") {
             error += 'Please enter name of visitor \n';
             $("#visitor_name").focus();
         }
-
         if (visitor_telephone == "") {
             error += 'Please enter telephone  \n';
             $("#visitor_telephone").focus();
         }
-
         if (visitor_service == "") {
             error += 'Please select service \n';
-
         }
 
 
-
-
         if (error == "") {
-
-
             $.ajax({
                 type: "POST",
                 url: "ajax/queries/save_visitor_attendance.php",
@@ -105,42 +82,26 @@ $period = date("Y-m-d H:i:s");
                     });
                 },
                 data: {
-
                     visitor_name: visitor_name,
                     visitor_telephone: visitor_telephone,
                     visitor_service: visitor_service
-
                 },
                 success: function (text) {
-
                     //alert(text);
-
                    location.reload();
-
                 },
-
                 error: function (xhr, ajaxOptions, thrownError) {
                     alert(xhr.status + " " + thrownError);
                 },
                 complete: function () {
                     $.unblockUI();
                 },
-
             });
-
-
         }
         else {
-
-
             $('#error_loc').notify(error);
-
         }
         return false;
-
-
-
-
     });
 
 

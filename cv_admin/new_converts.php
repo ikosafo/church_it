@@ -7,7 +7,7 @@
         <ul class="actions top-right">
             <li>
                 <a href="javascript:void(0)" class="btn btn-primary btn-floating">
-                    <i class="la la-eye"></i> MANAGE CONVERTS
+                     MANAGE CONVERTS
                 </a>
             </li>
         </ul>

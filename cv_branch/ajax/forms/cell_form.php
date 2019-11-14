@@ -21,7 +21,7 @@ $cellid = date("ymdhis").rand(1,10000);
 
                     <div class="form-group">
                         <button style="margin-top: 20px" type="button" class="btn btn-primary"
-                                id="savecell"><i class="la la-save" style="color: #fff"></i> Save
+                                id="savecell"><i class="zmdi zmdi-plus-circle-o zmdi-hc-fw" style="color: #fff"></i> Save
                         </button>
                     </div>
 

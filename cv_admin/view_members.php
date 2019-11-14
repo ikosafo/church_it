@@ -7,7 +7,7 @@
         <ul class="actions top-right">
             <li>
                 <a href="javascript:void(0)" class="btn btn-primary btn-floating">
-                    <i class="la la-eye"></i> MANAGE MEMBERS
+                     MANAGE MEMBERS
                 </a>
             </li>
         </ul>
@@ -25,11 +25,7 @@
 
 <?php require ('includes/footer.php')?>
 
-
-
 <script>
-
-
     $.ajax({
         url: "ajax/tables/member_table.php",
         beforeSend: function () {
@@ -37,7 +33,6 @@
                 message: '<img src="assets/img/load.gif" />'
             });
         },
-
         success: function (text) {
             $('#member_table_div').html(text);
         },
@@ -47,8 +42,6 @@
         complete: function () {
             $.unblockUI();
         },
-
     });
-
 
 </script>

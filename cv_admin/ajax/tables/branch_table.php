@@ -1,14 +1,11 @@
 <?php include('../../../config.php');
-
 $qubr=$mysqli->query("select * from branch ORDER BY name");
-
-
 ?>
 
 <div class="card">
     <h5 class="card-header">Branches</h5>
     <div class="card-body">
-        <table id="bs4-table" class="table table-striped table-bordered" style="width:100%">
+        <table id="bs4-table" class="table" style="width:100%">
             <thead>
             <tr>
                 <th>Name</th>
@@ -22,7 +19,6 @@ $qubr=$mysqli->query("select * from branch ORDER BY name");
             <?php
             while($fet_br=$qubr->fetch_assoc())
             {
-
                 ?>
                 <tr>
                     <td><?php echo $fet_br['name'];?></td>
@@ -44,27 +40,17 @@ $qubr=$mysqli->query("select * from branch ORDER BY name");
                         </button>
                     </td>
                 </tr>
-
                 <?php
             }
             ?>
-
-
             </tbody>
-
         </table>
-
-
     </div>
 </div>
 
 
 <script>
-
-
     $('#bs4-table').DataTable();
-
-
 
 
     $(document).on('click','.delete_branch', function(e) {
@@ -137,10 +123,69 @@ $qubr=$mysqli->query("select * from branch ORDER BY name");
 
     });
 
+    $(document).off('click', '.delete_branch').on('click', '.delete_branch', function () {
+        var theindex = $(this).attr('i_index');
+        $.confirm({
+            title: 'Delete Branch!',
+            content: 'Are you sure to continue?',
+            buttons: {
+                no: {
+                    text: 'No',
+                    keys: ['enter', 'shift'],
+                    backdrop: 'static',
+                    keyboard: false,
+                    action: function () {
+                        $.alert('Data is safe');
+                    }
+                },
+                yes: {
+                    text: 'Yes, Delete it!',
+                    btnClass: 'btn-blue',
+                    action: function () {
+                        $.ajax({
+                            type: "POST",
+                            url: "ajax/queries/delete_branch.php",
+                            data: {
+                                theindex: theindex
+                            },
+                            dataType: "html",
+                            success:function(text) {
+                                $.ajax({
+                                    url: "ajax/tables/branch_table.php",
+                                    beforeSend: function () {
+                                        $.blockUI({
+                                            message: '<img src="assets/img/load.gif" />'
+                                        });
+                                    },
+                                    success: function (text) {
+                                        $('#branch_table_div').html(text);
+                                    },
+                                    error: function (xhr, ajaxOptions, thrownError) {
+                                        alert(xhr.status + " " + thrownError);
+                                    },
+                                    complete: function () {
+                                        $.unblockUI();
+                                    },
+                                });
+                            },
+                            complete: function () {
+                            },
+                            error: function (xhr, ajaxOptions, thrownError) {
+                                alert(xhr.status + " " + thrownError);
+                            }
+                        });
+                    }
+                }
+            }
+        });
+
+
+    });
+
+
 
     $(document).on('click','.edit_branch',function(){
         var theindex = $(this).attr('i_index');
-
         $.ajax({
             type: "POST",
             url: "ajax/forms/branch_form_edit.php",
@@ -163,10 +208,5 @@ $qubr=$mysqli->query("select * from branch ORDER BY name");
                 $.unblockUI();
             },
         });
-
-
-
     });
-
-
 </script>

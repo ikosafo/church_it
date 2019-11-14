@@ -1,20 +1,14 @@
 <?php include ('../../../config.php');
-
 //$branch = $_SESSION['branch'];
-
 $dep = $mysqli->query("select * from department ORDER by department_name");
-
 
 ?>
 
 <div class="card">
-
-    <h5 class="card-header">Departments <strong>
-
-        </strong></h5>
+    <h5 class="card-header">Departments </h5>
     <div class="card-body">
 
-        <table id="bs4-table" class="table table-striped table-bordered"
+        <table id="bs4-table" class="table"
                style="width:100% !important;">
             <thead>
             <tr>
@@ -27,10 +21,7 @@ $dep = $mysqli->query("select * from department ORDER by department_name");
             <tbody>
 
             <?php
-            while ($resdep = $dep->fetch_assoc()) {
-
-
-                ?>
+            while ($resdep = $dep->fetch_assoc()) {?>
                 <tr>
                     <td><?php echo $resdep['department_name']; ?></td>
                     <td>
@@ -51,10 +42,6 @@ $dep = $mysqli->query("select * from department ORDER by department_name");
                         </button>
 
                     </td>
-
-
-
-
                 </tr>
 
                 <?php
@@ -62,13 +49,8 @@ $dep = $mysqli->query("select * from department ORDER by department_name");
             ?>
             </tbody>
             <tfoot>
-
         </table>
-
-
     </div>
-
-
 
 </div>
 
@@ -79,13 +61,9 @@ $dep = $mysqli->query("select * from department ORDER by department_name");
         });
 
 
-
         $(document).on('click', '.edit_department', function () {
-
             var id_index = $(this).attr('i_index');
-
             //alert(id_index);
-
             $.ajax({
                 type: "POST",
                 url: "ajax/forms/department_form_edit.php",
@@ -107,83 +85,73 @@ $dep = $mysqli->query("select * from department ORDER by department_name");
                 complete: function () {
                     $.unblockUI();
                 },
+            });
+        });
 
+        $(document).off('click', '.delete_department').on('click', '.delete_department', function () {
+            var i_index = $(this).attr('i_index');
+            $.confirm({
+                title: 'Delete Department!',
+                content: 'Are you sure to continue?',
+                buttons: {
+                    no: {
+                        text: 'No',
+                        keys: ['enter', 'shift'],
+                        backdrop: 'static',
+                        keyboard: false,
+                        action: function () {
+                            $.alert('Data is safe');
+                        }
+                    },
+                    yes: {
+                        text: 'Yes, Delete it!',
+                        btnClass: 'btn-blue',
+                        action: function () {
+                            $.ajax({
+                                type: "POST",
+                                url: "ajax/queries/delete_department.php",
+                                data: {
+                                    i_index: i_index
+                                },
+                                dataType: "html",
+                                success: function (text) {
+                                    $.ajax({
+                                        type: "POST",
+                                        url: "ajax/tables/department_table.php",
+                                        beforeSend: function () {
+                                            $.blockUI({
+                                                message: '<img src="assets/img/load.gif"/>'
+                                            });
+                                        },
+                                        success: function (text) {
+                                            $('#department_table_div').html(text);
+                                        },
+                                        error: function (xhr, ajaxOptions, thrownError) {
+                                            alert(xhr.status + " " + thrownError);
+                                        },
+                                        complete: function () {
+                                            $.unblockUI();
+                                        },
+
+                                    });
+
+                                },
+
+                                complete: function () {
+
+                                },
+                                error: function (xhr, ajaxOptions, thrownError) {
+                                    alert(xhr.status + " " + thrownError);
+                                }
+                            });
+                        }
+                    }
+                }
             });
 
 
         });
 
-
-
-
-        $(document).on('click', '.delete_department', function () {
-            var i_index = $(this).attr('i_index');
-
-            //alert(i_index);
-
-            swal({
-                    title: "Do you want to delete this?",
-                    text: "You will not be able to recover this data!",
-                    type: "warning",
-                    showCancelButton: true,
-                    confirmButtonClass: "btn-danger",
-                    confirmButtonText: "Yes, delete it!",
-                    cancelButtonText: "No, cancel!",
-                    closeOnConfirm: false,
-                    closeOnCancel: false
-                },
-                function (isConfirm) {
-                    if (isConfirm) {
-
-                        $.ajax({
-                            type: "POST",
-                            url: "ajax/queries/delete_department.php",
-                            data: {
-                                i_index: i_index
-                            },
-                            dataType: "html",
-
-                            success: function (text) {
-
-                                $.ajax({
-                                    type: "POST",
-                                    url: "ajax/tables/department_table.php",
-                                    beforeSend: function () {
-                                        $.blockUI({
-                                            message: '<img src="assets/img/load.gif"/>'
-                                        });
-                                    },
-                                    success: function (text) {
-                                        $('#department_table_div').html(text);
-                                    },
-                                    error: function (xhr, ajaxOptions, thrownError) {
-                                        alert(xhr.status + " " + thrownError);
-                                    },
-                                    complete: function () {
-                                        $.unblockUI();
-                                    },
-
-                                });
-
-                            },
-
-                            complete: function () {
-
-                            },
-                            error: function (xhr, ajaxOptions, thrownError) {
-                                alert(xhr.status + " " + thrownError);
-                            }
-                        });
-
-                        swal("Deleted!", "Department has been deleted.", "success");
-
-                    } else {
-                        swal("Cancelled", "Data is safe.", "error");
-                    }
-                });
-
-
-        });
 
     </script>
 

@@ -49,6 +49,7 @@ $branch = $_SESSION['branch'];
     <link rel="stylesheet" href="assets/css/bootstrap-timepicker.css">
     <link rel="stylesheet" href="assets/vendor/bootstrap-daterangepicker/daterangepicker.css">
     <link rel="stylesheet" href="assets/css/custom.css">
+    <link rel="stylesheet" href="assets/jquery-confirm/css/jquery-confirm.css">
 
 </head>
 <body>

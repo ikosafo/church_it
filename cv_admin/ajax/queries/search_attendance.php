@@ -21,7 +21,7 @@ $dep = $mysqli->query("SELECT * FROM attendance WHERE datereported
         </strong></h5>
     <div class="card-body">
 
-        <table id="bs4-table" class="table table-striped table-bordered"
+        <table id="bs4-table" class="table"
                style="width:100% !important;">
             <thead>
             <tr>
@@ -29,16 +29,12 @@ $dep = $mysqli->query("SELECT * FROM attendance WHERE datereported
                 <th>Name of Attendee</th>
                 <th>Service Name</th>
                 <th>Period Reported</th>
-
-
             </tr>
             </thead>
             <tbody>
 
             <?php
             while ($resdep = $dep->fetch_assoc()) {
-
-
                 ?>
                 <tr>
                     <td>
@@ -73,11 +69,7 @@ $dep = $mysqli->query("SELECT * FROM attendance WHERE datereported
             <tfoot>
 
         </table>
-
-
     </div>
-
-
 
 </div>
 

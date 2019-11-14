@@ -12,7 +12,7 @@ ORDER BY `year` DESC, period DESC");
     <h5 class="card-header">First Fruit Records</h5>
     <div class="card-body">
 
-        <table id="bs4-table" class="table table-striped table-bordered">
+        <table id="bs4-table" class="table">
             <thead>
             <tr>
                 <th>No.</th>
