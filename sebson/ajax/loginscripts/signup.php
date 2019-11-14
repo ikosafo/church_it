@@ -1,7 +1,5 @@
 <?php
-
 include("../../../config.php");
-
 
 $first_name=mysqli_real_escape_string($mysqli,$_POST['first_name']);
 $last_name=mysqli_real_escape_string($mysqli,$_POST['last_name']);
@@ -11,18 +9,14 @@ $telephone=mysqli_real_escape_string($mysqli,$_POST['telephone']);
 $skills=mysqli_real_escape_string($mysqli,$_POST['skills']);
 $specify_skill=mysqli_real_escape_string($mysqli,$_POST['specify_skill']);
 
-
 $full_name = $first_name.' '.$last_name;
-
 /*$n_link = md5(md5($first_name."".$last_name."".$email_address."".$password));
 $v_link = rand(1,100000000).$n_link.rand(1,100000000);*/
 
-$res=$mysqli->query("SELECT * FROM sebson WHERE `emailaddress` = '$email_address'
-                           OR `telephone` = '$telephone'");
+$res=$mysqli->query("SELECT * FROM sebson WHERE program = '1' AND (`emailaddress` = '$email_address'
+                          OR `telephone` = '$telephone')");
 $getdetails = $res->fetch_assoc();
 $rowcount = mysqli_num_rows($res);
-
-
 
 ob_start();
 system('ipconfig /all');
@@ -31,7 +25,6 @@ ob_clean();
 $findme = 'physique';
 $pmac = strpos($mycom, $findme);
 $mac_address = substr($mycom,($pmac+33),17);
-
 
 function getRealIpAddr()
 {
@@ -52,12 +45,9 @@ function getRealIpAddr()
 }
 
 $ip_add = getRealIpAddr();
-
 $today = date("Y-m-d H:i:s");
 
-
 /*$subject = 'AHPC Email Verification';
-
 $message = "Dear $full_name, <p>Thank you for signing up with <b>Allied Health
 Professions Council.</b>. Please click on the activation link 
 <a href='$reg_root/email_validating.php?vid=$v_link&email=$email_address'>HERE</a> to verify your 
@@ -65,9 +55,7 @@ email address.</p>
 <p>Thank you.</p>
 ";*/
 
-
 if ($rowcount == "0"){
-
     $mysqli->query("INSERT INTO `sebson`
             (`firstname`,
              `lastname`,
@@ -76,6 +64,7 @@ if ($rowcount == "0"){
              `branch`,
              `skills`,
              `specifyskill`,
+             `program`,
              `dateregistered`)
 VALUES ('$first_name',
         '$last_name',
@@ -84,11 +73,8 @@ VALUES ('$first_name',
         '$branch',
         '$skills',
         '$specify_skill',
+        '1',
         '$today')") or die(mysqli_error($mysqli));
-
-
-
-
 
     $mysqli->query("INSERT INTO `logs`
             (`message`,
@@ -105,18 +91,12 @@ VALUES ('Registered for Sebson Multimedia Training',
         '$mac_address',
         '$ip_add',
         'Successful')") or die(mysqli_error($mysqli));
-
     echo 1;
-
     //SendEmail::compose($email_address,$subject,$message);
-
 
 }
 
-
-
 else {
-
     $mysqli->query("INSERT INTO `logs`
             (`message`,
              `logdate`,
@@ -132,19 +112,8 @@ VALUES ('Email  or telephone already exist after attempted account creation',
         '$mac_address',
         '$ip_add',
         'Failed')") or die(mysqli_error($mysqli));
-
     echo 2;
 
-
 }
-
-
-
-
-
-
-
-
-
 
 ?>

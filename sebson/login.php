@@ -1,7 +1,7 @@
 <?php include ('../config.php');
 
 session_destroy();
-
+//echo md5 ('123456');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -10,7 +10,7 @@ session_destroy();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Church Admin System | /Christ Vision Sanctuary Int</title>
+    <title>Sebson Multimedia | Christ Vision Sanctuary Int.</title>
     <!-- ================== GOOGLE FONTS ==================-->
     <link href="https@fonts.googleapis.com/css@family=Poppins_3A300,400,500" rel="stylesheet">
     <!-- ======================= GLOBAL VENDOR STYLES ========================-->
@@ -54,54 +54,30 @@ session_destroy();
         ::-webkit-scrollbar {
             width: 10px;
         }
-
         /* Track */
         ::-webkit-scrollbar-track {
             background: #f1f1f1;
         }
-
         /* Handle */
         ::-webkit-scrollbar-thumb {
             background: #888;
         }
-
         /* Handle on hover */
         ::-webkit-scrollbar-thumb:hover {
             background: #555;
         }
-
         .notifyjs-bootstrap-base {
             font-weight: lighter !important;
             font-size: small;
         }
-
+        .sign-in-form {
+            margin:0.1% auto !important;
+        }
     </style>
 </head>
 
-<style>
-    .sign-in-form {
-        margin:0.1% auto !important;
-    }
-
-    .notifyjs-bootstrap-base {
-        font-weight: lighter !important;
-    }
-</style>
-
-
-<script>
-    function isNumber(evt) {
-        evt = (evt) ? evt : window.event;
-        var charCode = (evt.which) ? evt.which : evt.keyCode;
-        if (charCode > 31 && (charCode < 48 || charCode > 57)) {
-            return false;
-        }
-        return true;
-    }
-</script>
 
 <body>
-
 <div class="container">
 
     <hr/>
@@ -109,7 +85,6 @@ session_destroy();
     <div class="row">
         <div class="col-md-6 col-sm-12">
         </div>
-
         <div class="col-md-6 col-sm-12">
             <a href="../">
                 <button class="btn btn-success btn-floating"
@@ -124,87 +99,35 @@ session_destroy();
     <form class="sign-in-form" autocomplete="off">
         <div id="error_loc"></div>
         <div class="card">
-
-            <div class="card-body" id="signup_form">
+            <div class="card-body">
                 <a href="#." class="brand text-center d-block m-b-20">
-                   <h1>SEBSON MULTIMEDIA TRAINING</h1>
+                   SEBSON MULTIMEDIA ADMINISTRATOR
                 </a>
-
                 <div class="form-group">
-                    <label for="inputPassword" class="sr-only">First Name</label>
-                    <input type="text" id="signup_first_name" class="form-control" placeholder="First Name" required="">
+                    <label for="inputPassword" class="sr-only">Email</label>
+                    <input type="text" id="emailaddress" class="form-control" placeholder="Email Address" required="">
                 </div>
 
                 <div class="form-group">
-                    <label for="inputPassword" class="sr-only">Last Name</label>
-                    <input type="text" id="signup_last_name" class="form-control" placeholder="Last Name" required="">
-                </div>
-
-                <div class="form-group">
-                    <label for="inputPassword" class="sr-only">Email Address</label>
-                    <input type="text" id="signup_email_address" class="form-control" placeholder="Email Address" required="">
-                </div>
-
-                <div class="form-group">
-                    <label for="inputPassword" class="sr-only">Telephone</label>
-                    <input type="text" id="signup_phone_number" onkeypress="return isNumber(event)"
-                           class="form-control" placeholder="Phone Number" required="">
-                </div>
-
-                <div class="form-group">
-                    <label for="inputPassword" class="sr-only">Branch</label>
-
-                    <select id="branch" style="width: 100%">
-
-                        <option value="">Select Branch</option>
-
-                        <?php
-                        $getd = $mysqli->query("select * from branch ORDER BY name");
-                        while ($resd = $getd->fetch_assoc()){?>
-                            <option value="<?php echo $resd['id'] ?>"><?php echo $resd['name'] ?></option>
-                        <?php } ?>
-
-
-                    </select>
-                </div>
-
-                <div class="form-group">
-                    <label for="inputPassword" class="sr-only">Do you have any skills?</label>
-
-                    <select id="skills" style="width: 100%">
-
-                        <option value="">Do you have any skills?</option>
-                        <option value="Sound Engineering">Sound Engineering</option>
-                        <option value="Video Editing">Video Editing</option>
-                        <option value="Website Designing">Website Designing</option>
-                        <option value="Social Media Management">Social Media Management</option>
-                        <option value="Online Audiovisual Live Streaming">Online Audiovisual Live Streaming</option>
-                        <option value="Other">Other</option>
-
-                    </select>
-                </div>
-
-                <div class="form-group">
-                    <label for="inputPassword" class="sr-only">If Other, Specify</label>
-                    <input type="text" id="specify_skill"
-                           class="form-control" placeholder="If Other, Specify">
+                    <label for="inputPassword" class="sr-only">Password</label>
+                    <input type="password" id="password" class="form-control" placeholder="Password" required="">
                 </div>
 
 
                 <div style="text-align:center;">
-                    <button id="register_btn"
+                    <button id="login_btn"
                             class="btn btn-primary btn-rounded
-                                            btn-floating" type="button">Register
+                                            btn-floating" type="button">Sign In
                     </button>
-
 
                 </div>
 
-            </div>
 
+            </div>
 
         </div>
     </form>
+
 </div>
 
 <!-- ================== GLOBAL VENDOR SCRIPTS ==================-->
@@ -251,213 +174,50 @@ session_destroy();
 <script>
 
 
-    $("#branch").selectize();
-    $("#skills").selectize();
-
-
-
-    $('#register_btn').click(function () {
-
-       //alert('hi');
-
-        var first_name = $('#signup_first_name').val();
-        var last_name = $('#signup_last_name').val();
-        var email_address = $('#signup_email_address').val();
-        var phone_number = $('#signup_phone_number').val();
-        var branch = $('#branch').val();
-        var skills = $('#skills').val();
-        var specify_skill = $('#specify_skill').val();
-
-
-        var error = '';
-
-        if (first_name == "") {
-            error += 'Please enter first name \n';
-            $("#signup_first_name").focus();
-        }
-
-        if (last_name == "") {
-            error += 'Please enter last name \n';
-            $("#signup_last_name").focus();
-        }
-
-        if (phone_number == "") {
-            error += 'Please enter phone number \n';
-            $("#signup_phone_number").focus();
-        }
-
-        if (phone_number != "" && phone_number.length < 10) {
-            error += 'Please enter valid phone number \n';
-            $("#signup_phone_number").focus();
-        }
-
-        if (branch == "") {
-            error += 'Please select branch \n';
-        }
-
-        if (skills == "") {
-            error += 'Please select skills \n';
-        }
-
-        if (skills == "Other" && specify_skill == "") {
-            error += 'Please specify skill \n';
-        }
-
-        if (skills != "Other" && specify_skill != "") {
-            error += 'Please do not specify skill \n';
-            $("#specify_skill").focus();
-        }
-
-        if (!email_address.match(/^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/)) {
-            error += 'Please enter valid email \n';
-            $("#signup_email_address").focus();
-
-        }
-
-
-
-        if (error == "") {
-
-
-            $.ajax({
-                type: "POST",
-                url: "ajax/loginscripts/signup.php",
-                beforeSend: function () {
-                    $.blockUI({
-                        message: '<img src="assets/img/wait.gif" style="border:0 !important"/>'
-
-                    });
-                },
-                data: {
-                    first_name: first_name,
-                    last_name: last_name,
-                    email_address: email_address,
-                    telephone: phone_number,
-                    branch: branch,
-                    skills: skills,
-                    specify_skill: specify_skill
-
-                },
-                success: function (text) {
-
-                    //alert(text);
-
-                    if (text == 1) {
-                        alert('You have registered successfully');
-                        location.reload();
-                    }
-
-                    else if (text == 2) {
-                        $('#error_loc').notify("Email address or telephone already exists", "error");
-                    }
-
-                    else {
-                        $('#error_loc').notify("Error registering", "error");
-                    }
-
-                },
-                error: function (xhr, ajaxOptions, thrownError) {
-                    alert(xhr.status + " " + thrownError);
-                },
-                complete: function () {
-                    $.unblockUI();
-                },
-
-            });
-
-
-        }
-        else {
-
-            $('#error_loc').notify(error);
-
-
-        }
-        return false;
-
-
-    });
-
-
     $('#login_btn').click(function () {
 
-        //alert('hi');
-
-
-        var signin_email_address = $('#signin_email_address').val();
-        var signin_password = $('#signin_password').val();
-
+        var emailaddress = $('#emailaddress').val();
+        var password = $('#password').val();
         var error = '';
 
-        if (signin_email_address == "") {
+        if (emailaddress == "") {
             error += 'Please enter email address \n';
-            $("#signin_email_address").focus();
-
+            $("#emailaddress").focus();
         }
-
-        /* if (!signin_email_address.match(/^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/)) {
-             error += 'Please enter valid email \n';
-             $("#signin_email_address").focus();
-
-         }*/
-
-
-        if (signin_password == "") {
+        if (password == "") {
             error += 'Please enter password \n';
-            $("#signin_password").focus();
+            $("#password").focus();
         }
-
-
-
 
         if (error == "") {
-
-
             $.ajax({
                 type: "POST",
                 url: "ajax/loginscripts/signin.php",
                 data: {
-                    signin_email_address: signin_email_address,
-                    signin_password: signin_password
-
+                    emailaddress: emailaddress,
+                    password: password
                 },
                 success: function (text) {
-
-                    //alert(text);
-
+                    //alert(text)
                     if (text == 1) {
-
-                        window.location.href = "index.php";
-
+                        window.location.href = "admin";
                     }
-
-
-                    else if (text == 3) {
-
-                        $('#error_loc').notify("Email address or password does not exist", "error");
+                    else {
+                        $('#error_loc').notify("Email Address or Password does not exist", "error");
                     }
-
-
                 },
                 error: function (xhr, ajaxOptions, thrownError) {
                     alert(xhr.status + " " + thrownError);
                 },
-
             });
-
-
         }
         else {
-
             $('#error_loc').notify(error);
-
-
         }
         return false;
     });
 
 </script>
-
 </body>
 
 </html>

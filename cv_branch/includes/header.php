@@ -1,13 +1,10 @@
 <?php include('../config.php');
 
-
 if (!isset($_SESSION['username'])) {
-
-    header("location:login.php");
+    header("location:login");
 }
 
 $branch = $_SESSION['branch'];
-
 
 ?>
 
@@ -43,53 +40,16 @@ $branch = $_SESSION['branch'];
     <link rel="stylesheet" href="assets/css/layouts/vertical/menu-type/default.css">
     <!-- ======================= THEME COLOR STYLES ===========================-->
     <link rel="stylesheet" href="assets/css/layouts/vertical/themes/theme-j.css">
-
     <link rel="stylesheet" href="assets/vendor/sweetalert/sweetalert.css">
-
     <link rel="stylesheet" href="assets/vendor/flatpickr/flatpickr.css">
-
     <link rel="stylesheet" href="assets/uploadify/uploadifive.css">
-
     <link rel="stylesheet" href="assets/css/selectize.css">
-
     <link rel="stylesheet" href="assets/css/countrySelect.css">
-
     <link rel="stylesheet" href="assets/vendor/bootstrap-datepicker/bootstrap-datepicker.min.css">
-
     <link rel="stylesheet" href="assets/css/bootstrap-timepicker.css">
-
     <link rel="stylesheet" href="assets/vendor/bootstrap-daterangepicker/daterangepicker.css">
+    <link rel="stylesheet" href="assets/css/custom.css">
 
-
-
-
-
-    <style>
-        ::-webkit-scrollbar {
-            width: 10px;
-        }
-
-        /* Track */
-        ::-webkit-scrollbar-track {
-            background: #f1f1f1;
-        }
-
-        /* Handle */
-        ::-webkit-scrollbar-thumb {
-            background: #888;
-        }
-
-        /* Handle on hover */
-        ::-webkit-scrollbar-thumb:hover {
-            background: #555;
-        }
-
-        .notifyjs-bootstrap-base {
-            font-weight: lighter !important;
-            font-size: small;
-        }
-
-    </style>
 </head>
 <body>
 <!-- START APP WRAPPER -->
@@ -134,7 +94,7 @@ $branch = $_SESSION['branch'];
                     <li class="sidebar-header"><span>MAIN</span></li>
                     <li class="<?php echo($_SERVER['PHP_SELF'] == "/index.php"
                         ? "active" : ""); ?> nav-dropdown">
-                        <a href="index.php"><i class="icon dripicons-meter"></i><span>Dashboard</span></a>
+                        <a href="/cv_branch"><i class="icon dripicons-meter"></i><span>Dashboard</span></a>
                     </li>
                     <li class="<?php echo(
                     $_SERVER['PHP_SELF'] == "/cv_branch/cells.php" ||
@@ -142,13 +102,13 @@ $branch = $_SESSION['branch'];
                         ? "active" : ""); ?> nav-dropdown">
                         <a class="has-arrow" href="#" aria-expanded="false"><i class="icon dripicons-gear"></i><span>Configuration</span></a>
                         <ul class="collapse nav-sub" aria-expanded="false">
-                            <li><a href="cells.php"><span>Cells</span></a></li>
-                            <li><a href="mnotify_key.php"><span>Mnotify Key</span></a></li>
+                            <li><a href="cells"><span>Cells</span></a></li>
+                            <li><a href="mnotify_key"><span>Mnotify Key</span></a></li>
                         </ul>
                     </li>
                     <li class="<?php echo($_SERVER['PHP_SELF'] == "/documents.php"
                         ? "active" : ""); ?> nav-dropdown">
-                        <a href="documents.php"><i class="icon dripicons-folder-open"></i><span>Documents</span></a>
+                        <a href="documents"><i class="icon dripicons-folder-open"></i><span>Documents</span></a>
                     </li>
                     <li class="<?php echo(
                     $_SERVER['PHP_SELF'] == "/cv_branch/new_member.php" ||
@@ -159,11 +119,11 @@ $branch = $_SESSION['branch'];
                         ? "active" : ""); ?> nav-dropdown">
                         <a class="has-arrow" href="#" aria-expanded="false"><i class="icon icon-people"></i><span>Membership</span></a>
                         <ul class="collapse nav-sub">
-                            <li><a href="new_member.php"><span>Add New Member</span></a></li>
-                            <li><a href="view_member.php"><span>View Members</span></a></li>
-                            <li><a href="new_converts.php"><span>New Converts</span></a></li>
-                            <li><a href="visitors.php"><span>Visitors</span></a></li>
-                            <li><a href="church_workers.php"><span>Church Workers</span></a></li>
+                            <li><a href="new_member"><span>Add New Member</span></a></li>
+                            <li><a href="view_member"><span>View Members</span></a></li>
+                            <li><a href="new_converts"><span>New Converts</span></a></li>
+                            <li><a href="visitors"><span>Visitors</span></a></li>
+                            <li><a href="church_workers"><span>Church Workers</span></a></li>
                         </ul>
                     </li>
                     <li class="sidebar-header"><span>OTHERS</span></li>
@@ -237,7 +197,7 @@ $branch = $_SESSION['branch'];
                         </ul>
                     </li>
 
-                    <li><a href="login.php"><i class="icon icon-logout"></i><span>Log Out</span></a>
+                    <li><a href="login"><i class="icon icon-logout"></i><span>Log Out</span></a>
                     </li>
                 </ul>
             </nav>
@@ -337,7 +297,7 @@ $branch = $_SESSION['branch'];
                             </div>
                         </div>
 
-                        <a class="dropdown-item" href="login.php"><i class="icon dripicons-lock-open"></i> Sign Out</a>
+                        <a class="dropdown-item" href="login"><i class="icon dripicons-lock-open"></i> Sign Out</a>
                     </div>
                 </li>
 

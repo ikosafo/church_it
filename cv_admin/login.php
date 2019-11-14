@@ -1,5 +1,4 @@
 <?php include ('../config.php');
-
 session_destroy();
 
 ?>
@@ -35,58 +34,14 @@ session_destroy();
     <link rel="stylesheet" href="assets/css/layouts/vertical/menu-type/default.css">
     <!-- ======================= THEME COLOR STYLES ===========================-->
     <link rel="stylesheet" href="assets/css/layouts/vertical/themes/theme-j.css">
-
     <link rel="stylesheet" href="assets/vendor/sweetalert/sweetalert.css">
-
     <link rel="stylesheet" href="assets/uploadify/uploadifive.css">
-
     <link rel="stylesheet" href="assets/css/selectize.css">
-
     <link rel="stylesheet" href="assets/css/countrySelect.css">
-
+    <link rel="stylesheet" href="assets/css/custom.css">
     <link rel="stylesheet" href="assets/vendor/bootstrap-datepicker/bootstrap-datepicker.min.css">
-
     <link rel="stylesheet" href="assets/vendor/bootstrap-daterangepicker/daterangepicker.css">
-
-
-
-    <style>
-        ::-webkit-scrollbar {
-            width: 10px;
-        }
-
-        /* Track */
-        ::-webkit-scrollbar-track {
-            background: #f1f1f1;
-        }
-
-        /* Handle */
-        ::-webkit-scrollbar-thumb {
-            background: #888;
-        }
-
-        /* Handle on hover */
-        ::-webkit-scrollbar-thumb:hover {
-            background: #555;
-        }
-
-        .notifyjs-bootstrap-base {
-            font-weight: lighter !important;
-            font-size: small;
-        }
-
-    </style>
 </head>
-
-<style>
-    .sign-in-form {
-        margin:0.1% auto !important;
-    }
-
-    .notifyjs-bootstrap-base {
-        font-weight: lighter !important;
-    }
-</style>
 
 <body>
 <div class="container">
@@ -94,16 +49,13 @@ session_destroy();
     <hr/>
 
     <div class="row">
-        <div class="col-md-6 col-sm-12">
-        </div>
-
+        <div class="col-md-6 col-sm-12"></div>
         <div class="col-md-6 col-sm-12">
             <a href="../">
                 <button class="btn btn-success btn-floating"
                         style="float: right"><i class="icon-globe"></i> Go back
                 </button>
             </a>
-
         </div>
     </div>
 
@@ -126,18 +78,13 @@ session_destroy();
                     <input type="password" id="password" class="form-control" placeholder="Password" required="">
                 </div>
 
-
                 <div style="text-align:center;">
                     <button id="login_btn"
                             class="btn btn-primary btn-rounded
                                             btn-floating" type="button">Sign In
                     </button>
-
                 </div>
-
-
             </div>
-
         </div>
     </form>
 
@@ -185,77 +132,48 @@ session_destroy();
 <script src="assets/js/components/bootstrap-date-range-picker-init.js"></script>
 
 
-
 <script>
 
-
-
     $('#login_btn').click(function () {
-
         var username = $('#username').val();
         var password = $('#password').val();
-
         var error = '';
-
         if (username == "") {
             error += 'Please enter username \n';
             $("#username").focus();
         }
-
-
         if (password == "") {
             error += 'Please enter password \n';
             $("#password").focus();
         }
 
-
         if (error == "") {
-
-
             $.ajax({
                 type: "POST",
                 url: "ajax/queries/loginaction.php",
                 data: {
-
                     username: username,
                     password: password
-
                 },
                 success: function (text) {
-
                     //alert(text)
-
                     if (text == 1) {
-
-                        window.location.href = "index.php";
-
+                        window.location.href = "/cv_admin";
                     }
-
                     else {
-
                         $('#error_loc').notify("Username or password does not exist", "error");
-
                     }
-
-
                 },
                 error: function (xhr, ajaxOptions, thrownError) {
                     alert(xhr.status + " " + thrownError);
                 },
-
             });
-
-
         }
         else {
-
             $('#error_loc').notify(error);
-
-
         }
         return false;
     });
-
 </script>
 
 

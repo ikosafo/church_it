@@ -1,14 +1,9 @@
 <?php include('../config.php');
 
-
 if (!isset($_SESSION['username'])) {
-
-    header("location:login.php");
+    header("location:login");
 }
-
 //$branch = $_SESSION['branch'];
-
-
 ?>
 
 <!DOCTYPE html>
@@ -43,51 +38,21 @@ if (!isset($_SESSION['username'])) {
     <link rel="stylesheet" href="assets/css/layouts/vertical/menu-type/default.css">
     <!-- ======================= THEME COLOR STYLES ===========================-->
     <link rel="stylesheet" href="assets/css/layouts/vertical/themes/theme-j.css">
-
     <link rel="stylesheet" href="assets/vendor/sweetalert/sweetalert.css">
-
     <link rel="stylesheet" href="assets/uploadify/uploadifive.css">
-
     <link rel="stylesheet" href="assets/css/selectize.css">
-
     <link rel="stylesheet" href="assets/vendor/flatpickr/flatpickr.css">
-
     <link rel="stylesheet" href="assets/css/countrySelect.css">
-
     <link rel="stylesheet" href="assets/vendor/bootstrap-datepicker/bootstrap-datepicker.min.css">
-
     <link rel="stylesheet" href="assets/vendor/bootstrap-daterangepicker/daterangepicker.css">
-
-
-
-
+    <link rel="stylesheet" href="assets/css/custom.css">
 
     <style>
-        ::-webkit-scrollbar {
-            width: 10px;
+        .active {
+            font-weight: bold;
         }
-
-        /* Track */
-        ::-webkit-scrollbar-track {
-            background: #f1f1f1;
-        }
-
-        /* Handle */
-        ::-webkit-scrollbar-thumb {
-            background: #888;
-        }
-
-        /* Handle on hover */
-        ::-webkit-scrollbar-thumb:hover {
-            background: #555;
-        }
-
-        .notifyjs-bootstrap-base {
-            font-weight: lighter !important;
-            font-size: small;
-        }
-
     </style>
+
 </head>
 <body>
 <!-- START APP WRAPPER -->
@@ -132,7 +97,7 @@ if (!isset($_SESSION['username'])) {
                     <li class="sidebar-header"><span>MAIN</span></li>
                     <li class="<?php echo($_SERVER['PHP_SELF'] == "/cv_admin/index.php"
                         ? "active" : ""); ?> nav-dropdown">
-                        <a href="index.php"><i class="icon dripicons-meter"></i><span>Dashboard</span></a>
+                        <a href="/cv_admin"><i class="icon dripicons-meter"></i><span>Dashboard</span></a>
                     </li>
                     <li class="<?php echo($_SERVER['PHP_SELF'] == "/cv_admin/branches.php" ||
                     $_SERVER['PHP_SELF'] == "/cv_admin/sms_api_key.php" ||
@@ -142,16 +107,28 @@ if (!isset($_SESSION['username'])) {
                         ? "active" : ""); ?> nav-dropdown">
                         <a class="has-arrow" href="#" aria-expanded="false"><i class="icon dripicons-gear"></i><span>Configuration</span></a>
                         <ul class="collapse nav-sub" aria-expanded="false">
-                            <li><a href="branches.php"><span>Branches</span></a></li>
-                            <li><a href="system_users.php"><span>System Users</span></a></li>
-                            <li><a href="departments.php"><span>Departments</span></a></li>
-                            <li><a href="ministries.php"><span>Ministries</span></a></li>
-                            <li><a href="sms_api_key.php"><span>SMS API Key</span></a></li>
+                            <li class="active"><a href="branches">
+                                    <span class="<?php echo($_SERVER['PHP_SELF'] == "/cv_admin/branches.php"
+                                        ? "active" : ""); ?>">Branches</span></a></li>
+                            <li><a href="system_users">
+                                    <span class="<?php echo($_SERVER['PHP_SELF'] == "/cv_admin/system_users.php"
+                                        ? "active" : ""); ?>">System Users</span></a></li>
+                            <li><a href="departments">
+                                    <span class="<?php echo($_SERVER['PHP_SELF'] == "/cv_admin/departments.php"
+                                        ? "active" : ""); ?>">Departments</span></a></li>
+                            <li><a href="ministries">
+                                    <span class="<?php echo($_SERVER['PHP_SELF'] == "/cv_admin/ministries.php"
+                                        ? "active" : ""); ?>">Ministries</span></a></li>
+                            <li><a href="sms_api_key">
+                                    <span class="<?php echo($_SERVER['PHP_SELF'] == "/cv_admin/sms_api_key.php"
+                                        ? "active" : ""); ?>">SMS API Key</span></a></li>
                         </ul>
                     </li>
                     <li class="<?php echo($_SERVER['PHP_SELF'] == "/ad/documents.php"
                         ? "active" : ""); ?> nav-dropdown">
-                        <a href="documents.php"><i class="icon dripicons-folder-open"></i><span>Documents</span></a>
+                        <a href="documents"><i class="icon dripicons-folder-open"></i>
+                            <span class="<?php echo($_SERVER['PHP_SELF'] == "/cv_admin/documents.php"
+                                ? "active" : ""); ?>">Documents</span></a>
                     </li>
                     <li class="<?php echo(
                     $_SERVER['PHP_SELF'] == "/cv_admin/view_members.php" ||
@@ -159,13 +136,22 @@ if (!isset($_SESSION['username'])) {
                     $_SERVER['PHP_SELF'] == "/cv_admin/visitors.php" ||
                     $_SERVER['PHP_SELF'] == "/cv_admin/print_forms.php"
                         ? "active" : ""); ?> nav-dropdown">
-                        <a class="has-arrow" href="#" aria-expanded="false"><i class="icon icon-people"></i><span>Membership</span></a>
+                        <a class="has-arrow" href="#" aria-expanded="false">
+                            <i class="icon icon-people"></i><span>Membership</span></a>
                         <ul class="collapse nav-sub">
 
-                            <li><a href="view_members.php"><span>View Members</span></a></li>
-                            <li><a href="new_converts.php"><span>New Converts</span></a></li>
-                            <li><a href="visitors.php"><span>Visitors</span></a></li>
-                            <li><a href="print_forms.php"><span>Print Forms</span></a></li>
+                            <li><a href="view_members">
+                                    <span class="<?php echo($_SERVER['PHP_SELF'] == "/cv_admin/view_members.php"
+                                        ? "active" : ""); ?>">View Members</span></a></li>
+                            <li><a href="new_converts">
+                                    <span class="<?php echo($_SERVER['PHP_SELF'] == "/cv_admin/new_converts.php"
+                                        ? "active" : ""); ?>">New Converts</span></a></li>
+                            <li><a href="visitors">
+                                    <span class="<?php echo($_SERVER['PHP_SELF'] == "/cv_admin/visitors.php"
+                                        ? "active" : ""); ?>">Visitors</span></a></li>
+                            <li><a href="print_forms">
+                                    <span class="<?php echo($_SERVER['PHP_SELF'] == "/cv_admin/print_forms.php"
+                                        ? "active" : ""); ?>">Print Forms</span></a></li>
                         </ul>
                     </li>
                     <li class="sidebar-header"><span>OTHERS</span></li>
@@ -176,8 +162,12 @@ if (!isset($_SESSION['username'])) {
                         <a class="has-arrow" href="#" aria-expanded="false"><i
                                     class="icon dripicons-checklist"></i><span>Attendance</span></a>
                         <ul class="collapse nav-sub" aria-expanded="false">
-                            <li><a href="attendance_service.php"><span>Service</span></a></li>
-                            <li><a href="attendance_search.php"><span>Search Details</span></a></li>
+                            <li><a href="attendance_service">
+                                    <span class="<?php echo($_SERVER['PHP_SELF'] == "/cv_admin/attendance_service.php"
+                                        ? "active" : ""); ?>">Service</span></a></li>
+                            <li><a href="attendance_search">
+                                    <span class="<?php echo($_SERVER['PHP_SELF'] == "/cv_admin/attendance_search.php"
+                                        ? "active" : ""); ?>">Search Details</span></a></li>
                         </ul>
                     </li>
                     <li class="<?php echo(
@@ -188,43 +178,43 @@ if (!isset($_SESSION['username'])) {
                         ? "active" : ""); ?> nav-dropdown">
                         <a class="has-arrow" href="#" aria-expanded="false"><i class="icon dripicons-wallet"></i><span>Financials</span></a>
                         <ul class="collapse nav-sub" aria-expanded="false">
-                            <li><a href="tithe.php"><span>Tithe</span></a></li>
-                            <li><a href="welfare.php"><span>Welfare</span></a></li>
-                            <li><a href="contributions.php"><span>Contributions</span></a></li>
-                            <li><a href="first_fruit.php"><span>First Fruit</span></a></li>
-                            <li><a href="ministry_partners.php"><span>Ministry Partners</span></a></li>
-                            <li><a href="financials_search.php"><span>Search</span></a></li>
+                            <li><a href="tithe"><span>Tithe</span></a></li>
+                            <li><a href="welfare"><span>Welfare</span></a></li>
+                            <li><a href="contributions"><span>Contributions</span></a></li>
+                            <li><a href="first_fruit"><span>First Fruit</span></a></li>
+                            <li><a href="ministry_partners"><span>Ministry Partners</span></a></li>
+                            <li><a href="financials_search"><span>Search</span></a></li>
 
                         </ul>
                     </li>
                     <li class="nav-dropdown">
-                        <a href="sms.php"><i class="icon icon-envelope-letter"></i><span>SMS</span></a>
+                        <a href="sms"><i class="icon icon-envelope-letter"></i><span>SMS</span></a>
                     </li>
                     <li class="nav-dropdown">
-                        <a href="birthdays.php"><i class="icon icon-emotsmile"></i><span>Birthdays</span></a>
+                        <a href="birthdays"><i class="icon icon-emotsmile"></i><span>Birthdays</span></a>
                     </li>
                     <li class="nav-dropdown">
                         <a class="has-arrow" href="#" aria-expanded="false"><i
                                     class="icon icon-calculator"></i><span>Accounts</span></a>
                         <ul class="collapse nav-sub" aria-expanded="false">
-                            <li><a href="account_inputs.php"><span>Account Inputs</span></a></li>
-                            <li><a href="account_expenses.php"><span>Expenses</span></a></li>
-                            <li><a href="account_bank_transaction.php"><span>Bank Transaction</span></a></li>
-                            <li><a href="account_balance_sheet.php"><span>Balance Sheet</span></a></li>
-                            <li><a href="account_search.php"><span>Search</span></a></li>
+                            <li><a href="account_inputs"><span>Account Inputs</span></a></li>
+                            <li><a href="account_expenses"><span>Expenses</span></a></li>
+                            <li><a href="account_bank_transaction"><span>Bank Transaction</span></a></li>
+                            <li><a href="account_balance_sheet"><span>Balance Sheet</span></a></li>
+                            <li><a href="account_search"><span>Search</span></a></li>
                         </ul>
                     </li>
                     <li class="nav-dropdown">
                         <a class="has-arrow" href="#" aria-expanded="false"><i
                                     class="icon dripicons-blog"></i><span>Asset Register/Inv.</span></a>
                         <ul class="collapse nav-sub" aria-expanded="false">
-                            <li><a href="inventory_category.php"><span>Categories</span></a></li>
-                            <li><a href="inventory_entry.php"><span>Entry</span></a></li>
-                            <li><a href="inventory_search.php"><span>Search</span></a></li>
+                            <li><a href="inventory_category"><span>Categories</span></a></li>
+                            <li><a href="inventory_entry"><span>Entry</span></a></li>
+                            <li><a href="inventory_search"><span>Search</span></a></li>
                         </ul>
                     </li>
 
-                    <li><a href="login.php"><i class="icon icon-logout"></i><span>Log Out</span></a>
+                    <li><a href="login"><i class="icon icon-logout"></i><span>Log Out</span></a>
                     </li>
                 </ul>
             </nav>
@@ -250,7 +240,7 @@ if (!isset($_SESSION['username'])) {
             </ul>
             <ul class="navbar-nav nav-center site-logo">
                 <li>
-                    <a href="index.php">
+                    <a href="index">
                         <div class="logo_mobile">
                             <svg id="logo_mobile" width="27" height="27" viewBox="0 0 54.03 56.55">
                                 <defs>

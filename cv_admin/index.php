@@ -1,13 +1,7 @@
-<?php require ('includes/header.php');
-
-//$branch = $_SESSION['branch'];
-?>
+<?php require ('includes/header.php'); ?>
 
             <!--START PAGE CONTENT -->
             <section class="page-content container-fluid">
-
-
-
                 <div class="row">
                     <div class="col-12">
                         <div class="card">
@@ -24,7 +18,6 @@
                                         <h6 class="text-muted m-t-10">
                                             Member(s)
                                         </h6>
-
                                     </div>
                                 </div>
                                 <div class="col-md-12 col-lg-6 col-xl-3">
@@ -39,7 +32,6 @@
                                         <h6 class="text-muted m-t-10">
                                             Male(s)
                                         </h6>
-
                                     </div>
                                 </div>
                                 <div class="col-md-12 col-lg-6 col-xl-3">

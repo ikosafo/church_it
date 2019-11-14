@@ -13,14 +13,14 @@
                 <label for="exampleInputEmail1">Username</label>
                 <input type="text" class="form-control" id="username" placeholder="Enter username">
             </div>
-            <div class="form-group">
+           <!-- <div class="form-group">
                 <label for="exampleInputEmail1">Default Password</label>
                 <input type="password" class="form-control" id="password" placeholder="Enter password">
             </div>
             <div class="form-group">
                 <label for="exampleInputEmail1">Confirm Password</label>
                 <input type="password" class="form-control" id="confirm_password" placeholder="Confirm password">
-            </div>
+            </div>-->
             <div class="form-group">
                 <label for="exampleInputEmail1">User Branch</label>
                 <select class="select_branch" id="user_branch">
@@ -60,28 +60,24 @@
         var full_name = $("#full_name").val();
         var username = $("#username").val();
         var user_branch = $("#user_branch").val();
-        var password = $("#password").val();
-        var confirm_password = $("#confirm_password").val();
-
+        /*var password = $("#password").val();
+        var confirm_password = $("#confirm_password").val();*/
 
         var error = '';
-
         if (full_name == "") {
             error += 'Please enter full name of user \n';
             $("#full_name").focus();
         }
-
         if (username == "") {
             error += 'Please enter username \n';
             $("#username").focus();
         }
-
         if (user_branch == "") {
             error += 'Please select branch of user \n';
             $("#user_branch").focus();
         }
 
-        if (password == "") {
+       /* if (password == "") {
             error += 'Please enter password \n';
             $("#password").focus();
         }
@@ -95,13 +91,9 @@
             error += 'Passwords do not match \n';
             $("#confirm_password").focus();
         }
-
-
-
+*/
 
         if (error == "") {
-
-
             $.ajax({
                 type: "POST",
                 url: "ajax/queries/save_user.php",
@@ -114,16 +106,12 @@
 
                     full_name: full_name,
                     username: username,
-                    user_branch: user_branch,
-                    password:password
-
+                    user_branch: user_branch
+                    //password:password
                 },
                 success: function (text) {
-
                     if (text == 1) {
-
                         $('#success_loc').notify("Form submitted","success");
-
                         $.ajax({
                             url: "ajax/tables/user_table.php",
                             beforeSend: function () {
@@ -131,7 +119,6 @@
                                     message: '<img src="assets/img/load.gif" />'
                                 });
                             },
-
                             success: function (text) {
                                 $('#user_table_div').html(text);
                             },
@@ -141,9 +128,7 @@
                             complete: function () {
                                 $.unblockUI();
                             },
-
                         });
-
                         $.ajax({
                             url: "ajax/forms/user_form.php",
                             beforeSend: function () {
@@ -151,7 +136,6 @@
                                     message: '<img src="assets/img/load.gif" />'
                                 });
                             },
-
                             success: function (text) {
                                 $('#user_form_div').html(text);
                             },
@@ -161,34 +145,21 @@
                             complete: function () {
                                 $.unblockUI();
                             },
-
                         });
-
-
                     } else {
-
                         $('#error_loc').notify("Username already exists","error");
-
                     }
-
                 },
-
                 error: function (xhr, ajaxOptions, thrownError) {
                     alert(xhr.status + " " + thrownError);
                 },
                 complete: function () {
                     $.unblockUI();
                 },
-
             });
-
-
         }
         else {
-
-
             $('#error_loc').notify(error);
-
         }
         return false;
 

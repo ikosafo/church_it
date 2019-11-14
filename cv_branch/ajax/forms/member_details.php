@@ -86,7 +86,7 @@ $memberid = $result['memberid'];
 
 
                                             <div class="profile-image"><img
-                                                        src="<?php echo $reg_root . '/' . $fetch_img['image_location'] ?>"
+                                                        src="../<?php echo $fetch_img['image_location'] ?>"
                                                         alt="" style="width: 80%">
                                             </div>
 

@@ -2,26 +2,20 @@
 
 include("../../../config.php");
 
-$email_address=mysqli_real_escape_string($mysqli,$_POST['signin_email_address']);
-$pass=mysqli_real_escape_string($mysqli,$_POST['signin_password']);
+$emailaddress=mysqli_real_escape_string($mysqli,$_POST['emailaddress']);
+$pass=mysqli_real_escape_string($mysqli,$_POST['password']);
 
 $password = md5($pass);
 
 
-$res=$mysqli->query("SELECT * FROM users_login WHERE 
-                             (`email_address` = '$email_address' OR telephone = '$email_address') AND
-                             `password` = '$password'
-                             ");
+$res=$mysqli->query("SELECT * FROM sebsonadmin WHERE `emailaddress` = '$emailaddress' 
+                            AND `password` = '$password'");
 $rowcount = mysqli_num_rows($res);
 
 $getdetails = $res->fetch_assoc();
-$telephone = $getdetails['telephone'];
-$emailaddress = $getdetails['email_address'];
-$memberid = $telephone.$emailaddress;
-$branch = $getdetails['branch'];
-$firstname = $getdetails['first_name'];
-$lastname = $getdetails['last_name'];
-$fullname = $firstname.' '.$lastname;
+$fullname = $getdetails['fullname'];
+$emailaddress = $getdetails['emailaddress'];
+$memberid = $emailaddress;
 /*$verified = $getdetails['email_verified'];*/
 
 ob_start();
@@ -69,8 +63,8 @@ if ($rowcount == "0"){
              `action`)
 VALUES ('Email or password error after attempted login',
         '$today',
-        '$email_address',
-        '$telephone',
+        '$emailaddress',
+        '',
         '$mac_address',
         '$ip_add',
         'Failed')") or die(mysqli_error($mysqli));
@@ -91,19 +85,15 @@ else {
              `action`)
 VALUES ('Logged in successfully',
         '$today',
-        '$email_address',
-        '$telephone',
+        '$emailaddress',
+        '',
         '$mac_address',
         '$ip_add',
         'Successful')") or die(mysqli_error($mysqli));
 
     $_SESSION['fullname'] = $fullname;
-    $_SESSION['firstname'] = $firstname;
-    $_SESSION['lastname'] = $lastname;
     $_SESSION['memberid'] = $memberid;
-    $_SESSION['emailaddress'] = $email_address;
-    $_SESSION['telephone'] = $telephone;
-    $_SESSION['branch'] = $branch;
+    $_SESSION['emailaddress'] = $emailaddress;
     $_SESSION['password'] = $pass;
 
     echo 1;

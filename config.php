@@ -7,9 +7,15 @@ if($mysqli->connect_errno){
     echo"cannot connect MYSQLI error no{$mysqli->connect_errno}:{$mysqli->connect_errno}";
     exit();
 }
+
+/*$mysqli= new mysqli('localhost','u349494272_root','Is0205737464','u349494272_cvsi');
+if($mysqli->connect_errno){
+    echo"cannot connect MYSQLI error no{$mysqli->connect_errno}:{$mysqli->connect_errno}";
+    exit();
+}*/
 session_start();
 
-$reg_root = 'http://church.local';
+//$reg_root = 'http://church.local';
 
 
 function lock($item){
